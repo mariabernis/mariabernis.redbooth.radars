@@ -1,0 +1,39 @@
+PODS:
+  - AFNetworking (2.4.1):
+    - AFNetworking/NSURLConnection (= 2.4.1)
+    - AFNetworking/NSURLSession (= 2.4.1)
+    - AFNetworking/Reachability (= 2.4.1)
+    - AFNetworking/Security (= 2.4.1)
+    - AFNetworking/Serialization (= 2.4.1)
+    - AFNetworking/UIKit (= 2.4.1)
+  - AFNetworking/NSURLConnection (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - GROAuth2SessionManager (0.2.3):
+    - AFNetworking (~> 2.4.1)
+  - PQFCustomLoaders (0.0.1):
+    - UIColor+FlatColors
+  - UIColor+FlatColors (0.0.2)
+
+DEPENDENCIES:
+  - GROAuth2SessionManager (~> 0.2)
+  - PQFCustomLoaders
+
+SPEC CHECKSUMS:
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  GROAuth2SessionManager: d40e386b9e865806687b4b818964efb3ac6db952
+  PQFCustomLoaders: 3f59916dce73c721a823a5bb21be28305329e775
+  UIColor+FlatColors: 15506ef6472e26a751033f2f2469283800bcb906
+
+COCOAPODS: 0.35.0
