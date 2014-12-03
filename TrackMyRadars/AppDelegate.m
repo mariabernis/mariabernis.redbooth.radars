@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "RadarListViewController.h"
+#import "RedboothAPIClient.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +19,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];
+    
+    self.window.rootViewController = initialVC;
+    [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (UIStoryboard *)mainStoryboard {
+    return [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+}
+
+- (UIViewController *)initialViewControllerForStoryboard:(UIStoryboard *)storyboard {
+    UIViewController *controller = nil;
+    if ([[RedboothAPIClient sharedInstance] hasStoredToken]) {
+        controller = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([RadarListViewController class])];
+    } else {
+        controller = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
+    }
+    return controller;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -40,6 +63,28 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    NSLog(@"😱😱😱😱 %@", url);
+    if ([[url scheme] isEqualToString:APP_URL_SCHEME]) {
+        NSString *urlString = [url absoluteString];
+        NSString *urlParams = [urlString substringFromIndex:[APP_CALLBACK_URI length] + 1];
+        [[RedboothAPIClient sharedInstance] authorisedWithCallback:urlParams];
+        
+        UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];
+        
+        self.window.rootViewController = initialVC;
+        [self.window makeKeyAndVisible];
+        
+        
+        return YES;
+    }
+    return NO;
 }
 
 @end

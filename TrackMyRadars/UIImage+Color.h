@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UIImage+Color.h
 //  TrackMyRadars
 //
 //  Created by Maria Bernis on 03/12/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface UIImage (Color)
++ (UIImage *)mbc_imageWithColor:(UIColor *)color;
 @end
-

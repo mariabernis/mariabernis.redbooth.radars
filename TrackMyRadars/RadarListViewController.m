@@ -1,27 +1,28 @@
 //
-//  ViewController.m
+//  RadarListViewController.m
 //  TrackMyRadars
 //
 //  Created by Maria Bernis on 03/12/14.
 //  Copyright (c) 2014 mariabernis. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RadarListViewController.h"
 
-@interface ViewController ()
+@interface RadarListViewController ()
 
 @end
 
-@implementation ViewController
+
+@implementation RadarListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

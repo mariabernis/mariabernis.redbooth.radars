@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="vXZ-lx-hvc" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,109 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="56" text="Track My Radars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfT-BA-aFF">
+                                <rect key="frame" x="20" y="64" width="560" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="tYs-4j-Qqj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="70" text="Easily track your radars as tasks in your Redbooth account. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-qO-QqJ">
+                                <rect key="frame" x="20" y="156" width="560" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Koj-Pj-uA9">
+                                <rect key="frame" x="20" y="275" width="560" height="45"/>
+                                <color key="backgroundColor" red="0.82564979791641235" green="0.27364793419837952" blue="0.21109616756439209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Zk0-xR-p9S"/>
+                                </constraints>
+                                <state key="normal" title="Connect to Redbooth" image="ic_redbooth_white_30">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7P6-Zn-EnZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8xa-qO-QqJ" firstAttribute="top" secondItem="TfT-BA-aFF" secondAttribute="bottom" constant="36" id="3CF-He-zmi"/>
+                            <constraint firstAttribute="trailing" secondItem="TfT-BA-aFF" secondAttribute="trailing" constant="20" id="3eD-7b-t3R"/>
+                            <constraint firstItem="8xa-qO-QqJ" firstAttribute="trailing" secondItem="TfT-BA-aFF" secondAttribute="trailing" id="42b-Fd-NsJ"/>
+                            <constraint firstItem="TfT-BA-aFF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="BHS-HV-No2"/>
+                            <constraint firstItem="8xa-qO-QqJ" firstAttribute="leading" secondItem="TfT-BA-aFF" secondAttribute="leading" id="Mdn-Bg-ChH"/>
+                            <constraint firstItem="TfT-BA-aFF" firstAttribute="leading" secondItem="Koj-Pj-uA9" secondAttribute="leading" id="VOD-wL-dKj"/>
+                            <constraint firstItem="TfT-BA-aFF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="44" id="bcc-SD-0F3"/>
+                            <constraint firstItem="Koj-Pj-uA9" firstAttribute="top" secondItem="8xa-qO-QqJ" secondAttribute="bottom" constant="49" id="jd2-j4-k3s"/>
+                            <constraint firstItem="TfT-BA-aFF" firstAttribute="trailing" secondItem="Koj-Pj-uA9" secondAttribute="trailing" id="n6B-bN-D1B"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Koj-Pj-uA9" id="95P-Ah-AFn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Radar List View Controller-->
+        <scene sceneID="yU5-se-WAc">
+            <objects>
+                <viewController storyboardIdentifier="RadarListViewController" id="vOw-kZ-t51" customClass="RadarListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gek-cZ-wWP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bli-AC-j9t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MZb-Px-kte">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UW6-wf-Wp6">
+                                <rect key="frame" x="25" y="225" width="548" height="117"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No radars imported yet. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h11-4T-dRc">
+                                        <rect key="frame" x="0.0" y="23" width="548" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOd-Md-hKq">
+                                        <rect key="frame" x="144" y="67" width="260" height="30"/>
+                                        <state key="normal" title="C'mon!">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="StD-UO-5fv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="StD-UO-5fv" firstAttribute="top" secondItem="MZb-Px-kte" secondAttribute="top" id="VP6-Hw-meP"/>
+                            <constraint firstAttribute="centerY" secondItem="UW6-wf-Wp6" secondAttribute="centerY" constant="16.5" id="WDP-73-YIc"/>
+                            <constraint firstAttribute="centerX" secondItem="UW6-wf-Wp6" secondAttribute="centerX" constant="1" id="Wak-g4-aUV"/>
+                            <constraint firstItem="Bli-AC-j9t" firstAttribute="top" secondItem="StD-UO-5fv" secondAttribute="bottom" id="Xuk-uM-l66"/>
+                            <constraint firstAttribute="trailing" secondItem="StD-UO-5fv" secondAttribute="trailing" id="dIz-tZ-Low"/>
+                            <constraint firstItem="StD-UO-5fv" firstAttribute="leading" secondItem="MZb-Px-kte" secondAttribute="leading" id="ubi-13-AdX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdc-Fg-gTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="1084"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ic_redbooth_white_30" width="19" height="30"/>
+    </resources>
 </document>
