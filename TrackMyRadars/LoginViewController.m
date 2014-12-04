@@ -11,6 +11,7 @@
 #import "UIImage+Color.h"
 #import <PQFCustomLoaders/PQFCirclesInTriangle.h>
 #import "RedboothAPIClient.h"
+#import "RadarListViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -20,6 +21,7 @@
 
 @implementation LoginViewController
 
+#pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,9 +36,25 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Actions
 - (IBAction)loginButtonPressed:(id)sender {
     
     [[RedboothAPIClient sharedInstance] authorize];
+}
+
+- (void)handleAuthoriseCallback:(NSString *)code {
+    
+    [[RedboothAPIClient sharedInstance] authoriseWithCode:code
+                                               completion:^(NSError *error) {
+                                                   if (error) {
+                                                       NSLog(@"😱 Auth error: %@", error);
+                                                       return;
+                                                   }
+                                                   RadarListViewController *radarListVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([RadarListViewController class])];
+                                                   radarListVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                                                   [self presentViewController:radarListVC animated:YES completion:nil];
+                                                   
+                                               }];
 }
 
 @end

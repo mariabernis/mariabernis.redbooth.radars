@@ -10,6 +10,7 @@
 
 @interface LoginViewController : UIViewController
 
+- (void)handleAuthoriseCallback:(NSString *)code;
 
 @end
 

@@ -73,14 +73,10 @@
     NSLog(@"😱😱😱😱 %@", url);
     if ([[url scheme] isEqualToString:APP_URL_SCHEME]) {
         NSString *urlString = [url absoluteString];
-        NSString *urlParams = [urlString substringFromIndex:[APP_CALLBACK_URI length] + 1];
-        [[RedboothAPIClient sharedInstance] authorisedWithCallback:urlParams];
+        NSString *code = [urlString substringFromIndex:[NSString stringWithFormat:@"%@?code=", APP_CALLBACK_URI].length];
         
-        UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];
-        
-        self.window.rootViewController = initialVC;
-        [self.window makeKeyAndVisible];
-        
+        LoginViewController *loginVC = (LoginViewController *)self.window.rootViewController;
+        [loginVC handleAuthoriseCallback:code];
         
         return YES;
     }

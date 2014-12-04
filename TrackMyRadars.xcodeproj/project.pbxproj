@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8390B5BC1A3054FF003F97A5 /* OpenradarAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5BB1A3054FF003F97A5 /* OpenradarAPIClient.m */; };
+		8390B5BF1A30602B003F97A5 /* WizardOpEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5BE1A30602B003F97A5 /* WizardOpEmailViewController.m */; };
+		8390B5C21A306064003F97A5 /* WizardRbOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5C11A306064003F97A5 /* WizardRbOrganizationViewController.m */; };
+		8390B5C71A306FD5003F97A5 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5C61A306FD5003F97A5 /* Organization.m */; };
 		839274791A2F2076008DFA0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274781A2F2076008DFA0E /* main.m */; };
 		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
 		8392747F1A2F2076008DFA0E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747E1A2F2076008DFA0E /* LoginViewController.m */; };
@@ -33,6 +37,15 @@
 
 /* Begin PBXFileReference section */
 		3E83AE3877BD2ED395D8AA3C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8390B5BA1A3054FF003F97A5 /* OpenradarAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenradarAPIClient.h; sourceTree = "<group>"; };
+		8390B5BB1A3054FF003F97A5 /* OpenradarAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenradarAPIClient.m; sourceTree = "<group>"; };
+		8390B5BD1A30602B003F97A5 /* WizardOpEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardOpEmailViewController.h; sourceTree = "<group>"; };
+		8390B5BE1A30602B003F97A5 /* WizardOpEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardOpEmailViewController.m; sourceTree = "<group>"; };
+		8390B5C01A306064003F97A5 /* WizardRbOrganizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardRbOrganizationViewController.h; sourceTree = "<group>"; };
+		8390B5C11A306064003F97A5 /* WizardRbOrganizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardRbOrganizationViewController.m; sourceTree = "<group>"; };
+		8390B5C41A306519003F97A5 /* WizardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardDelegate.h; sourceTree = "<group>"; };
+		8390B5C51A306FD5003F97A5 /* Organization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
+		8390B5C61A306FD5003F97A5 /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
 		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839274771A2F2076008DFA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839274781A2F2076008DFA0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +107,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8390B5C81A306FE5003F97A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8390B5C51A306FD5003F97A5 /* Organization.h */,
+				8390B5C61A306FD5003F97A5 /* Organization.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8392746A1A2F2076008DFA0E = {
 			isa = PBXGroup;
 			children = (
@@ -119,9 +141,10 @@
 			children = (
 				8392747A1A2F2076008DFA0E /* AppDelegate.h */,
 				8392747B1A2F2076008DFA0E /* AppDelegate.m */,
-				839274AA1A2FC843008DFA0E /* Utils */,
 				839274A01A2F7D14008DFA0E /* Services */,
+				8390B5C81A306FE5003F97A5 /* Models */,
 				839274AB1A2FC85E008DFA0E /* ViewControllers */,
+				839274AA1A2FC843008DFA0E /* Utils */,
 				839274AC1A2FC872008DFA0E /* Views */,
 				839274831A2F2076008DFA0E /* Images.xcassets */,
 				839274761A2F2076008DFA0E /* Supporting Files */,
@@ -160,6 +183,8 @@
 			children = (
 				8392749D1A2F7D0B008DFA0E /* RedboothAPIClient.h */,
 				8392749E1A2F7D0B008DFA0E /* RedboothAPIClient.m */,
+				8390B5BA1A3054FF003F97A5 /* OpenradarAPIClient.h */,
+				8390B5BB1A3054FF003F97A5 /* OpenradarAPIClient.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -182,6 +207,11 @@
 				8392747E1A2F2076008DFA0E /* LoginViewController.m */,
 				839274A11A2F8001008DFA0E /* RadarListViewController.h */,
 				839274A21A2F8001008DFA0E /* RadarListViewController.m */,
+				8390B5C41A306519003F97A5 /* WizardDelegate.h */,
+				8390B5BD1A30602B003F97A5 /* WizardOpEmailViewController.h */,
+				8390B5BE1A30602B003F97A5 /* WizardOpEmailViewController.m */,
+				8390B5C01A306064003F97A5 /* WizardRbOrganizationViewController.h */,
+				8390B5C11A306064003F97A5 /* WizardRbOrganizationViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -331,9 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8392747F1A2F2076008DFA0E /* LoginViewController.m in Sources */,
+				8390B5BF1A30602B003F97A5 /* WizardOpEmailViewController.m in Sources */,
+				8390B5C21A306064003F97A5 /* WizardRbOrganizationViewController.m in Sources */,
 				8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */,
 				839274A91A2F8C78008DFA0E /* UIImage+Color.m in Sources */,
+				8390B5C71A306FD5003F97A5 /* Organization.m in Sources */,
 				839274A61A2F8955008DFA0E /* UIColor+TrackMyRadars.m in Sources */,
+				8390B5BC1A3054FF003F97A5 /* OpenradarAPIClient.m in Sources */,
 				8392749F1A2F7D0B008DFA0E /* RedboothAPIClient.m in Sources */,
 				839274791A2F2076008DFA0E /* main.m in Sources */,
 				839274A31A2F8001008DFA0E /* RadarListViewController.m in Sources */,
