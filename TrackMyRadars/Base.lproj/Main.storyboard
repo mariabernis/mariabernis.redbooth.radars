@@ -161,7 +161,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="120-0u-BHP">
-                                <rect key="frame" x="155" y="211" width="290" height="30"/>
+                                <rect key="frame" x="155" y="193" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="KtP-OM-VD0"/>
                                 </constraints>
@@ -169,7 +169,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario de Openradar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrT-En-GWd">
-                                <rect key="frame" x="155" y="182" width="290" height="21"/>
+                                <rect key="frame" x="155" y="164" width="290" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="Sds-yf-yk0"/>
                                 </constraints>
@@ -183,7 +183,7 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="BcT-nF-7JV" secondAttribute="centerX" id="8Fh-tb-IQb"/>
                             <constraint firstItem="120-0u-BHP" firstAttribute="top" secondItem="SrT-En-GWd" secondAttribute="bottom" constant="8" id="DNh-9a-SWD"/>
-                            <constraint firstItem="SrT-En-GWd" firstAttribute="top" secondItem="eHU-RL-d0J" secondAttribute="bottom" constant="118" id="Ggq-F8-pr0"/>
+                            <constraint firstItem="SrT-En-GWd" firstAttribute="top" secondItem="eHU-RL-d0J" secondAttribute="bottom" constant="100" id="Ggq-F8-pr0"/>
                             <constraint firstAttribute="centerX" secondItem="120-0u-BHP" secondAttribute="centerX" id="R3k-b9-wZS"/>
                             <constraint firstAttribute="centerX" secondItem="SrT-En-GWd" secondAttribute="centerX" id="Ta9-g7-wcd"/>
                             <constraint firstItem="cEu-qL-HQX" firstAttribute="top" secondItem="BcT-nF-7JV" secondAttribute="bottom" constant="20" id="tKE-ba-JUV"/>
@@ -238,8 +238,8 @@
                                     <action selector="startRadarsImport:" destination="OWm-3g-cUr" eventType="touchUpInside" id="gus-JQ-Tuj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="290" placeholderIntrinsicHeight="44" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-UU-9Xc">
-                                <rect key="frame" x="155" y="182" width="290" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="290" placeholderIntrinsicHeight="44" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-UU-9Xc">
+                                <rect key="frame" x="155" y="164" width="290" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="MNW-Yw-e6e"/>
                                 </constraints>
@@ -250,10 +250,10 @@ the radars project?</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Drb-XK-2Ef">
-                                <rect key="frame" x="155" y="234" width="290" height="250"/>
+                                <rect key="frame" x="155" y="216" width="290" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="B0q-Zo-RUY"/>
+                                    <constraint firstAttribute="height" priority="750" constant="250" id="B0q-Zo-RUY"/>
                                     <constraint firstAttribute="width" constant="290" id="wv0-vN-rom"/>
                                 </constraints>
                                 <prototypes>
@@ -276,7 +276,8 @@ the radars project?</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z9p-UU-9Xc" firstAttribute="top" secondItem="HWE-OG-xUU" secondAttribute="bottom" constant="118" id="MAr-3T-SvW"/>
+                            <constraint firstItem="Z9p-UU-9Xc" firstAttribute="top" secondItem="HWE-OG-xUU" secondAttribute="bottom" constant="100" id="MAr-3T-SvW"/>
+                            <constraint firstItem="oNj-9a-pfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Drb-XK-2Ef" secondAttribute="bottom" constant="20" id="YDi-th-mLh"/>
                             <constraint firstAttribute="centerX" secondItem="Drb-XK-2Ef" secondAttribute="centerX" id="dAm-Io-vrZ"/>
                             <constraint firstAttribute="centerX" secondItem="Z9p-UU-9Xc" secondAttribute="centerX" id="kcw-Cz-e1Z"/>
                             <constraint firstItem="Drb-XK-2Ef" firstAttribute="top" secondItem="Z9p-UU-9Xc" secondAttribute="bottom" constant="8" id="ltW-wz-7dM"/>

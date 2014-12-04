@@ -14,6 +14,4 @@
 @property (nonatomic, strong) NSString *organizationName;
 @property (nonatomic, assign) NSInteger remainingProjects;
 
-- (instancetype)initWithAPIInfo:(NSDictionary *)info;
-
 @end

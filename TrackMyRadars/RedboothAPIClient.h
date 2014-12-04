@@ -20,6 +20,15 @@
 #define KEY_TOKEN_EXPIRES   @"access_token_expires"
 #define KEY_REFRESH_TOKEN   @"refresh_token"
 
+#define RB_PATH_ORGANIZATION @"api/3/organizations"
+#define RB_PATH_PROJECT      @"api/3/projects"
+#define RB_PATH_TASKLIST     @"api/3/task_lists"
+#define RB_PATH_TASK         @"api/3/tasks"
+
+
+typedef void (^RedboothRequestCompletion)(id responseObject, NSError *error);
+
+@class AFOAuthCredential;
 @interface RedboothAPIClient : AFHTTPSessionManager
 
 // Singleton instance
@@ -30,7 +39,7 @@
 - (void)authoriseWithCode:(NSString *)code completion:(void(^)(NSError *error))completion;
 - (void)handleAuthoriseCallback:(NSString *)urlParams;
 - (void)setAuthorizationHeaderWithToken:(NSString *)token;
-- (void)storeToken:(NSString *)token;
+- (void)storeCredential:(AFOAuthCredential *)credential;
 - (BOOL)hasStoredToken;
 
 @end

@@ -37,5 +37,9 @@
 }
 
 #pragma mark - WizardDelegate
+- (void)wizardDidFinishWithOpEmail:(NSString *)email
+                    organizationId:(NSInteger)organizationId {
+    
+}
 
 @end

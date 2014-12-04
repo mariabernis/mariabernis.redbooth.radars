@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "RadarListViewController.h"
 #import "RedboothAPIClient.h"
+#import "AFNetworkActivityLogger.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 

@@ -8,13 +8,17 @@
 
 #import "WizardRbOrganizationViewController.h"
 #import "Organization.h"
-#import "RedboothAPIClient.h"
-
-#define RB_PATH_ORGANIZATION @"api/3/organizations"
+#import "OrganizationsProvider.h"
+#import "RadarTasksProvider.h"
+#import "RadarsProjectProvider.h"
 
 @interface WizardRbOrganizationViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *organizations; // Of Organization
 @property (nonatomic, strong) NSIndexPath *selectedIndex;
+@property (nonatomic, strong) OrganizationsProvider *organizationsProvider;
+@property (nonatomic, strong) RadarTasksProvider *radarsProvider;
+@property (nonatomic, strong) RadarsProjectProvider *projectProvider;
+@property (nonatomic, strong) NSArray *openRadars;
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITableView *organizationsTableView;
@@ -36,6 +40,28 @@
     _organizations = [NSArray arrayWithArray:organizations];
     [self.organizationsTableView reloadData];
 }
+
+- (OrganizationsProvider *)organizationsProvider {
+    if (!_organizationsProvider) {
+        _organizationsProvider = [[OrganizationsProvider alloc] init];
+    }
+    return _organizationsProvider;
+}
+
+- (RadarTasksProvider *)radarsProvider {
+    if (!_radarsProvider) {
+        _radarsProvider = [[RadarTasksProvider alloc] init];
+    }
+    return _radarsProvider;
+}
+
+- (RadarsProjectProvider *)projectProvider {
+    if (!_projectProvider) {
+        _projectProvider = [[RadarsProjectProvider alloc] init];
+    }
+    return _projectProvider;
+}
+
 
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
@@ -59,27 +85,56 @@
 #pragma mark - Actions
 - (IBAction)startRadarsImport:(id)sender {
     
+    [self.radarsProvider fetchOpenradarsWithOPUser:self.opEmail
+                                        completion:^(NSArray *radars, NSError *error) {
+                                            
+                                            if (error) {
+                                                return;
+                                            }
+                                            self.openRadars = [NSArray arrayWithArray:radars];
+                                            [self newProjectForRadars];
+                                        }];
+    
 }
 
 - (void)loadOrganizationList {
-    RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
-    [redboothClient GET:RB_PATH_ORGANIZATION parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSArray *results = (NSArray *)responseObject;
-        NSMutableArray *parsedResults = [[NSMutableArray alloc] init];
-        for (NSDictionary *item in results) {
-            // Show only organizations with capacity for new projects
-            Organization *organization = [[Organization alloc] initWithAPIInfo:item];
-            if (organization.remainingProjects) {
-                [parsedResults addObject:organization];
-            }
-            
+    
+    [self.organizationsProvider fetchOrganizationsWithRemainingProjects:^(NSArray *organizations, NSError *error) {
+
+        if (error) {
+            return;
         }
-        self.organizations = parsedResults;
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"😱 Error: %@", error);
+        self.organizations = organizations;
     }];
 }
+
+- (void)newProjectForRadars {
+    
+    Organization *selected = self.organizations[self.selectedIndex.row];
+    [self.projectProvider newRadarsProjectWithOrganizationId:selected.oragnizationId
+                                                  completion:^(NSInteger projectId, NSInteger taskListId, NSError *error) {
+                                                      
+                                                      if (error) {
+                                                          return;
+                                                      }
+                                    
+                                                      [self importRadarsIntoTasksAndFinalize:projectId taskList:taskListId];
+                                                      
+                                                  }];
+}
+
+- (void)importRadarsIntoTasksAndFinalize:(NSInteger)projectId taskList:(NSInteger)taskListId {
+    [self.radarsProvider postTasksForOpenradars:self.openRadars
+                                      inProject:projectId
+                                     inTaskList:taskListId
+                                       progress:^(NSUInteger index, RadarTask *importedRadar) {
+                                           NSLog(@"🌠 Task imported at index %li", (unsigned long)index);
+                                       }
+                                     completion:^(NSArray *importedRadars, NSError *error) {
+                                         NSLog(@"🐼 Importing ended with error: %@", error);
+                                     }];
+}
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -96,7 +151,7 @@
         self.selectedIndex = indexPath;
     }
     
-    if (self.selectedIndex == indexPath) {
+    if (self.selectedIndex.row == indexPath.row) {
         cell.accessoryType =  UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;

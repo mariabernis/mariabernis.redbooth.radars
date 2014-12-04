@@ -11,6 +11,15 @@
 		8390B5BF1A30602B003F97A5 /* WizardOpEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5BE1A30602B003F97A5 /* WizardOpEmailViewController.m */; };
 		8390B5C21A306064003F97A5 /* WizardRbOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5C11A306064003F97A5 /* WizardRbOrganizationViewController.m */; };
 		8390B5C71A306FD5003F97A5 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5C61A306FD5003F97A5 /* Organization.m */; };
+		8390B5CC1A30B0D6003F97A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5CB1A30B0D6003F97A5 /* User.m */; };
+		8390B5CF1A30BB48003F97A5 /* RadarTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5CE1A30BB48003F97A5 /* RadarTask.m */; };
+		8390B5D21A30C284003F97A5 /* RadarsImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D11A30C284003F97A5 /* RadarsImportManager.m */; };
+		8390B5D51A30E8A7003F97A5 /* OrganizationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D41A30E8A7003F97A5 /* OrganizationParser.m */; };
+		8390B5D91A30E8D1003F97A5 /* RadarTaskParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D81A30E8D1003F97A5 /* RadarTaskParser.m */; };
+		8390B5DC1A30EF7C003F97A5 /* OrganizationsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5DB1A30EF7C003F97A5 /* OrganizationsProvider.m */; };
+		8390B5E01A30EF9D003F97A5 /* RadarTasksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5DF1A30EF9D003F97A5 /* RadarTasksProvider.m */; };
+		8390B5E31A30F613003F97A5 /* RadarsProjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5E21A30F613003F97A5 /* RadarsProjectProvider.m */; };
+		8390B5E61A31180D003F97A5 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5E51A31180D003F97A5 /* AFNetworkActivityLogger.m */; };
 		839274791A2F2076008DFA0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274781A2F2076008DFA0E /* main.m */; };
 		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
 		8392747F1A2F2076008DFA0E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747E1A2F2076008DFA0E /* LoginViewController.m */; };
@@ -46,6 +55,24 @@
 		8390B5C41A306519003F97A5 /* WizardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardDelegate.h; sourceTree = "<group>"; };
 		8390B5C51A306FD5003F97A5 /* Organization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
 		8390B5C61A306FD5003F97A5 /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
+		8390B5CA1A30B0D6003F97A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		8390B5CB1A30B0D6003F97A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		8390B5CD1A30BB48003F97A5 /* RadarTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTask.h; sourceTree = "<group>"; };
+		8390B5CE1A30BB48003F97A5 /* RadarTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTask.m; sourceTree = "<group>"; };
+		8390B5D01A30C284003F97A5 /* RadarsImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsImportManager.h; sourceTree = "<group>"; };
+		8390B5D11A30C284003F97A5 /* RadarsImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsImportManager.m; sourceTree = "<group>"; };
+		8390B5D31A30E8A7003F97A5 /* OrganizationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationParser.h; sourceTree = "<group>"; };
+		8390B5D41A30E8A7003F97A5 /* OrganizationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationParser.m; sourceTree = "<group>"; };
+		8390B5D71A30E8D1003F97A5 /* RadarTaskParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTaskParser.h; sourceTree = "<group>"; };
+		8390B5D81A30E8D1003F97A5 /* RadarTaskParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTaskParser.m; sourceTree = "<group>"; };
+		8390B5DA1A30EF7C003F97A5 /* OrganizationsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationsProvider.h; sourceTree = "<group>"; };
+		8390B5DB1A30EF7C003F97A5 /* OrganizationsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationsProvider.m; sourceTree = "<group>"; };
+		8390B5DE1A30EF9D003F97A5 /* RadarTasksProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTasksProvider.h; sourceTree = "<group>"; };
+		8390B5DF1A30EF9D003F97A5 /* RadarTasksProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTasksProvider.m; sourceTree = "<group>"; };
+		8390B5E11A30F613003F97A5 /* RadarsProjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProjectProvider.h; sourceTree = "<group>"; };
+		8390B5E21A30F613003F97A5 /* RadarsProjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProjectProvider.m; sourceTree = "<group>"; };
+		8390B5E41A31180D003F97A5 /* AFNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityLogger.h; sourceTree = "<group>"; };
+		8390B5E51A31180D003F97A5 /* AFNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityLogger.m; sourceTree = "<group>"; };
 		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839274771A2F2076008DFA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839274781A2F2076008DFA0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,8 +139,36 @@
 			children = (
 				8390B5C51A306FD5003F97A5 /* Organization.h */,
 				8390B5C61A306FD5003F97A5 /* Organization.m */,
+				8390B5CA1A30B0D6003F97A5 /* User.h */,
+				8390B5CB1A30B0D6003F97A5 /* User.m */,
+				8390B5CD1A30BB48003F97A5 /* RadarTask.h */,
+				8390B5CE1A30BB48003F97A5 /* RadarTask.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		8390B5D61A30E8AD003F97A5 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				8390B5D31A30E8A7003F97A5 /* OrganizationParser.h */,
+				8390B5D41A30E8A7003F97A5 /* OrganizationParser.m */,
+				8390B5D71A30E8D1003F97A5 /* RadarTaskParser.h */,
+				8390B5D81A30E8D1003F97A5 /* RadarTaskParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		8390B5DD1A30EF81003F97A5 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				8390B5DA1A30EF7C003F97A5 /* OrganizationsProvider.h */,
+				8390B5DB1A30EF7C003F97A5 /* OrganizationsProvider.m */,
+				8390B5DE1A30EF9D003F97A5 /* RadarTasksProvider.h */,
+				8390B5DF1A30EF9D003F97A5 /* RadarTasksProvider.m */,
+				8390B5E11A30F613003F97A5 /* RadarsProjectProvider.h */,
+				8390B5E21A30F613003F97A5 /* RadarsProjectProvider.m */,
+			);
+			name = Providers;
 			sourceTree = "<group>";
 		};
 		8392746A1A2F2076008DFA0E = {
@@ -141,7 +196,11 @@
 			children = (
 				8392747A1A2F2076008DFA0E /* AppDelegate.h */,
 				8392747B1A2F2076008DFA0E /* AppDelegate.m */,
+				8390B5D01A30C284003F97A5 /* RadarsImportManager.h */,
+				8390B5D11A30C284003F97A5 /* RadarsImportManager.m */,
 				839274A01A2F7D14008DFA0E /* Services */,
+				8390B5DD1A30EF81003F97A5 /* Providers */,
+				8390B5D61A30E8AD003F97A5 /* Parsers */,
 				8390B5C81A306FE5003F97A5 /* Models */,
 				839274AB1A2FC85E008DFA0E /* ViewControllers */,
 				839274AA1A2FC843008DFA0E /* Utils */,
@@ -192,6 +251,8 @@
 		839274AA1A2FC843008DFA0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8390B5E41A31180D003F97A5 /* AFNetworkActivityLogger.h */,
+				8390B5E51A31180D003F97A5 /* AFNetworkActivityLogger.m */,
 				839274A41A2F8955008DFA0E /* UIColor+TrackMyRadars.h */,
 				839274A51A2F8955008DFA0E /* UIColor+TrackMyRadars.m */,
 				839274A71A2F8C78008DFA0E /* UIImage+Color.h */,
@@ -362,15 +423,24 @@
 			files = (
 				8392747F1A2F2076008DFA0E /* LoginViewController.m in Sources */,
 				8390B5BF1A30602B003F97A5 /* WizardOpEmailViewController.m in Sources */,
+				8390B5CF1A30BB48003F97A5 /* RadarTask.m in Sources */,
+				8390B5D51A30E8A7003F97A5 /* OrganizationParser.m in Sources */,
+				8390B5DC1A30EF7C003F97A5 /* OrganizationsProvider.m in Sources */,
 				8390B5C21A306064003F97A5 /* WizardRbOrganizationViewController.m in Sources */,
 				8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */,
+				8390B5D91A30E8D1003F97A5 /* RadarTaskParser.m in Sources */,
 				839274A91A2F8C78008DFA0E /* UIImage+Color.m in Sources */,
 				8390B5C71A306FD5003F97A5 /* Organization.m in Sources */,
+				8390B5E61A31180D003F97A5 /* AFNetworkActivityLogger.m in Sources */,
+				8390B5E01A30EF9D003F97A5 /* RadarTasksProvider.m in Sources */,
 				839274A61A2F8955008DFA0E /* UIColor+TrackMyRadars.m in Sources */,
 				8390B5BC1A3054FF003F97A5 /* OpenradarAPIClient.m in Sources */,
+				8390B5CC1A30B0D6003F97A5 /* User.m in Sources */,
 				8392749F1A2F7D0B008DFA0E /* RedboothAPIClient.m in Sources */,
+				8390B5E31A30F613003F97A5 /* RadarsProjectProvider.m in Sources */,
 				839274791A2F2076008DFA0E /* main.m in Sources */,
 				839274A31A2F8001008DFA0E /* RadarListViewController.m in Sources */,
+				8390B5D21A30C284003F97A5 /* RadarsImportManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,16 @@
     return sharedInstance;
 }
 
+- (instancetype)initWithBaseURL:(NSURL *)url {
+    self = [super initWithBaseURL:url];
+    if (self) {
+        NSMutableSet *responseContentTypes = [NSMutableSet setWithSet:self.responseSerializer.acceptableContentTypes];
+        [responseContentTypes addObject:@"text/html"];
+        self.responseSerializer.acceptableContentTypes = [NSSet setWithSet:responseContentTypes];
+    }
+    return self;
+}
+
 #pragma mark - Authorisation
 - (void)setAuthorizationHeaderWithKey:(NSString *)apiKey {
     [self.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", apiKey]

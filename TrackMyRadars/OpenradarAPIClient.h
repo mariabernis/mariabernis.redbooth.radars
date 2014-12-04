@@ -8,6 +8,8 @@
 
 #import <AFNetworking/AFNetworking.h>
 
+#define OP_PATH_RADAR @"radar"
+
 @interface OpenradarAPIClient : AFHTTPSessionManager
 
 // Singleton instance

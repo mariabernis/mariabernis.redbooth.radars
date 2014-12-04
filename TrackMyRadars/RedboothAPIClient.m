@@ -10,6 +10,8 @@
 #import "GROAuth2SessionManager.h"
 #import "AppDelegate.h"
 
+//typedef void (^RedboothRequestCompletion)(id responseObject, NSError *error);
+
 @implementation RedboothAPIClient
 
 #pragma mark - Singleton instance
@@ -25,6 +27,7 @@
     });
     return sharedInstance;
 }
+
 
 - (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(id)parameters completion:(void (^)(NSURLSessionDataTask *tast, id responseObject, NSError *error))completion {
     
@@ -81,7 +84,7 @@
     NSString *token = [paramsDict objectForKey:@"access_token"];
     if (token) {
         [self setAuthorizationHeaderWithToken:token];
-        [self storeToken:token];
+//        [self storeToken:token];
     } else {
 //        NSString *code = [paramsDict objectForKey:@"code"];
 //        ((AppDelegate *)[UIApplication sharedApplication].delegate).window.rootViewController;
@@ -104,7 +107,7 @@
                                                
                                                //Setting token singleton Redbooth API Client
                                                [self setAuthorizationHeaderWithToken:credential.accessToken];
-                                               [self storeToken:credential.accessToken];
+                                               [self storeCredential:credential];
                                                
                                                // Enjoy!
                                                if (completion) {
@@ -131,8 +134,9 @@
                   forHTTPHeaderField:@"Authorization"];
 }
 
-- (void)storeToken:(NSString *)token {
-    [[NSUserDefaults standardUserDefaults] setObject:token forKey:KEY_ACCESS_TOKEN];
+- (void)storeCredential:(AFOAuthCredential *)credential {
+    [[NSUserDefaults standardUserDefaults] setObject:credential.accessToken forKey:KEY_ACCESS_TOKEN];
+    [[NSUserDefaults standardUserDefaults] setObject:credential.refreshToken forKey:KEY_REFRESH_TOKEN];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
