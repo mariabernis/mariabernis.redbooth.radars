@@ -1,650 +1,1801 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		8390B5BC1A3054FF003F97A5 /* OpenradarAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5BB1A3054FF003F97A5 /* OpenradarAPIClient.m */; };
-		8390B5BF1A30602B003F97A5 /* WizardOpEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5BE1A30602B003F97A5 /* WizardOpEmailViewController.m */; };
-		8390B5C21A306064003F97A5 /* WizardRbOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5C11A306064003F97A5 /* WizardRbOrganizationViewController.m */; };
-		8390B5C71A306FD5003F97A5 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5C61A306FD5003F97A5 /* Organization.m */; };
-		8390B5CC1A30B0D6003F97A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5CB1A30B0D6003F97A5 /* User.m */; };
-		8390B5CF1A30BB48003F97A5 /* RadarTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5CE1A30BB48003F97A5 /* RadarTask.m */; };
-		8390B5D21A30C284003F97A5 /* RadarsImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D11A30C284003F97A5 /* RadarsImportManager.m */; };
-		8390B5D51A30E8A7003F97A5 /* OrganizationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D41A30E8A7003F97A5 /* OrganizationParser.m */; };
-		8390B5D91A30E8D1003F97A5 /* RadarTaskParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D81A30E8D1003F97A5 /* RadarTaskParser.m */; };
-		8390B5DC1A30EF7C003F97A5 /* OrganizationsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5DB1A30EF7C003F97A5 /* OrganizationsProvider.m */; };
-		8390B5E01A30EF9D003F97A5 /* RadarTasksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5DF1A30EF9D003F97A5 /* RadarTasksProvider.m */; };
-		8390B5E31A30F613003F97A5 /* RadarsProjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5E21A30F613003F97A5 /* RadarsProjectProvider.m */; };
-		8390B5E61A31180D003F97A5 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5E51A31180D003F97A5 /* AFNetworkActivityLogger.m */; };
-		839274791A2F2076008DFA0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274781A2F2076008DFA0E /* main.m */; };
-		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
-		8392747F1A2F2076008DFA0E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747E1A2F2076008DFA0E /* LoginViewController.m */; };
-		839274821A2F2076008DFA0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839274801A2F2076008DFA0E /* Main.storyboard */; };
-		839274841A2F2076008DFA0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839274831A2F2076008DFA0E /* Images.xcassets */; };
-		839274871A2F2076008DFA0E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839274851A2F2076008DFA0E /* LaunchScreen.xib */; };
-		839274931A2F2076008DFA0E /* TrackMyRadarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */; };
-		8392749F1A2F7D0B008DFA0E /* RedboothAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392749E1A2F7D0B008DFA0E /* RedboothAPIClient.m */; };
-		839274A31A2F8001008DFA0E /* RadarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274A21A2F8001008DFA0E /* RadarListViewController.m */; };
-		839274A61A2F8955008DFA0E /* UIColor+TrackMyRadars.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274A51A2F8955008DFA0E /* UIColor+TrackMyRadars.m */; };
-		839274A91A2F8C78008DFA0E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274A81A2F8C78008DFA0E /* UIImage+Color.m */; };
-		8F99663B463E284415250B18 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E83AE3877BD2ED395D8AA3C /* libPods.a */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		8392748D1A2F2076008DFA0E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8392746B1A2F2076008DFA0E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 839274721A2F2076008DFA0E;
-			remoteInfo = TrackMyRadars;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		3E83AE3877BD2ED395D8AA3C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8390B5BA1A3054FF003F97A5 /* OpenradarAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenradarAPIClient.h; sourceTree = "<group>"; };
-		8390B5BB1A3054FF003F97A5 /* OpenradarAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenradarAPIClient.m; sourceTree = "<group>"; };
-		8390B5BD1A30602B003F97A5 /* WizardOpEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardOpEmailViewController.h; sourceTree = "<group>"; };
-		8390B5BE1A30602B003F97A5 /* WizardOpEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardOpEmailViewController.m; sourceTree = "<group>"; };
-		8390B5C01A306064003F97A5 /* WizardRbOrganizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardRbOrganizationViewController.h; sourceTree = "<group>"; };
-		8390B5C11A306064003F97A5 /* WizardRbOrganizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardRbOrganizationViewController.m; sourceTree = "<group>"; };
-		8390B5C41A306519003F97A5 /* WizardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardDelegate.h; sourceTree = "<group>"; };
-		8390B5C51A306FD5003F97A5 /* Organization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
-		8390B5C61A306FD5003F97A5 /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
-		8390B5CA1A30B0D6003F97A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		8390B5CB1A30B0D6003F97A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		8390B5CD1A30BB48003F97A5 /* RadarTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTask.h; sourceTree = "<group>"; };
-		8390B5CE1A30BB48003F97A5 /* RadarTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTask.m; sourceTree = "<group>"; };
-		8390B5D01A30C284003F97A5 /* RadarsImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsImportManager.h; sourceTree = "<group>"; };
-		8390B5D11A30C284003F97A5 /* RadarsImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsImportManager.m; sourceTree = "<group>"; };
-		8390B5D31A30E8A7003F97A5 /* OrganizationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationParser.h; sourceTree = "<group>"; };
-		8390B5D41A30E8A7003F97A5 /* OrganizationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationParser.m; sourceTree = "<group>"; };
-		8390B5D71A30E8D1003F97A5 /* RadarTaskParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTaskParser.h; sourceTree = "<group>"; };
-		8390B5D81A30E8D1003F97A5 /* RadarTaskParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTaskParser.m; sourceTree = "<group>"; };
-		8390B5DA1A30EF7C003F97A5 /* OrganizationsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationsProvider.h; sourceTree = "<group>"; };
-		8390B5DB1A30EF7C003F97A5 /* OrganizationsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationsProvider.m; sourceTree = "<group>"; };
-		8390B5DE1A30EF9D003F97A5 /* RadarTasksProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTasksProvider.h; sourceTree = "<group>"; };
-		8390B5DF1A30EF9D003F97A5 /* RadarTasksProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTasksProvider.m; sourceTree = "<group>"; };
-		8390B5E11A30F613003F97A5 /* RadarsProjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProjectProvider.h; sourceTree = "<group>"; };
-		8390B5E21A30F613003F97A5 /* RadarsProjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProjectProvider.m; sourceTree = "<group>"; };
-		8390B5E41A31180D003F97A5 /* AFNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityLogger.h; sourceTree = "<group>"; };
-		8390B5E51A31180D003F97A5 /* AFNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityLogger.m; sourceTree = "<group>"; };
-		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		839274771A2F2076008DFA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		839274781A2F2076008DFA0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8392747A1A2F2076008DFA0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8392747B1A2F2076008DFA0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8392747D1A2F2076008DFA0E /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		8392747E1A2F2076008DFA0E /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		839274811A2F2076008DFA0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		839274831A2F2076008DFA0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		839274861A2F2076008DFA0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackMyRadarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		839274911A2F2076008DFA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackMyRadarsTests.m; sourceTree = "<group>"; };
-		8392749D1A2F7D0B008DFA0E /* RedboothAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedboothAPIClient.h; sourceTree = "<group>"; };
-		8392749E1A2F7D0B008DFA0E /* RedboothAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedboothAPIClient.m; sourceTree = "<group>"; };
-		839274A11A2F8001008DFA0E /* RadarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarListViewController.h; sourceTree = "<group>"; };
-		839274A21A2F8001008DFA0E /* RadarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarListViewController.m; sourceTree = "<group>"; };
-		839274A41A2F8955008DFA0E /* UIColor+TrackMyRadars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TrackMyRadars.h"; sourceTree = "<group>"; };
-		839274A51A2F8955008DFA0E /* UIColor+TrackMyRadars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TrackMyRadars.m"; sourceTree = "<group>"; };
-		839274A71A2F8C78008DFA0E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
-		839274A81A2F8C78008DFA0E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
-		C41AD7ED4D6A51DD4AB83475 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		D4ABF6E65573CCF122F77923 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		839274701A2F2076008DFA0E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8F99663B463E284415250B18 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		839274891A2F2076008DFA0E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		146BEEA611E69DF080ACED45 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D4ABF6E65573CCF122F77923 /* Pods.debug.xcconfig */,
-				C41AD7ED4D6A51DD4AB83475 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3436723C735ADC07AC2EE5F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3E83AE3877BD2ED395D8AA3C /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8390B5C81A306FE5003F97A5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8390B5C51A306FD5003F97A5 /* Organization.h */,
-				8390B5C61A306FD5003F97A5 /* Organization.m */,
-				8390B5CA1A30B0D6003F97A5 /* User.h */,
-				8390B5CB1A30B0D6003F97A5 /* User.m */,
-				8390B5CD1A30BB48003F97A5 /* RadarTask.h */,
-				8390B5CE1A30BB48003F97A5 /* RadarTask.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		8390B5D61A30E8AD003F97A5 /* Parsers */ = {
-			isa = PBXGroup;
-			children = (
-				8390B5D31A30E8A7003F97A5 /* OrganizationParser.h */,
-				8390B5D41A30E8A7003F97A5 /* OrganizationParser.m */,
-				8390B5D71A30E8D1003F97A5 /* RadarTaskParser.h */,
-				8390B5D81A30E8D1003F97A5 /* RadarTaskParser.m */,
-			);
-			name = Parsers;
-			sourceTree = "<group>";
-		};
-		8390B5DD1A30EF81003F97A5 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				8390B5DA1A30EF7C003F97A5 /* OrganizationsProvider.h */,
-				8390B5DB1A30EF7C003F97A5 /* OrganizationsProvider.m */,
-				8390B5DE1A30EF9D003F97A5 /* RadarTasksProvider.h */,
-				8390B5DF1A30EF9D003F97A5 /* RadarTasksProvider.m */,
-				8390B5E11A30F613003F97A5 /* RadarsProjectProvider.h */,
-				8390B5E21A30F613003F97A5 /* RadarsProjectProvider.m */,
-			);
-			name = Providers;
-			sourceTree = "<group>";
-		};
-		8392746A1A2F2076008DFA0E = {
-			isa = PBXGroup;
-			children = (
-				839274751A2F2076008DFA0E /* TrackMyRadars */,
-				8392748F1A2F2076008DFA0E /* TrackMyRadarsTests */,
-				839274741A2F2076008DFA0E /* Products */,
-				146BEEA611E69DF080ACED45 /* Pods */,
-				3436723C735ADC07AC2EE5F5 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		839274741A2F2076008DFA0E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				839274731A2F2076008DFA0E /* TrackMyRadars.app */,
-				8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		839274751A2F2076008DFA0E /* TrackMyRadars */ = {
-			isa = PBXGroup;
-			children = (
-				8392747A1A2F2076008DFA0E /* AppDelegate.h */,
-				8392747B1A2F2076008DFA0E /* AppDelegate.m */,
-				8390B5D01A30C284003F97A5 /* RadarsImportManager.h */,
-				8390B5D11A30C284003F97A5 /* RadarsImportManager.m */,
-				839274A01A2F7D14008DFA0E /* Services */,
-				8390B5DD1A30EF81003F97A5 /* Providers */,
-				8390B5D61A30E8AD003F97A5 /* Parsers */,
-				8390B5C81A306FE5003F97A5 /* Models */,
-				839274AB1A2FC85E008DFA0E /* ViewControllers */,
-				839274AA1A2FC843008DFA0E /* Utils */,
-				839274AC1A2FC872008DFA0E /* Views */,
-				839274831A2F2076008DFA0E /* Images.xcassets */,
-				839274761A2F2076008DFA0E /* Supporting Files */,
-			);
-			path = TrackMyRadars;
-			sourceTree = "<group>";
-		};
-		839274761A2F2076008DFA0E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				839274771A2F2076008DFA0E /* Info.plist */,
-				839274781A2F2076008DFA0E /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8392748F1A2F2076008DFA0E /* TrackMyRadarsTests */ = {
-			isa = PBXGroup;
-			children = (
-				839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */,
-				839274901A2F2076008DFA0E /* Supporting Files */,
-			);
-			path = TrackMyRadarsTests;
-			sourceTree = "<group>";
-		};
-		839274901A2F2076008DFA0E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				839274911A2F2076008DFA0E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		839274A01A2F7D14008DFA0E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8392749D1A2F7D0B008DFA0E /* RedboothAPIClient.h */,
-				8392749E1A2F7D0B008DFA0E /* RedboothAPIClient.m */,
-				8390B5BA1A3054FF003F97A5 /* OpenradarAPIClient.h */,
-				8390B5BB1A3054FF003F97A5 /* OpenradarAPIClient.m */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
-		839274AA1A2FC843008DFA0E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				8390B5E41A31180D003F97A5 /* AFNetworkActivityLogger.h */,
-				8390B5E51A31180D003F97A5 /* AFNetworkActivityLogger.m */,
-				839274A41A2F8955008DFA0E /* UIColor+TrackMyRadars.h */,
-				839274A51A2F8955008DFA0E /* UIColor+TrackMyRadars.m */,
-				839274A71A2F8C78008DFA0E /* UIImage+Color.h */,
-				839274A81A2F8C78008DFA0E /* UIImage+Color.m */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
-		839274AB1A2FC85E008DFA0E /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				8392747D1A2F2076008DFA0E /* LoginViewController.h */,
-				8392747E1A2F2076008DFA0E /* LoginViewController.m */,
-				839274A11A2F8001008DFA0E /* RadarListViewController.h */,
-				839274A21A2F8001008DFA0E /* RadarListViewController.m */,
-				8390B5C41A306519003F97A5 /* WizardDelegate.h */,
-				8390B5BD1A30602B003F97A5 /* WizardOpEmailViewController.h */,
-				8390B5BE1A30602B003F97A5 /* WizardOpEmailViewController.m */,
-				8390B5C01A306064003F97A5 /* WizardRbOrganizationViewController.h */,
-				8390B5C11A306064003F97A5 /* WizardRbOrganizationViewController.m */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		839274AC1A2FC872008DFA0E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				839274801A2F2076008DFA0E /* Main.storyboard */,
-				839274851A2F2076008DFA0E /* LaunchScreen.xib */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		839274721A2F2076008DFA0E /* TrackMyRadars */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 839274961A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadars" */;
-			buildPhases = (
-				7D0697D5B54E8B74AF3E5AB5 /* Check Pods Manifest.lock */,
-				8392746F1A2F2076008DFA0E /* Sources */,
-				839274701A2F2076008DFA0E /* Frameworks */,
-				839274711A2F2076008DFA0E /* Resources */,
-				9E5AA0B7AD38D807DD763FBD /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TrackMyRadars;
-			productName = TrackMyRadars;
-			productReference = 839274731A2F2076008DFA0E /* TrackMyRadars.app */;
-			productType = "com.apple.product-type.application";
-		};
-		8392748B1A2F2076008DFA0E /* TrackMyRadarsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 839274991A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadarsTests" */;
-			buildPhases = (
-				839274881A2F2076008DFA0E /* Sources */,
-				839274891A2F2076008DFA0E /* Frameworks */,
-				8392748A1A2F2076008DFA0E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8392748E1A2F2076008DFA0E /* PBXTargetDependency */,
-			);
-			name = TrackMyRadarsTests;
-			productName = TrackMyRadarsTests;
-			productReference = 8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		8392746B1A2F2076008DFA0E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = mariabernis;
-				TargetAttributes = {
-					839274721A2F2076008DFA0E = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					8392748B1A2F2076008DFA0E = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 839274721A2F2076008DFA0E;
-					};
-				};
-			};
-			buildConfigurationList = 8392746E1A2F2076008DFA0E /* Build configuration list for PBXProject "TrackMyRadars" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 8392746A1A2F2076008DFA0E;
-			productRefGroup = 839274741A2F2076008DFA0E /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				839274721A2F2076008DFA0E /* TrackMyRadars */,
-				8392748B1A2F2076008DFA0E /* TrackMyRadarsTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		839274711A2F2076008DFA0E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				839274821A2F2076008DFA0E /* Main.storyboard in Resources */,
-				839274871A2F2076008DFA0E /* LaunchScreen.xib in Resources */,
-				839274841A2F2076008DFA0E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8392748A1A2F2076008DFA0E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7D0697D5B54E8B74AF3E5AB5 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9E5AA0B7AD38D807DD763FBD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		8392746F1A2F2076008DFA0E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8392747F1A2F2076008DFA0E /* LoginViewController.m in Sources */,
-				8390B5BF1A30602B003F97A5 /* WizardOpEmailViewController.m in Sources */,
-				8390B5CF1A30BB48003F97A5 /* RadarTask.m in Sources */,
-				8390B5D51A30E8A7003F97A5 /* OrganizationParser.m in Sources */,
-				8390B5DC1A30EF7C003F97A5 /* OrganizationsProvider.m in Sources */,
-				8390B5C21A306064003F97A5 /* WizardRbOrganizationViewController.m in Sources */,
-				8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */,
-				8390B5D91A30E8D1003F97A5 /* RadarTaskParser.m in Sources */,
-				839274A91A2F8C78008DFA0E /* UIImage+Color.m in Sources */,
-				8390B5C71A306FD5003F97A5 /* Organization.m in Sources */,
-				8390B5E61A31180D003F97A5 /* AFNetworkActivityLogger.m in Sources */,
-				8390B5E01A30EF9D003F97A5 /* RadarTasksProvider.m in Sources */,
-				839274A61A2F8955008DFA0E /* UIColor+TrackMyRadars.m in Sources */,
-				8390B5BC1A3054FF003F97A5 /* OpenradarAPIClient.m in Sources */,
-				8390B5CC1A30B0D6003F97A5 /* User.m in Sources */,
-				8392749F1A2F7D0B008DFA0E /* RedboothAPIClient.m in Sources */,
-				8390B5E31A30F613003F97A5 /* RadarsProjectProvider.m in Sources */,
-				839274791A2F2076008DFA0E /* main.m in Sources */,
-				839274A31A2F8001008DFA0E /* RadarListViewController.m in Sources */,
-				8390B5D21A30C284003F97A5 /* RadarsImportManager.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		839274881A2F2076008DFA0E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				839274931A2F2076008DFA0E /* TrackMyRadarsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8392748E1A2F2076008DFA0E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 839274721A2F2076008DFA0E /* TrackMyRadars */;
-			targetProxy = 8392748D1A2F2076008DFA0E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		839274801A2F2076008DFA0E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				839274811A2F2076008DFA0E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		839274851A2F2076008DFA0E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				839274861A2F2076008DFA0E /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		839274941A2F2076008DFA0E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		839274951A2F2076008DFA0E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		839274971A2F2076008DFA0E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4ABF6E65573CCF122F77923 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TrackMyRadars/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		839274981A2F2076008DFA0E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C41AD7ED4D6A51DD4AB83475 /* Pods.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TrackMyRadars/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		8392749A1A2F2076008DFA0E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TrackMyRadarsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars";
-			};
-			name = Debug;
-		};
-		8392749B1A2F2076008DFA0E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TrackMyRadarsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		8392746E1A2F2076008DFA0E /* Build configuration list for PBXProject "TrackMyRadars" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				839274941A2F2076008DFA0E /* Debug */,
-				839274951A2F2076008DFA0E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		839274961A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadars" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				839274971A2F2076008DFA0E /* Debug */,
-				839274981A2F2076008DFA0E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		839274991A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadarsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8392749A1A2F2076008DFA0E /* Debug */,
-				8392749B1A2F2076008DFA0E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 8392746B1A2F2076008DFA0E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>146BEEA611E69DF080ACED45</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>44D6AFCC6FBA1EFB938CFEBC</string>
+				<string>2E529D0A7199C3AFE5F7F747</string>
+				<string>98D047F4CC18B9B2CE295181</string>
+				<string>D98073A7B6FC829ABD718ABE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2E529D0A7199C3AFE5F7F747</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-TrackMyRadarsTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-TrackMyRadarsTests/Pods-TrackMyRadarsTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3092815ED06402BB66EB95B6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-TrackMyRadarsTests/Pods-TrackMyRadarsTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>3436723C735ADC07AC2EE5F5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3E83AE3877BD2ED395D8AA3C</string>
+				<string>790A2C9BEB688FD202909488</string>
+				<string>D29D9D023CBA9A69D5F9C080</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E83AE3877BD2ED395D8AA3C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>44D6AFCC6FBA1EFB938CFEBC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-TrackMyRadarsTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-TrackMyRadarsTests/Pods-TrackMyRadarsTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>790A2C9BEB688FD202909488</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-TrackMyRadars.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7D0697D5B54E8B74AF3E5AB5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>8390B5BA1A3054FF003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>OpenradarAPIClient.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5BB1A3054FF003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>OpenradarAPIClient.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5BC1A3054FF003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5BB1A3054FF003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5BD1A30602B003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WizardOpEmailViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5BE1A30602B003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WizardOpEmailViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5BF1A30602B003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5BE1A30602B003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5C01A306064003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WizardRbOrganizationViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5C11A306064003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>WizardRbOrganizationViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5C21A306064003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5C11A306064003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5C41A306519003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WizardDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5C51A306FD5003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Organization.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5C61A306FD5003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Organization.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5C71A306FD5003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5C61A306FD5003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5C81A306FE5003F97A5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8390B5C51A306FD5003F97A5</string>
+				<string>8390B5C61A306FD5003F97A5</string>
+				<string>8390B5CA1A30B0D6003F97A5</string>
+				<string>8390B5CB1A30B0D6003F97A5</string>
+				<string>8390B5CD1A30BB48003F97A5</string>
+				<string>8390B5CE1A30BB48003F97A5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5CA1A30B0D6003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>User.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5CB1A30B0D6003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>User.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5CC1A30B0D6003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5CB1A30B0D6003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5CD1A30BB48003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RadarTask.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5CE1A30BB48003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RadarTask.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5CF1A30BB48003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5CE1A30BB48003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5D01A30C284003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RadarsImportManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5D11A30C284003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RadarsImportManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5D21A30C284003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5D11A30C284003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5D31A30E8A7003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>OrganizationParser.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5D41A30E8A7003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>OrganizationParser.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5D51A30E8A7003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5D41A30E8A7003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5D61A30E8AD003F97A5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8390B5D31A30E8A7003F97A5</string>
+				<string>8390B5D41A30E8A7003F97A5</string>
+				<string>8390B5D71A30E8D1003F97A5</string>
+				<string>8390B5D81A30E8D1003F97A5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Parsers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5D71A30E8D1003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RadarTaskParser.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5D81A30E8D1003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RadarTaskParser.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5D91A30E8D1003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5D81A30E8D1003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5DA1A30EF7C003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>OrganizationsProvider.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5DB1A30EF7C003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>OrganizationsProvider.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5DC1A30EF7C003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5DB1A30EF7C003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5DD1A30EF81003F97A5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8390B5DA1A30EF7C003F97A5</string>
+				<string>8390B5DB1A30EF7C003F97A5</string>
+				<string>8390B5DE1A30EF9D003F97A5</string>
+				<string>8390B5DF1A30EF9D003F97A5</string>
+				<string>8390B5E11A30F613003F97A5</string>
+				<string>8390B5E21A30F613003F97A5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Providers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5DE1A30EF9D003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RadarTasksProvider.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5DF1A30EF9D003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RadarTasksProvider.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5E01A30EF9D003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5DF1A30EF9D003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5E11A30F613003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RadarsProjectProvider.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5E21A30F613003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RadarsProjectProvider.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5E31A30F613003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5E21A30F613003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8390B5E41A31180D003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AFNetworkActivityLogger.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5E51A31180D003F97A5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AFNetworkActivityLogger.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8390B5E61A31180D003F97A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8390B5E51A31180D003F97A5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8392746A1A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274751A2F2076008DFA0E</string>
+				<string>8392748F1A2F2076008DFA0E</string>
+				<string>839274741A2F2076008DFA0E</string>
+				<string>146BEEA611E69DF080ACED45</string>
+				<string>3436723C735ADC07AC2EE5F5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8392746B1A2F2076008DFA0E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0610</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>mariabernis</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>839274721A2F2076008DFA0E</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1</string>
+					</dict>
+					<key>8392748B1A2F2076008DFA0E</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1</string>
+						<key>TestTargetID</key>
+						<string>839274721A2F2076008DFA0E</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>8392746E1A2F2076008DFA0E</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>8392746A1A2F2076008DFA0E</string>
+			<key>productRefGroup</key>
+			<string>839274741A2F2076008DFA0E</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>839274721A2F2076008DFA0E</string>
+				<string>8392748B1A2F2076008DFA0E</string>
+			</array>
+		</dict>
+		<key>8392746E1A2F2076008DFA0E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>839274941A2F2076008DFA0E</string>
+				<string>839274951A2F2076008DFA0E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>8392746F1A2F2076008DFA0E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8392747F1A2F2076008DFA0E</string>
+				<string>8390B5BF1A30602B003F97A5</string>
+				<string>8390B5CF1A30BB48003F97A5</string>
+				<string>8390B5D51A30E8A7003F97A5</string>
+				<string>8390B5DC1A30EF7C003F97A5</string>
+				<string>8390B5C21A306064003F97A5</string>
+				<string>8392747C1A2F2076008DFA0E</string>
+				<string>8390B5D91A30E8D1003F97A5</string>
+				<string>839274A91A2F8C78008DFA0E</string>
+				<string>8390B5C71A306FD5003F97A5</string>
+				<string>8390B5E61A31180D003F97A5</string>
+				<string>8390B5E01A30EF9D003F97A5</string>
+				<string>839274A61A2F8955008DFA0E</string>
+				<string>8390B5BC1A3054FF003F97A5</string>
+				<string>8390B5CC1A30B0D6003F97A5</string>
+				<string>8392749F1A2F7D0B008DFA0E</string>
+				<string>8390B5E31A30F613003F97A5</string>
+				<string>839274791A2F2076008DFA0E</string>
+				<string>839274A31A2F8001008DFA0E</string>
+				<string>8390B5D21A30C284003F97A5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>839274701A2F2076008DFA0E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9E9BF58ED9437C5259A43EC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>839274711A2F2076008DFA0E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>839274821A2F2076008DFA0E</string>
+				<string>839274871A2F2076008DFA0E</string>
+				<string>839274841A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>839274721A2F2076008DFA0E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>839274961A2F2076008DFA0E</string>
+			<key>buildPhases</key>
+			<array>
+				<string>7D0697D5B54E8B74AF3E5AB5</string>
+				<string>8392746F1A2F2076008DFA0E</string>
+				<string>839274701A2F2076008DFA0E</string>
+				<string>839274711A2F2076008DFA0E</string>
+				<string>9E5AA0B7AD38D807DD763FBD</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TrackMyRadars</string>
+			<key>productName</key>
+			<string>TrackMyRadars</string>
+			<key>productReference</key>
+			<string>839274731A2F2076008DFA0E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>839274731A2F2076008DFA0E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TrackMyRadars.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>839274741A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274731A2F2076008DFA0E</string>
+				<string>8392748C1A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274751A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8392747A1A2F2076008DFA0E</string>
+				<string>8392747B1A2F2076008DFA0E</string>
+				<string>8390B5D01A30C284003F97A5</string>
+				<string>8390B5D11A30C284003F97A5</string>
+				<string>839274A01A2F7D14008DFA0E</string>
+				<string>8390B5DD1A30EF81003F97A5</string>
+				<string>8390B5D61A30E8AD003F97A5</string>
+				<string>8390B5C81A306FE5003F97A5</string>
+				<string>839274AB1A2FC85E008DFA0E</string>
+				<string>839274AA1A2FC843008DFA0E</string>
+				<string>839274AC1A2FC872008DFA0E</string>
+				<string>839274831A2F2076008DFA0E</string>
+				<string>839274761A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TrackMyRadars</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274761A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274771A2F2076008DFA0E</string>
+				<string>839274781A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274771A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274781A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274791A2F2076008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274781A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8392747A1A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8392747B1A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8392747C1A2F2076008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8392747B1A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8392747D1A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>LoginViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8392747E1A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>LoginViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8392747F1A2F2076008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8392747E1A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274801A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274811A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274811A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274821A2F2076008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274801A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274831A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274841A2F2076008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274831A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274851A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274861A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274861A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274871A2F2076008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274851A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274881A2F2076008DFA0E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>839274931A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>839274891A2F2076008DFA0E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E90008A80225BEA412A71557</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8392748A1A2F2076008DFA0E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8392748B1A2F2076008DFA0E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>839274991A2F2076008DFA0E</string>
+			<key>buildPhases</key>
+			<array>
+				<string>9281F1E2EF2A6C126FC16F6B</string>
+				<string>839274881A2F2076008DFA0E</string>
+				<string>839274891A2F2076008DFA0E</string>
+				<string>8392748A1A2F2076008DFA0E</string>
+				<string>3092815ED06402BB66EB95B6</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>8392748E1A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TrackMyRadarsTests</string>
+			<key>productName</key>
+			<string>TrackMyRadarsTests</string>
+			<key>productReference</key>
+			<string>8392748C1A2F2076008DFA0E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>8392748C1A2F2076008DFA0E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TrackMyRadarsTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8392748D1A2F2076008DFA0E</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>8392746B1A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>839274721A2F2076008DFA0E</string>
+			<key>remoteInfo</key>
+			<string>TrackMyRadars</string>
+		</dict>
+		<key>8392748E1A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>839274721A2F2076008DFA0E</string>
+			<key>targetProxy</key>
+			<string>8392748D1A2F2076008DFA0E</string>
+		</dict>
+		<key>8392748F1A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274921A2F2076008DFA0E</string>
+				<string>839274901A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TrackMyRadarsTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274901A2F2076008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274911A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274911A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274921A2F2076008DFA0E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TrackMyRadarsTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274931A2F2076008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274921A2F2076008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274941A2F2076008DFA0E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>839274951A2F2076008DFA0E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>839274961A2F2076008DFA0E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>839274971A2F2076008DFA0E</string>
+				<string>839274981A2F2076008DFA0E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>839274971A2F2076008DFA0E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>98D047F4CC18B9B2CE295181</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TrackMyRadars/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>839274981A2F2076008DFA0E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>D98073A7B6FC829ABD718ABE</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TrackMyRadars/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>839274991A2F2076008DFA0E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>8392749A1A2F2076008DFA0E</string>
+				<string>8392749B1A2F2076008DFA0E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>8392749A1A2F2076008DFA0E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>44D6AFCC6FBA1EFB938CFEBC</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>TrackMyRadarsTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>8392749B1A2F2076008DFA0E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>2E529D0A7199C3AFE5F7F747</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>TrackMyRadarsTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>8392749D1A2F7D0B008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RedboothAPIClient.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8392749E1A2F7D0B008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RedboothAPIClient.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8392749F1A2F7D0B008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8392749E1A2F7D0B008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274A01A2F7D14008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8392749D1A2F7D0B008DFA0E</string>
+				<string>8392749E1A2F7D0B008DFA0E</string>
+				<string>8390B5BA1A3054FF003F97A5</string>
+				<string>8390B5BB1A3054FF003F97A5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Services</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274A11A2F8001008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>RadarListViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274A21A2F8001008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>RadarListViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274A31A2F8001008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274A21A2F8001008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274A41A2F8955008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>UIColor+TrackMyRadars.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274A51A2F8955008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>UIColor+TrackMyRadars.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274A61A2F8955008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274A51A2F8955008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274A71A2F8C78008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>UIImage+Color.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274A81A2F8C78008DFA0E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>UIImage+Color.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274A91A2F8C78008DFA0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>839274A81A2F8C78008DFA0E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839274AA1A2FC843008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8390B5E41A31180D003F97A5</string>
+				<string>8390B5E51A31180D003F97A5</string>
+				<string>839274A41A2F8955008DFA0E</string>
+				<string>839274A51A2F8955008DFA0E</string>
+				<string>839274A71A2F8C78008DFA0E</string>
+				<string>839274A81A2F8C78008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Utils</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274AB1A2FC85E008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8392747D1A2F2076008DFA0E</string>
+				<string>8392747E1A2F2076008DFA0E</string>
+				<string>839274A11A2F8001008DFA0E</string>
+				<string>839274A21A2F8001008DFA0E</string>
+				<string>8390B5C41A306519003F97A5</string>
+				<string>8390B5BD1A30602B003F97A5</string>
+				<string>8390B5BE1A30602B003F97A5</string>
+				<string>8390B5C01A306064003F97A5</string>
+				<string>8390B5C11A306064003F97A5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ViewControllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>839274AC1A2FC872008DFA0E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>839274801A2F2076008DFA0E</string>
+				<string>839274851A2F2076008DFA0E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9281F1E2EF2A6C126FC16F6B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>98D047F4CC18B9B2CE295181</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-TrackMyRadars.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9E5AA0B7AD38D807DD763FBD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>9E9BF58ED9437C5259A43EC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>790A2C9BEB688FD202909488</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D29D9D023CBA9A69D5F9C080</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-TrackMyRadarsTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>D98073A7B6FC829ABD718ABE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-TrackMyRadars.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E90008A80225BEA412A71557</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D29D9D023CBA9A69D5F9C080</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>8392746B1A2F2076008DFA0E</string>
+</dict>
+</plist>

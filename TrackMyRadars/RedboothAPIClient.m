@@ -123,9 +123,9 @@
 }
 
 - (void)refreshToken {
-    GROAuth2SessionManager *sessionManager = [GROAuth2SessionManager managerWithBaseURL:[self baseURL]
-                                                                               clientID:RB_API_CLIENT
-                                                                                 secret:RB_API_SECRET];
+//    GROAuth2SessionManager *sessionManager = [GROAuth2SessionManager managerWithBaseURL:[self baseURL]
+//                                                                               clientID:RB_API_CLIENT
+//                                                                                 secret:RB_API_SECRET];
 //    [sessionManager authenticateUsingOAuthWithPath:@"/oauth2/token" refreshToken:<#(NSString *)#> success:<#^(AFOAuthCredential *credential)success#> failure:<#^(NSError *error)failure#>]
 }
 

@@ -4,27 +4,57 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworking.xcscheme</key>
+		<key>Pods-TrackMyRadars-AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-GROAuth2SessionManager.xcscheme</key>
+		<key>Pods-TrackMyRadars-GROAuth2SessionManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PQFCustomLoaders.xcscheme</key>
+		<key>Pods-TrackMyRadars-PQFCustomLoaders.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-UIColor+FlatColors.xcscheme</key>
+		<key>Pods-TrackMyRadars-UIColor+FlatColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-TrackMyRadars.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TrackMyRadarsTests-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TrackMyRadarsTests-GROAuth2SessionManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TrackMyRadarsTests-Kiwi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TrackMyRadarsTests-PQFCustomLoaders.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TrackMyRadarsTests-UIColor+FlatColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TrackMyRadarsTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>176138283D9FD2F135EE73A9</key>
+		<key>0EDB0BC9F99B22B123AD2575</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E005F80AE80BE07056179ED</key>
+		<key>134B7ECAADA756CC90CEA7BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F7B41F294CBD79D36E64A0F</key>
+		<key>23605A1824CDE1CB3837181A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9A7FBD09918055384D62F23</key>
+		<key>299DFF8AB83075A96DBD5A96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E799CE0D9D6D54B5320FBA85</key>
+		<key>2A5C466C84F70C440561C8A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B03A098EAD3B040C44C0587</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70B734CCD188C4D0CF234A50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C0F4EC0B41C7937EE1BF3812</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2584CF3173D26AF69077E7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E98036E276AAC6D8406A41A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7949B0E55E6F7715C45522E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
