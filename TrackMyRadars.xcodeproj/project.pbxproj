@@ -25,11 +25,11 @@
 		83267B3A1A31E471004591C6 /* RadarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B331A31E471004591C6 /* RadarListViewController.m */; };
 		83267B3B1A31E471004591C6 /* WizardOpEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B361A31E471004591C6 /* WizardOpEmailViewController.m */; };
 		83267B3C1A31E471004591C6 /* WizardRbOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B381A31E471004591C6 /* WizardRbOrganizationViewController.m */; };
+		83267B4E1A31E6FA004591C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83267B4A1A31E6FA004591C6 /* LaunchScreen.xib */; };
+		83267B4F1A31E6FA004591C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83267B4C1A31E6FA004591C6 /* Main.storyboard */; };
 		8390B5D21A30C284003F97A5 /* RadarsImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D11A30C284003F97A5 /* RadarsImportManager.m */; };
 		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
-		839274821A2F2076008DFA0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839274801A2F2076008DFA0E /* Main.storyboard */; };
 		839274841A2F2076008DFA0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839274831A2F2076008DFA0E /* Images.xcassets */; };
-		839274871A2F2076008DFA0E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839274851A2F2076008DFA0E /* LaunchScreen.xib */; };
 		839274931A2F2076008DFA0E /* TrackMyRadarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */; };
 		9E9BF58ED9437C5259A43EC5 /* libPods-TrackMyRadars.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 790A2C9BEB688FD202909488 /* libPods-TrackMyRadars.a */; };
 		E90008A80225BEA412A71557 /* libPods-TrackMyRadarsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29D9D023CBA9A69D5F9C080 /* libPods-TrackMyRadarsTests.a */; };
@@ -87,14 +87,14 @@
 		83267B361A31E471004591C6 /* WizardOpEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardOpEmailViewController.m; sourceTree = "<group>"; };
 		83267B371A31E471004591C6 /* WizardRbOrganizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardRbOrganizationViewController.h; sourceTree = "<group>"; };
 		83267B381A31E471004591C6 /* WizardRbOrganizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardRbOrganizationViewController.m; sourceTree = "<group>"; };
+		83267B4B1A31E6FA004591C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		83267B4D1A31E6FA004591C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390B5D01A30C284003F97A5 /* RadarsImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsImportManager.h; sourceTree = "<group>"; };
 		8390B5D11A30C284003F97A5 /* RadarsImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsImportManager.m; sourceTree = "<group>"; };
 		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8392747A1A2F2076008DFA0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8392747B1A2F2076008DFA0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		839274811A2F2076008DFA0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		839274831A2F2076008DFA0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		839274861A2F2076008DFA0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackMyRadarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		839274911A2F2076008DFA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackMyRadarsTests.m; sourceTree = "<group>"; };
@@ -290,10 +290,10 @@
 		839274AC1A2FC872008DFA0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				839274801A2F2076008DFA0E /* Main.storyboard */,
-				839274851A2F2076008DFA0E /* LaunchScreen.xib */,
+				83267B4A1A31E6FA004591C6 /* LaunchScreen.xib */,
+				83267B4C1A31E6FA004591C6 /* Main.storyboard */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,8 +380,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				839274821A2F2076008DFA0E /* Main.storyboard in Resources */,
-				839274871A2F2076008DFA0E /* LaunchScreen.xib in Resources */,
+				83267B4F1A31E6FA004591C6 /* Main.storyboard in Resources */,
+				83267B4E1A31E6FA004591C6 /* LaunchScreen.xib in Resources */,
 				839274841A2F2076008DFA0E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,20 +505,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		839274801A2F2076008DFA0E /* Main.storyboard */ = {
+		83267B4A1A31E6FA004591C6 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				839274811A2F2076008DFA0E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		839274851A2F2076008DFA0E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				839274861A2F2076008DFA0E /* Base */,
+				83267B4B1A31E6FA004591C6 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		83267B4C1A31E6FA004591C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83267B4D1A31E6FA004591C6 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
