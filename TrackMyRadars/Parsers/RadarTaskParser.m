@@ -8,20 +8,21 @@
 
 #import "RadarTaskParser.h"
 #import "RadarTask.h"
+#import "RadarsProject.h"
 
 @implementation RadarTaskParser
 
-+ (NSArray *)radarTasksWithJSONArray:(NSArray *)array {
++ (NSArray *)radarTasksWithOPArray:(NSArray *)array {
     NSMutableArray *items = [[NSMutableArray alloc] init];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        RadarTask *item = [self radarTaskWithJSONInfo:(NSDictionary *)obj];
+        RadarTask *item = [self radarTaskWithOPInfo:(NSDictionary *)obj];
         [items addObject:item];
     }];
     
     return [NSArray arrayWithArray:items];
 }
 
-+ (RadarTask *)radarTaskWithJSONInfo:(NSDictionary *)info {
++ (RadarTask *)radarTaskWithOPInfo:(NSDictionary *)info {
     
     RadarTask *item = [[RadarTask alloc] init];
     item.radarNumber = [info objectForKey:@"number"];
@@ -44,6 +45,39 @@
         status = kRadarStatusOpen;
     }
     return status;
+}
+
++ (NSDictionary *)rbParametersWithRadarTask:(RadarTask *)radar andRadarProject:(RadarsProject *)project {
+    
+    NSDictionary *taskParams = @{ @"project_id"  :@(project.radarsProjectId),
+                                  @"task_list_id":@(project.radarsTaskListId),
+                                  @"name"        :radar.radarTitle,
+                                  @"description" :radar.radarDescription,
+                                  @"is_private"  :@"false"
+                                  };
+    return taskParams;
+}
+
++ (NSArray *)radarTasksWithRBArray:(NSArray *)array {
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        RadarTask *item = [self radarTaskWithRBInfo:(NSDictionary *)obj];
+        [items addObject:item];
+    }];
+    
+    return [NSArray arrayWithArray:items];
+}
+
++ (RadarTask *)radarTaskWithRBInfo:(NSDictionary *)info {
+    
+    RadarTask *item = [[RadarTask alloc] init];
+//    item.radarNumber = [info objectForKey:@"number"];
+    item.taskId = [[info objectForKey:@"id"] integerValue];
+    item.radarTitle = [info objectForKey:@"name"];
+    item.radarDescription = [info objectForKey:@"description"];
+    item.radarStatus = [info objectForKey:@"status"];
+    
+    return item;
 }
 
 @end

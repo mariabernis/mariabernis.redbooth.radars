@@ -8,7 +8,7 @@
 
 #import "OpenradarAPIClient.h"
 
-#define OP_API_BASE_URL @"http://openradar.appspot.com/api"
+#define OP_API_BASE_URL @"https://openradar.appspot.com/api"
 
 @implementation OpenradarAPIClient
 
@@ -33,9 +33,9 @@
 }
 
 #pragma mark - Authorisation
-- (void)setAuthorizationHeaderWithKey:(NSString *)apiKey {
-    [self.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", apiKey]
-                  forHTTPHeaderField:@"Authorization"];
-}
+//- (void)setAuthorizationHeaderWithKey:(NSString *)apiKey {
+//    [self.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", apiKey]
+//                  forHTTPHeaderField:@"Authorization"];
+//}
 
 @end

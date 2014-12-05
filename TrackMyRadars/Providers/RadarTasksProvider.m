@@ -23,7 +23,7 @@
                  success:^(NSURLSessionDataTask *task, id responseObject) {
                      
                      NSArray *results = [(NSDictionary *)responseObject objectForKey:@"result"];
-                     NSArray *radars = [RadarTaskParser radarTasksWithJSONArray:results];
+                     NSArray *radars = [RadarTaskParser radarTasksWithOPArray:results];
                      if (completion) {
                          completion(radars, nil);
                      }

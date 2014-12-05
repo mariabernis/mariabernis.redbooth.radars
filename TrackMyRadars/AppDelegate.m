@@ -10,7 +10,12 @@
 #import "LoginViewController.h"
 #import "RadarListViewController.h"
 #import "RedboothAPIClient.h"
+#import "MBCheck.h"
 #import "AFNetworkActivityLogger.h"
+
+#define APP_URL_SCHEME      @"mbredbooth"
+#define APP_CALLBACK_URI    @"mbredbooth://authorise"
+
 
 @interface AppDelegate ()
 
@@ -29,6 +34,8 @@
     
     self.window.rootViewController = initialVC;
     [self.window makeKeyAndVisible];
+    
+    [MBCheck storeLastOpenedAppVersion];
     return YES;
 }
 
@@ -38,7 +45,7 @@
 
 - (UIViewController *)initialViewControllerForStoryboard:(UIStoryboard *)storyboard {
     UIViewController *controller = nil;
-    if ([[RedboothAPIClient sharedInstance] hasStoredToken]) {
+    if ([RedboothAPIClient sharedInstance].isAuthorised) {
         controller = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([RadarListViewController class])];
     } else {
         controller = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];

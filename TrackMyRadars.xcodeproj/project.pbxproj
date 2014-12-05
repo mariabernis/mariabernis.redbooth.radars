@@ -11,7 +11,6 @@
 		83267B0A1A31E29E004591C6 /* RedboothAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B081A31E29E004591C6 /* RedboothAPIClient.m */; };
 		83267B111A31E2AB004591C6 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B0C1A31E2AB004591C6 /* Organization.m */; };
 		83267B121A31E2AB004591C6 /* RadarTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B0E1A31E2AB004591C6 /* RadarTask.m */; };
-		83267B131A31E2AB004591C6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B101A31E2AB004591C6 /* User.m */; };
 		83267B181A31E34D004591C6 /* OrganizationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B151A31E34D004591C6 /* OrganizationParser.m */; };
 		83267B191A31E34D004591C6 /* RadarTaskParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B171A31E34D004591C6 /* RadarTaskParser.m */; };
 		83267B201A31E38B004591C6 /* OrganizationsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B1B1A31E38B004591C6 /* OrganizationsProvider.m */; };
@@ -27,10 +26,17 @@
 		83267B3C1A31E471004591C6 /* WizardRbOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B381A31E471004591C6 /* WizardRbOrganizationViewController.m */; };
 		83267B4E1A31E6FA004591C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83267B4A1A31E6FA004591C6 /* LaunchScreen.xib */; };
 		83267B4F1A31E6FA004591C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83267B4C1A31E6FA004591C6 /* Main.storyboard */; };
+		83267B511A32370B004591C6 /* RedboothTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B501A32370B004591C6 /* RedboothTests.m */; };
+		83267B541A323B4F004591C6 /* MBCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B531A323B4F004591C6 /* MBCheck.m */; };
+		83267B561A324FFE004591C6 /* organizations_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B551A324FFE004591C6 /* organizations_stub.json */; };
+		83267B581A325045004591C6 /* OrganizationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B571A325045004591C6 /* OrganizationsTests.m */; };
+		83267B5A1A32564C004591C6 /* RadarTasksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B591A32564C004591C6 /* RadarTasksTests.m */; };
+		83267B5C1A325706004591C6 /* openradars_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B5B1A325706004591C6 /* openradars_stub.json */; };
+		83267B5F1A325F9A004591C6 /* RadarsProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B5E1A325F9A004591C6 /* RadarsProject.m */; };
+		83267B611A326C3C004591C6 /* redboothradars_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B601A326C3C004591C6 /* redboothradars_stub.json */; };
 		8390B5D21A30C284003F97A5 /* RadarsImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D11A30C284003F97A5 /* RadarsImportManager.m */; };
 		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
 		839274841A2F2076008DFA0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839274831A2F2076008DFA0E /* Images.xcassets */; };
-		839274931A2F2076008DFA0E /* TrackMyRadarsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */; };
 		9E9BF58ED9437C5259A43EC5 /* libPods-TrackMyRadars.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 790A2C9BEB688FD202909488 /* libPods-TrackMyRadars.a */; };
 		E90008A80225BEA412A71557 /* libPods-TrackMyRadarsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29D9D023CBA9A69D5F9C080 /* libPods-TrackMyRadarsTests.a */; };
 /* End PBXBuildFile section */
@@ -58,8 +64,6 @@
 		83267B0C1A31E2AB004591C6 /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
 		83267B0D1A31E2AB004591C6 /* RadarTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTask.h; sourceTree = "<group>"; };
 		83267B0E1A31E2AB004591C6 /* RadarTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTask.m; sourceTree = "<group>"; };
-		83267B0F1A31E2AB004591C6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		83267B101A31E2AB004591C6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		83267B141A31E34D004591C6 /* OrganizationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationParser.h; sourceTree = "<group>"; };
 		83267B151A31E34D004591C6 /* OrganizationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationParser.m; sourceTree = "<group>"; };
 		83267B161A31E34D004591C6 /* RadarTaskParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTaskParser.h; sourceTree = "<group>"; };
@@ -89,6 +93,16 @@
 		83267B381A31E471004591C6 /* WizardRbOrganizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardRbOrganizationViewController.m; sourceTree = "<group>"; };
 		83267B4B1A31E6FA004591C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		83267B4D1A31E6FA004591C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83267B501A32370B004591C6 /* RedboothTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedboothTests.m; sourceTree = "<group>"; };
+		83267B521A323B4F004591C6 /* MBCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCheck.h; sourceTree = "<group>"; };
+		83267B531A323B4F004591C6 /* MBCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCheck.m; sourceTree = "<group>"; };
+		83267B551A324FFE004591C6 /* organizations_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = organizations_stub.json; sourceTree = "<group>"; };
+		83267B571A325045004591C6 /* OrganizationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationsTests.m; sourceTree = "<group>"; };
+		83267B591A32564C004591C6 /* RadarTasksTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTasksTests.m; sourceTree = "<group>"; };
+		83267B5B1A325706004591C6 /* openradars_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openradars_stub.json; sourceTree = "<group>"; };
+		83267B5D1A325F9A004591C6 /* RadarsProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProject.h; sourceTree = "<group>"; };
+		83267B5E1A325F9A004591C6 /* RadarsProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProject.m; sourceTree = "<group>"; };
+		83267B601A326C3C004591C6 /* redboothradars_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = redboothradars_stub.json; sourceTree = "<group>"; };
 		8390B5D01A30C284003F97A5 /* RadarsImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsImportManager.h; sourceTree = "<group>"; };
 		8390B5D11A30C284003F97A5 /* RadarsImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsImportManager.m; sourceTree = "<group>"; };
 		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +111,6 @@
 		839274831A2F2076008DFA0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackMyRadarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		839274911A2F2076008DFA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackMyRadarsTests.m; sourceTree = "<group>"; };
 		98D047F4CC18B9B2CE295181 /* Pods-TrackMyRadars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyRadars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars.debug.xcconfig"; sourceTree = "<group>"; };
 		D29D9D023CBA9A69D5F9C080 /* libPods-TrackMyRadarsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackMyRadarsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98073A7B6FC829ABD718ABE /* Pods-TrackMyRadars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyRadars.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,8 +164,8 @@
 				83267B0C1A31E2AB004591C6 /* Organization.m */,
 				83267B0D1A31E2AB004591C6 /* RadarTask.h */,
 				83267B0E1A31E2AB004591C6 /* RadarTask.m */,
-				83267B0F1A31E2AB004591C6 /* User.h */,
-				83267B101A31E2AB004591C6 /* User.m */,
+				83267B5D1A325F9A004591C6 /* RadarsProject.h */,
+				83267B5E1A325F9A004591C6 /* RadarsProject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,7 +246,12 @@
 		8392748F1A2F2076008DFA0E /* TrackMyRadarsTests */ = {
 			isa = PBXGroup;
 			children = (
-				839274921A2F2076008DFA0E /* TrackMyRadarsTests.m */,
+				83267B501A32370B004591C6 /* RedboothTests.m */,
+				83267B571A325045004591C6 /* OrganizationsTests.m */,
+				83267B591A32564C004591C6 /* RadarTasksTests.m */,
+				83267B5B1A325706004591C6 /* openradars_stub.json */,
+				83267B601A326C3C004591C6 /* redboothradars_stub.json */,
+				83267B551A324FFE004591C6 /* organizations_stub.json */,
 				839274901A2F2076008DFA0E /* Supporting Files */,
 			);
 			path = TrackMyRadarsTests;
@@ -263,6 +281,8 @@
 			children = (
 				83267B271A31E428004591C6 /* AFNetworkActivityLogger.h */,
 				83267B281A31E428004591C6 /* AFNetworkActivityLogger.m */,
+				83267B521A323B4F004591C6 /* MBCheck.h */,
+				83267B531A323B4F004591C6 /* MBCheck.m */,
 				83267B291A31E428004591C6 /* UIColor+TrackMyRadars.h */,
 				83267B2A1A31E428004591C6 /* UIColor+TrackMyRadars.m */,
 				83267B2B1A31E428004591C6 /* UIImage+Color.h */,
@@ -390,6 +410,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83267B5C1A325706004591C6 /* openradars_stub.json in Resources */,
+				83267B611A326C3C004591C6 /* redboothradars_stub.json in Resources */,
+				83267B561A324FFE004591C6 /* organizations_stub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,14 +486,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83267B131A31E2AB004591C6 /* User.m in Sources */,
 				83267B0A1A31E29E004591C6 /* RedboothAPIClient.m in Sources */,
+				83267B5F1A325F9A004591C6 /* RadarsProject.m in Sources */,
 				83267B2D1A31E428004591C6 /* AFNetworkActivityLogger.m in Sources */,
 				83267B091A31E29E004591C6 /* OpenradarAPIClient.m in Sources */,
 				8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */,
 				83267B201A31E38B004591C6 /* OrganizationsProvider.m in Sources */,
 				83267B261A31E3EC004591C6 /* main.m in Sources */,
 				83267B391A31E471004591C6 /* LoginViewController.m in Sources */,
+				83267B541A323B4F004591C6 /* MBCheck.m in Sources */,
 				83267B191A31E34D004591C6 /* RadarTaskParser.m in Sources */,
 				83267B3A1A31E471004591C6 /* RadarListViewController.m in Sources */,
 				83267B111A31E2AB004591C6 /* Organization.m in Sources */,
@@ -490,7 +514,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				839274931A2F2076008DFA0E /* TrackMyRadarsTests.m in Sources */,
+				83267B581A325045004591C6 /* OrganizationsTests.m in Sources */,
+				83267B5A1A32564C004591C6 /* RadarTasksTests.m in Sources */,
+				83267B511A32370B004591C6 /* RedboothTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

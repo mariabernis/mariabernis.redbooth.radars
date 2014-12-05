@@ -15,7 +15,4 @@
 // Singleton instance
 + (instancetype)sharedInstance;
 
-// Authorise
-- (void)setAuthorizationHeaderWithKey:(NSString *)apiKey;
-
 @end

@@ -39,7 +39,7 @@
 #pragma mark - Actions
 - (IBAction)loginButtonPressed:(id)sender {
     
-    [[RedboothAPIClient sharedInstance] authorize];
+    [[RedboothAPIClient sharedInstance] launchAuthorizationFlow];
 }
 
 - (void)handleAuthoriseCallback:(NSString *)code {

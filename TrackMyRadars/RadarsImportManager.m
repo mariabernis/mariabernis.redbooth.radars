@@ -9,7 +9,6 @@
 #import "RadarsImportManager.h"
 #import "RedboothAPIClient.h"
 #import "OpenradarAPIClient.h"
-#import "User.h"
 #import "RadarTask.h"
 
 @interface RadarsImportManager ()

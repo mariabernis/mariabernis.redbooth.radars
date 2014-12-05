@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class RadarTask;
+@class RadarTask, RadarsProject;
 @interface RadarTaskParser : NSObject
 
-+ (NSArray *)radarTasksWithJSONArray:(NSArray *)array;
-+ (RadarTask *)radarTaskWithJSONInfo:(NSDictionary *)info;
++ (NSArray *)radarTasksWithOPArray:(NSArray *)array;
++ (RadarTask *)radarTaskWithOPInfo:(NSDictionary *)info;
++ (NSDictionary *)rbParametersWithRadarTask:(RadarTask *)radar
+                            andRadarProject:(RadarsProject *)project;
++ (NSArray *)radarTasksWithRBArray:(NSArray *)array;
 
 @end
