@@ -1,0 +1,15 @@
+{
+    "type":"Project",
+    "created_at":1403618899,
+    "updated_at":1403618899,
+    "id":2222,
+    "permalink":"eopen-radars",
+    "organization_id":1234,
+    "archived":false,
+    "name":"Open radar",
+    "tracks_time":false,
+    "public":null,
+    "publish_pages":false,
+    "settings":{"include_weekend_days":false},
+    "deleted":false
+}

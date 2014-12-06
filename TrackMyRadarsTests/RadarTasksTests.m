@@ -80,12 +80,6 @@ describe(@"When receiving array of OpenRadar radars", ^{
             });
         });
         
-//        @{ @"project_id"  :@(projectId),
-//           @"task_list_id":@(taskListId),
-//           @"name"        :radar.radarTitle,
-//           @"description" :radar.radarDescription,
-//           @"is_private"  :@"false"
-//           };
     });
     
 });

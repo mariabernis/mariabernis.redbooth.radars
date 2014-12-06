@@ -34,6 +34,10 @@
 		83267B5C1A325706004591C6 /* openradars_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B5B1A325706004591C6 /* openradars_stub.json */; };
 		83267B5F1A325F9A004591C6 /* RadarsProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B5E1A325F9A004591C6 /* RadarsProject.m */; };
 		83267B611A326C3C004591C6 /* redboothradars_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B601A326C3C004591C6 /* redboothradars_stub.json */; };
+		83267B641A32F691004591C6 /* RadarsProjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B631A32F691004591C6 /* RadarsProjectParser.m */; };
+		83267B661A32F6BB004591C6 /* RadarsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B651A32F6BB004591C6 /* RadarsProjectTests.m */; };
+		83267B681A32FBFC004591C6 /* newproject_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B671A32FBFC004591C6 /* newproject_stub.json */; };
+		83267B6A1A32FC59004591C6 /* newtasklist_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B691A32FC59004591C6 /* newtasklist_stub.json */; };
 		8390B5D21A30C284003F97A5 /* RadarsImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390B5D11A30C284003F97A5 /* RadarsImportManager.m */; };
 		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
 		839274841A2F2076008DFA0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839274831A2F2076008DFA0E /* Images.xcassets */; };
@@ -103,6 +107,11 @@
 		83267B5D1A325F9A004591C6 /* RadarsProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProject.h; sourceTree = "<group>"; };
 		83267B5E1A325F9A004591C6 /* RadarsProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProject.m; sourceTree = "<group>"; };
 		83267B601A326C3C004591C6 /* redboothradars_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = redboothradars_stub.json; sourceTree = "<group>"; };
+		83267B621A32F691004591C6 /* RadarsProjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProjectParser.h; sourceTree = "<group>"; };
+		83267B631A32F691004591C6 /* RadarsProjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProjectParser.m; sourceTree = "<group>"; };
+		83267B651A32F6BB004591C6 /* RadarsProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProjectTests.m; sourceTree = "<group>"; };
+		83267B671A32FBFC004591C6 /* newproject_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newproject_stub.json; sourceTree = "<group>"; };
+		83267B691A32FC59004591C6 /* newtasklist_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newtasklist_stub.json; sourceTree = "<group>"; };
 		8390B5D01A30C284003F97A5 /* RadarsImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsImportManager.h; sourceTree = "<group>"; };
 		8390B5D11A30C284003F97A5 /* RadarsImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsImportManager.m; sourceTree = "<group>"; };
 		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +186,8 @@
 				83267B151A31E34D004591C6 /* OrganizationParser.m */,
 				83267B161A31E34D004591C6 /* RadarTaskParser.h */,
 				83267B171A31E34D004591C6 /* RadarTaskParser.m */,
+				83267B621A32F691004591C6 /* RadarsProjectParser.h */,
+				83267B631A32F691004591C6 /* RadarsProjectParser.m */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -249,7 +260,10 @@
 				83267B501A32370B004591C6 /* RedboothTests.m */,
 				83267B571A325045004591C6 /* OrganizationsTests.m */,
 				83267B591A32564C004591C6 /* RadarTasksTests.m */,
+				83267B651A32F6BB004591C6 /* RadarsProjectTests.m */,
 				83267B5B1A325706004591C6 /* openradars_stub.json */,
+				83267B671A32FBFC004591C6 /* newproject_stub.json */,
+				83267B691A32FC59004591C6 /* newtasklist_stub.json */,
 				83267B601A326C3C004591C6 /* redboothradars_stub.json */,
 				83267B551A324FFE004591C6 /* organizations_stub.json */,
 				839274901A2F2076008DFA0E /* Supporting Files */,
@@ -412,7 +426,9 @@
 			files = (
 				83267B5C1A325706004591C6 /* openradars_stub.json in Resources */,
 				83267B611A326C3C004591C6 /* redboothradars_stub.json in Resources */,
+				83267B681A32FBFC004591C6 /* newproject_stub.json in Resources */,
 				83267B561A324FFE004591C6 /* organizations_stub.json in Resources */,
+				83267B6A1A32FC59004591C6 /* newtasklist_stub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +513,7 @@
 				83267B541A323B4F004591C6 /* MBCheck.m in Sources */,
 				83267B191A31E34D004591C6 /* RadarTaskParser.m in Sources */,
 				83267B3A1A31E471004591C6 /* RadarListViewController.m in Sources */,
+				83267B641A32F691004591C6 /* RadarsProjectParser.m in Sources */,
 				83267B111A31E2AB004591C6 /* Organization.m in Sources */,
 				83267B121A31E2AB004591C6 /* RadarTask.m in Sources */,
 				83267B3C1A31E471004591C6 /* WizardRbOrganizationViewController.m in Sources */,
@@ -516,6 +533,7 @@
 			files = (
 				83267B581A325045004591C6 /* OrganizationsTests.m in Sources */,
 				83267B5A1A32564C004591C6 /* RadarTasksTests.m in Sources */,
+				83267B661A32F6BB004591C6 /* RadarsProjectTests.m in Sources */,
 				83267B511A32370B004591C6 /* RedboothTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

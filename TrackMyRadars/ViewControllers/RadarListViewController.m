@@ -10,8 +10,13 @@
 #import "WizardOpEmailViewController.h"
 #import "WizardRbOrganizationViewController.h"
 #import "WizardDelegate.h"
+#import "RadarsImportManager.h"
+#import <PQFCustomLoaders/PQFCustomLoaders.h>
 
 @interface RadarListViewController ()<WizardDelegate>
+
+@property (nonatomic, strong) RadarsImportManager *importManager;
+@property (nonatomic, strong) PQFCirclesInTriangle *loader;
 
 @property (weak, nonatomic) IBOutlet UIView *noImportView;
 @end
@@ -19,9 +24,22 @@
 
 @implementation RadarListViewController
 
+- (PQFCirclesInTriangle *)loader {
+    if (!_loader) {
+        _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
+        _loader.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.4];
+        _loader.loaderColor = [UIColor flatPeterRiverColor];
+    }
+    return _loader;
+}
+
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +58,16 @@
 - (void)wizardDidFinishWithOpEmail:(NSString *)email
                     organizationId:(NSInteger)organizationId {
     
+    self.importManager = [[RadarsImportManager alloc] initWithOpEmail:email andOrganizationId:organizationId];
+    [self.importManager importRadarsWithTemporaryContent:^(NSArray *tempRadars) {
+        
+    }
+                                                progress:^(NSUInteger index, RadarTask *importedRadar) {
+                                                    
+                                                }
+                                              completion:^(NSArray *importedRadars, NSError *error) {
+                                                  
+                                              }];
 }
 
 @end

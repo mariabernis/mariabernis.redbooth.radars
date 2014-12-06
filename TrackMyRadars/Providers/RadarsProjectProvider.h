@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class RadarsProject;
 @interface RadarsProjectProvider : NSObject
 
+/* Designated initializer */
+- (instancetype)initWithOpUser:(NSString *)email;
+
 - (void)newRadarsProjectWithOrganizationId:(NSInteger)organizationId
-                                completion:(void(^)(NSInteger projectId, NSInteger taskListId, NSError *error))completion;
+                                completion:(void(^)(RadarsProject *project, NSError *error))completion;
 
 @end

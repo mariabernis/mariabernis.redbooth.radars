@@ -22,6 +22,7 @@
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITableView *organizationsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *importButton;
 @end
 
 
@@ -83,31 +84,40 @@
 }
 
 #pragma mark - Actions
-- (IBAction)startRadarsImport:(id)sender {
-    
-    [self.radarsProvider fetchOpenradarsWithOPUser:self.opEmail
-                                        completion:^(NSArray *radars, NSError *error) {
-                                            
-                                            if (error) {
-                                                return;
-                                            }
-                                            self.openRadars = [NSArray arrayWithArray:radars];
-                                            [self newProjectForRadars];
-                                        }];
-    
-}
-
 - (void)loadOrganizationList {
     
+    self.importButton.enabled = NO;
     [self.organizationsProvider fetchOrganizationsWithRemainingProjects:^(NSArray *organizations, NSError *error) {
-
+        
         if (error) {
             return;
         }
         self.organizations = organizations;
+        self.importButton.enabled = YES;
     }];
 }
 
+- (IBAction)startRadarsImport:(id)sender {
+    
+    if (self.delegate) {
+        Organization *selected = self.organizations[self.selectedIndex.row];
+        [self.delegate wizardDidFinishWithOpEmail:self.opEmail organizationId:selected.oragnizationId];
+    }
+    
+//    [self.radarsProvider fetchOpenradarsWithOPUser:self.opEmail
+//                                        completion:^(NSArray *radars, NSError *error) {
+//                                            
+//                                            if (error) {
+//                                                return;
+//                                            }
+//                                            self.openRadars = [NSArray arrayWithArray:radars];
+//                                            [self newProjectForRadars];
+//                                        }];
+    
+}
+
+
+/*
 - (void)newProjectForRadars {
     
     Organization *selected = self.organizations[self.selectedIndex.row];
@@ -134,7 +144,7 @@
                                          NSLog(@"🐼 Importing ended with error: %@", error);
                                      }];
 }
-
+*/
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

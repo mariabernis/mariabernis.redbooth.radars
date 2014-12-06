@@ -8,44 +8,59 @@
 
 #import "RadarsProjectProvider.h"
 #import "RedboothAPIClient.h"
+#import "RadarsProjectParser.h"
+#import "RadarsProject.h"
+
+@interface RadarsProjectProvider ()
+@property (nonatomic, strong) NSString *opEmail;
+@end
+
 
 @implementation RadarsProjectProvider
 
+- (instancetype)initWithOpUser:(NSString *)email
+{
+    self = [super init];
+    if (self) {
+        _opEmail = email;
+    }
+    return self;
+}
+
 - (void)newRadarsProjectWithOrganizationId:(NSInteger)organizationId
-                                completion:(void(^)(NSInteger projectId, NSInteger taskListId, NSError *error))completion {
+                                completion:(void(^)(RadarsProject *project, NSError *error))completion {
     
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
-    NSDictionary *projectParams = @{ @"name"           :@"Open radars",
-                                     @"organization_id":@(organizationId),
-                                     @"publish_pages"  :@"false"
-                                     };
+    NSDictionary *projectParams = [RadarsProjectParser rbParametersWithOrganizationId:organizationId];
     
     [redboothClient POST:RB_PATH_PROJECT
               parameters:projectParams
                  success:^(NSURLSessionDataTask *task, id responseObject) {
                      
                      NSDictionary *projInfo = (NSDictionary *)responseObject;
-                     NSInteger projId = [[projInfo objectForKey:@"id"] integerValue];
-//                     @{ @"project_id":@(projId) }
+                     NSInteger projId = [RadarsProjectParser projectIdWithJSONInfo:projInfo];
+                     NSDictionary *taskListParams = [RadarsProjectParser rbTasklistParametersWithProjectId:projId];
+                     
                      [redboothClient GET:RB_PATH_TASKLIST
-                              parameters:@{ @"project_id":@(projId) }
+                              parameters:taskListParams
                                  success:^(NSURLSessionDataTask *task, id responseObject) {
                                      
                                      NSDictionary *taskListInfo = [(NSArray *)responseObject firstObject];
-                                     NSInteger taskListId = [[taskListInfo objectForKey:@"id"] integerValue];
-                                     
-                                     NSLog(@"🌠 Project created %li", (long)projId);
-                                     completion(projId, taskListId, nil);
+                                     RadarsProject *project = [RadarsProjectParser projectWithOpUser:self.opEmail
+                                                                                  rbTasklistJSONInfo:taskListInfo];
+                                     BOOL saved = [RadarsProject saveImportedProject:project];
+                                     NSLog(@"🌠 Project created and saved: %@", saved? @"YES" : @"NO");
+                                     completion(project, nil);
                                  }
                                  failure:^(NSURLSessionDataTask *task, NSError *error) {
                                      NSLog(@"😱 Error getting tasklist: %@", error);
-                                     completion(0, 0, error);
+                                     completion(nil, error);
                                  }];
                      
                  }
                  failure:^(NSURLSessionDataTask *task, NSError *error) {
                      NSLog(@"😱 Error creating project: %@", error);
-                     completion(0, 0, error);
+                     completion(nil, error);
                  }];
 }
 

@@ -7,18 +7,21 @@
 //
 
 #import "RadarsImportManager.h"
-#import "RedboothAPIClient.h"
-#import "OpenradarAPIClient.h"
-#import "RadarTask.h"
+#import "RadarsProjectProvider.h"
+#import "RadarTasksProvider.h"
+#import "RadarsProject.h"
 
 @interface RadarsImportManager ()
 @property (nonatomic, strong) NSString *opEmail;
 @property (nonatomic, assign) NSInteger organizationId;
+@property (nonatomic, strong) RadarsProjectProvider *projectsProvider;
+@property (nonatomic, strong) RadarTasksProvider *tasksProvider;
 @end
 
 
 @implementation RadarsImportManager
 
+/* Designated initializer */
 - (instancetype)initWithOpEmail:(NSString *)opEmail andOrganizationId:(NSInteger)organizationId
 {
     self = [super init];
@@ -29,13 +32,66 @@
     return self;
 }
 
+- (RadarsProjectProvider *)projectsProvider {
+    if (!_projectsProvider) {
+        _projectsProvider = [[RadarsProjectProvider alloc] initWithOpUser:self.opEmail];
+    }
+    return _projectsProvider;
+}
+
+- (RadarTasksProvider *)tasksProvider {
+    if (!_tasksProvider) {
+        _tasksProvider = [[RadarTasksProvider alloc] init];
+    }
+    return _tasksProvider;
+}
+
 - (void)importRadarsWithTemporaryContent:(void(^)(NSArray *tempRadars))tempContent
                                 progress:(void(^)(NSUInteger index, RadarTask *importedRadar))progress
                               completion:(void(^)(NSArray *importedRadars, NSError *error))completion {
     
+    [self.tasksProvider fetchOpenradarsWithOPUser:self.opEmail
+                                       completion:^(NSArray *radars, NSError *error) {
+        if (error) {
+            if (completion) {
+                completion(nil, error);
+            }
+            return;
+        }
+        
+        [self.projectsProvider newRadarsProjectWithOrganizationId:self.organizationId
+                                                       completion:^(RadarsProject *project, NSError *error) {
+            if (error) {
+                if (completion) {
+                    completion(nil, error);
+                }
+                return;
+            }
+                                                           
+            [self.tasksProvider postTasksForOpenradars:radars inProject:project.radarsProjectId inTaskList:project.radarsTaskListId progress:^(NSUInteger index, RadarTask *importedRadar) {
+                
+                if (progress) {
+                    progress(index, importedRadar);
+                }
+                
+            } completion:^(NSArray *importedRadars, NSError *error) {
+                
+                if (error) {
+                    if (completion) {
+                        completion(nil, error);
+                    }
+                    return;
+                }
+                if (completion) {
+                    completion(importedRadars, error);
+                }
+            }];
+        }];
+    }];
     
 }
 
+/*
 - (void)postTasksForOpenradars:(NSArray *)radars
                      inProject:(NSInteger)projectId
                     inTaskList:(NSInteger)taskListId
@@ -136,5 +192,6 @@
 
     return parsedArray;
 }
+*/
 
 @end

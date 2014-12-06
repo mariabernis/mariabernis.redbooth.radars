@@ -286,6 +286,7 @@ the radars project?</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="importButton" destination="oNj-9a-pfY" id="w8P-FX-m8n"/>
                         <outlet property="organizationsTableView" destination="Drb-XK-2Ef" id="Qa8-bt-1p9"/>
                     </connections>
                 </viewController>
