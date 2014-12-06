@@ -7,6 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "RadarListViewController.h"
+#import "RedboothAPIClient.h"
+#import "MBCheck.h"
+#import "AFNetworkActivityLogger.h"
+
+#define APP_URL_SCHEME      @"mbredbooth"
+#define APP_CALLBACK_URI    @"mbredbooth://authorise"
+
 
 @interface AppDelegate ()
 
@@ -16,8 +25,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];
+    
+    self.window.rootViewController = initialVC;
+    [self.window makeKeyAndVisible];
+    
+    [MBCheck storeLastOpenedAppVersion];
     return YES;
+}
+
+- (UIStoryboard *)mainStoryboard {
+    return [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+}
+
+- (UIViewController *)initialViewControllerForStoryboard:(UIStoryboard *)storyboard {
+    UIViewController *controller = nil;
+    if ([RedboothAPIClient sharedInstance].isAuthorised) {
+//        UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"RadarListNav"];
+        controller = [storyboard instantiateViewControllerWithIdentifier:@"RadarListNav"];
+    } else {
+        controller = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
+    }
+    return controller;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -40,6 +74,24 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    NSLog(@"😱😱😱😱 %@", url);
+    if ([[url scheme] isEqualToString:APP_URL_SCHEME]) {
+        NSString *urlString = [url absoluteString];
+        NSString *code = [urlString substringFromIndex:[NSString stringWithFormat:@"%@?code=", APP_CALLBACK_URI].length];
+        
+        LoginViewController *loginVC = (LoginViewController *)self.window.rootViewController;
+        [loginVC handleAuthoriseCallback:code];
+        
+        return YES;
+    }
+    return NO;
 }
 
 @end

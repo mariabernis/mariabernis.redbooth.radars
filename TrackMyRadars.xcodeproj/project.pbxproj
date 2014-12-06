@@ -1,951 +1,738 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>146BEEA611E69DF080ACED45</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D4ABF6E65573CCF122F77923</string>
-				<string>C41AD7ED4D6A51DD4AB83475</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3436723C735ADC07AC2EE5F5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3E83AE3877BD2ED395D8AA3C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3E83AE3877BD2ED395D8AA3C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>7D0697D5B54E8B74AF3E5AB5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>8392746A1A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>839274751A2F2076008DFA0E</string>
-				<string>8392748F1A2F2076008DFA0E</string>
-				<string>839274741A2F2076008DFA0E</string>
-				<string>146BEEA611E69DF080ACED45</string>
-				<string>3436723C735ADC07AC2EE5F5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8392746B1A2F2076008DFA0E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0610</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>mariabernis</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>839274721A2F2076008DFA0E</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.1</string>
-					</dict>
-					<key>8392748B1A2F2076008DFA0E</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.1</string>
-						<key>TestTargetID</key>
-						<string>839274721A2F2076008DFA0E</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>8392746E1A2F2076008DFA0E</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>8392746A1A2F2076008DFA0E</string>
-			<key>productRefGroup</key>
-			<string>839274741A2F2076008DFA0E</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>839274721A2F2076008DFA0E</string>
-				<string>8392748B1A2F2076008DFA0E</string>
-			</array>
-		</dict>
-		<key>8392746E1A2F2076008DFA0E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>839274941A2F2076008DFA0E</string>
-				<string>839274951A2F2076008DFA0E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>8392746F1A2F2076008DFA0E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8392747F1A2F2076008DFA0E</string>
-				<string>8392747C1A2F2076008DFA0E</string>
-				<string>839274791A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>839274701A2F2076008DFA0E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8F99663B463E284415250B18</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>839274711A2F2076008DFA0E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>839274821A2F2076008DFA0E</string>
-				<string>839274871A2F2076008DFA0E</string>
-				<string>839274841A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>839274721A2F2076008DFA0E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>839274961A2F2076008DFA0E</string>
-			<key>buildPhases</key>
-			<array>
-				<string>7D0697D5B54E8B74AF3E5AB5</string>
-				<string>8392746F1A2F2076008DFA0E</string>
-				<string>839274701A2F2076008DFA0E</string>
-				<string>839274711A2F2076008DFA0E</string>
-				<string>9E5AA0B7AD38D807DD763FBD</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>TrackMyRadars</string>
-			<key>productName</key>
-			<string>TrackMyRadars</string>
-			<key>productReference</key>
-			<string>839274731A2F2076008DFA0E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>839274731A2F2076008DFA0E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>TrackMyRadars.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>839274741A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>839274731A2F2076008DFA0E</string>
-				<string>8392748C1A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274751A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8392747A1A2F2076008DFA0E</string>
-				<string>8392747B1A2F2076008DFA0E</string>
-				<string>8392747D1A2F2076008DFA0E</string>
-				<string>8392747E1A2F2076008DFA0E</string>
-				<string>839274801A2F2076008DFA0E</string>
-				<string>839274831A2F2076008DFA0E</string>
-				<string>839274851A2F2076008DFA0E</string>
-				<string>839274761A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>TrackMyRadars</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274761A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>839274771A2F2076008DFA0E</string>
-				<string>839274781A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274771A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274781A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274791A2F2076008DFA0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>839274781A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8392747A1A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8392747B1A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8392747C1A2F2076008DFA0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8392747B1A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8392747D1A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8392747E1A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8392747F1A2F2076008DFA0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8392747E1A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>839274801A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>839274811A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274811A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274821A2F2076008DFA0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>839274801A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>839274831A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274841A2F2076008DFA0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>839274831A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>839274851A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>839274861A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274861A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274871A2F2076008DFA0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>839274851A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>839274881A2F2076008DFA0E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>839274931A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>839274891A2F2076008DFA0E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8392748A1A2F2076008DFA0E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8392748B1A2F2076008DFA0E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>839274991A2F2076008DFA0E</string>
-			<key>buildPhases</key>
-			<array>
-				<string>839274881A2F2076008DFA0E</string>
-				<string>839274891A2F2076008DFA0E</string>
-				<string>8392748A1A2F2076008DFA0E</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>8392748E1A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>TrackMyRadarsTests</string>
-			<key>productName</key>
-			<string>TrackMyRadarsTests</string>
-			<key>productReference</key>
-			<string>8392748C1A2F2076008DFA0E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>8392748C1A2F2076008DFA0E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>TrackMyRadarsTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8392748D1A2F2076008DFA0E</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>8392746B1A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>839274721A2F2076008DFA0E</string>
-			<key>remoteInfo</key>
-			<string>TrackMyRadars</string>
-		</dict>
-		<key>8392748E1A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>839274721A2F2076008DFA0E</string>
-			<key>targetProxy</key>
-			<string>8392748D1A2F2076008DFA0E</string>
-		</dict>
-		<key>8392748F1A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>839274921A2F2076008DFA0E</string>
-				<string>839274901A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>TrackMyRadarsTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274901A2F2076008DFA0E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>839274911A2F2076008DFA0E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274911A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274921A2F2076008DFA0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TrackMyRadarsTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>839274931A2F2076008DFA0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>839274921A2F2076008DFA0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>839274941A2F2076008DFA0E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>839274951A2F2076008DFA0E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>839274961A2F2076008DFA0E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>839274971A2F2076008DFA0E</string>
-				<string>839274981A2F2076008DFA0E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>839274971A2F2076008DFA0E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D4ABF6E65573CCF122F77923</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>TrackMyRadars/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>839274981A2F2076008DFA0E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>C41AD7ED4D6A51DD4AB83475</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>TrackMyRadars/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>839274991A2F2076008DFA0E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8392749A1A2F2076008DFA0E</string>
-				<string>8392749B1A2F2076008DFA0E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>8392749A1A2F2076008DFA0E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>TrackMyRadarsTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>8392749B1A2F2076008DFA0E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>TrackMyRadarsTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>8F99663B463E284415250B18</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E83AE3877BD2ED395D8AA3C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9E5AA0B7AD38D807DD763FBD</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C41AD7ED4D6A51DD4AB83475</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D4ABF6E65573CCF122F77923</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>8392746B1A2F2076008DFA0E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83267B091A31E29E004591C6 /* OpenradarAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B061A31E29E004591C6 /* OpenradarAPIClient.m */; };
+		83267B0A1A31E29E004591C6 /* RedboothAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B081A31E29E004591C6 /* RedboothAPIClient.m */; };
+		83267B111A31E2AB004591C6 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B0C1A31E2AB004591C6 /* Organization.m */; };
+		83267B121A31E2AB004591C6 /* RadarTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B0E1A31E2AB004591C6 /* RadarTask.m */; };
+		83267B181A31E34D004591C6 /* OrganizationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B151A31E34D004591C6 /* OrganizationParser.m */; };
+		83267B191A31E34D004591C6 /* RadarTaskParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B171A31E34D004591C6 /* RadarTaskParser.m */; };
+		83267B201A31E38B004591C6 /* OrganizationsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B1B1A31E38B004591C6 /* OrganizationsProvider.m */; };
+		83267B211A31E38B004591C6 /* RadarsProjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B1D1A31E38B004591C6 /* RadarsProjectProvider.m */; };
+		83267B221A31E38B004591C6 /* RadarTasksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B1F1A31E38B004591C6 /* RadarTasksProvider.m */; };
+		83267B261A31E3EC004591C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B241A31E3EC004591C6 /* main.m */; };
+		83267B2D1A31E428004591C6 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B281A31E428004591C6 /* AFNetworkActivityLogger.m */; };
+		83267B2E1A31E428004591C6 /* UIColor+TrackMyRadars.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B2A1A31E428004591C6 /* UIColor+TrackMyRadars.m */; };
+		83267B2F1A31E428004591C6 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B2C1A31E428004591C6 /* UIImage+Color.m */; };
+		83267B391A31E471004591C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B311A31E471004591C6 /* LoginViewController.m */; };
+		83267B3A1A31E471004591C6 /* RadarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B331A31E471004591C6 /* RadarListViewController.m */; };
+		83267B3B1A31E471004591C6 /* WizardOpEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B361A31E471004591C6 /* WizardOpEmailViewController.m */; };
+		83267B3C1A31E471004591C6 /* WizardRbOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B381A31E471004591C6 /* WizardRbOrganizationViewController.m */; };
+		83267B4E1A31E6FA004591C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83267B4A1A31E6FA004591C6 /* LaunchScreen.xib */; };
+		83267B4F1A31E6FA004591C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83267B4C1A31E6FA004591C6 /* Main.storyboard */; };
+		83267B511A32370B004591C6 /* RedboothTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B501A32370B004591C6 /* RedboothTests.m */; };
+		83267B541A323B4F004591C6 /* MBCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B531A323B4F004591C6 /* MBCheck.m */; };
+		83267B561A324FFE004591C6 /* organizations_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B551A324FFE004591C6 /* organizations_stub.json */; };
+		83267B581A325045004591C6 /* OrganizationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B571A325045004591C6 /* OrganizationsTests.m */; };
+		83267B5A1A32564C004591C6 /* RadarTasksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B591A32564C004591C6 /* RadarTasksTests.m */; };
+		83267B5C1A325706004591C6 /* openradars_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B5B1A325706004591C6 /* openradars_stub.json */; };
+		83267B5F1A325F9A004591C6 /* RadarsProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B5E1A325F9A004591C6 /* RadarsProject.m */; };
+		83267B611A326C3C004591C6 /* redboothradars_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B601A326C3C004591C6 /* redboothradars_stub.json */; };
+		83267B641A32F691004591C6 /* RadarsProjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B631A32F691004591C6 /* RadarsProjectParser.m */; };
+		83267B661A32F6BB004591C6 /* RadarsProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B651A32F6BB004591C6 /* RadarsProjectTests.m */; };
+		83267B681A32FBFC004591C6 /* newproject_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B671A32FBFC004591C6 /* newproject_stub.json */; };
+		83267B6A1A32FC59004591C6 /* newtasklist_stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 83267B691A32FC59004591C6 /* newtasklist_stub.json */; };
+		83267B6D1A3313F4004591C6 /* RadarsImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B6C1A3313F3004591C6 /* RadarsImportManager.m */; };
+		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
+		839274841A2F2076008DFA0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839274831A2F2076008DFA0E /* Images.xcassets */; };
+		9E9BF58ED9437C5259A43EC5 /* libPods-TrackMyRadars.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 790A2C9BEB688FD202909488 /* libPods-TrackMyRadars.a */; };
+		E90008A80225BEA412A71557 /* libPods-TrackMyRadarsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29D9D023CBA9A69D5F9C080 /* libPods-TrackMyRadarsTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8392748D1A2F2076008DFA0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8392746B1A2F2076008DFA0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 839274721A2F2076008DFA0E;
+			remoteInfo = TrackMyRadars;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E529D0A7199C3AFE5F7F747 /* Pods-TrackMyRadarsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyRadarsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMyRadarsTests/Pods-TrackMyRadarsTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E83AE3877BD2ED395D8AA3C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D6AFCC6FBA1EFB938CFEBC /* Pods-TrackMyRadarsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyRadarsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMyRadarsTests/Pods-TrackMyRadarsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		790A2C9BEB688FD202909488 /* libPods-TrackMyRadars.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackMyRadars.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83267B051A31E29E004591C6 /* OpenradarAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenradarAPIClient.h; sourceTree = "<group>"; };
+		83267B061A31E29E004591C6 /* OpenradarAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenradarAPIClient.m; sourceTree = "<group>"; };
+		83267B071A31E29E004591C6 /* RedboothAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedboothAPIClient.h; sourceTree = "<group>"; };
+		83267B081A31E29E004591C6 /* RedboothAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedboothAPIClient.m; sourceTree = "<group>"; };
+		83267B0B1A31E2AB004591C6 /* Organization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
+		83267B0C1A31E2AB004591C6 /* Organization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
+		83267B0D1A31E2AB004591C6 /* RadarTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTask.h; sourceTree = "<group>"; };
+		83267B0E1A31E2AB004591C6 /* RadarTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTask.m; sourceTree = "<group>"; };
+		83267B141A31E34D004591C6 /* OrganizationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationParser.h; sourceTree = "<group>"; };
+		83267B151A31E34D004591C6 /* OrganizationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationParser.m; sourceTree = "<group>"; };
+		83267B161A31E34D004591C6 /* RadarTaskParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTaskParser.h; sourceTree = "<group>"; };
+		83267B171A31E34D004591C6 /* RadarTaskParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTaskParser.m; sourceTree = "<group>"; };
+		83267B1A1A31E38B004591C6 /* OrganizationsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizationsProvider.h; sourceTree = "<group>"; };
+		83267B1B1A31E38B004591C6 /* OrganizationsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationsProvider.m; sourceTree = "<group>"; };
+		83267B1C1A31E38B004591C6 /* RadarsProjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProjectProvider.h; sourceTree = "<group>"; };
+		83267B1D1A31E38B004591C6 /* RadarsProjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProjectProvider.m; sourceTree = "<group>"; };
+		83267B1E1A31E38B004591C6 /* RadarTasksProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTasksProvider.h; sourceTree = "<group>"; };
+		83267B1F1A31E38B004591C6 /* RadarTasksProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTasksProvider.m; sourceTree = "<group>"; };
+		83267B231A31E3EC004591C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83267B241A31E3EC004591C6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83267B271A31E428004591C6 /* AFNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityLogger.h; sourceTree = "<group>"; };
+		83267B281A31E428004591C6 /* AFNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityLogger.m; sourceTree = "<group>"; };
+		83267B291A31E428004591C6 /* UIColor+TrackMyRadars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TrackMyRadars.h"; sourceTree = "<group>"; };
+		83267B2A1A31E428004591C6 /* UIColor+TrackMyRadars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TrackMyRadars.m"; sourceTree = "<group>"; };
+		83267B2B1A31E428004591C6 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		83267B2C1A31E428004591C6 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		83267B301A31E471004591C6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		83267B311A31E471004591C6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		83267B321A31E471004591C6 /* RadarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarListViewController.h; sourceTree = "<group>"; };
+		83267B331A31E471004591C6 /* RadarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarListViewController.m; sourceTree = "<group>"; };
+		83267B341A31E471004591C6 /* WizardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardDelegate.h; sourceTree = "<group>"; };
+		83267B351A31E471004591C6 /* WizardOpEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardOpEmailViewController.h; sourceTree = "<group>"; };
+		83267B361A31E471004591C6 /* WizardOpEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardOpEmailViewController.m; sourceTree = "<group>"; };
+		83267B371A31E471004591C6 /* WizardRbOrganizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WizardRbOrganizationViewController.h; sourceTree = "<group>"; };
+		83267B381A31E471004591C6 /* WizardRbOrganizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WizardRbOrganizationViewController.m; sourceTree = "<group>"; };
+		83267B4B1A31E6FA004591C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		83267B4D1A31E6FA004591C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83267B501A32370B004591C6 /* RedboothTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedboothTests.m; sourceTree = "<group>"; };
+		83267B521A323B4F004591C6 /* MBCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCheck.h; sourceTree = "<group>"; };
+		83267B531A323B4F004591C6 /* MBCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCheck.m; sourceTree = "<group>"; };
+		83267B551A324FFE004591C6 /* organizations_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = organizations_stub.json; sourceTree = "<group>"; };
+		83267B571A325045004591C6 /* OrganizationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizationsTests.m; sourceTree = "<group>"; };
+		83267B591A32564C004591C6 /* RadarTasksTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTasksTests.m; sourceTree = "<group>"; };
+		83267B5B1A325706004591C6 /* openradars_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openradars_stub.json; sourceTree = "<group>"; };
+		83267B5D1A325F9A004591C6 /* RadarsProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProject.h; sourceTree = "<group>"; };
+		83267B5E1A325F9A004591C6 /* RadarsProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProject.m; sourceTree = "<group>"; };
+		83267B601A326C3C004591C6 /* redboothradars_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = redboothradars_stub.json; sourceTree = "<group>"; };
+		83267B621A32F691004591C6 /* RadarsProjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsProjectParser.h; sourceTree = "<group>"; };
+		83267B631A32F691004591C6 /* RadarsProjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProjectParser.m; sourceTree = "<group>"; };
+		83267B651A32F6BB004591C6 /* RadarsProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsProjectTests.m; sourceTree = "<group>"; };
+		83267B671A32FBFC004591C6 /* newproject_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newproject_stub.json; sourceTree = "<group>"; };
+		83267B691A32FC59004591C6 /* newtasklist_stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newtasklist_stub.json; sourceTree = "<group>"; };
+		83267B6B1A3313F3004591C6 /* RadarsImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarsImportManager.h; sourceTree = "<group>"; };
+		83267B6C1A3313F3004591C6 /* RadarsImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarsImportManager.m; sourceTree = "<group>"; };
+		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8392747A1A2F2076008DFA0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8392747B1A2F2076008DFA0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		839274831A2F2076008DFA0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackMyRadarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		839274911A2F2076008DFA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98D047F4CC18B9B2CE295181 /* Pods-TrackMyRadars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyRadars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars.debug.xcconfig"; sourceTree = "<group>"; };
+		D29D9D023CBA9A69D5F9C080 /* libPods-TrackMyRadarsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackMyRadarsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98073A7B6FC829ABD718ABE /* Pods-TrackMyRadars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyRadars.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		839274701A2F2076008DFA0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E9BF58ED9437C5259A43EC5 /* libPods-TrackMyRadars.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		839274891A2F2076008DFA0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90008A80225BEA412A71557 /* libPods-TrackMyRadarsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		146BEEA611E69DF080ACED45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44D6AFCC6FBA1EFB938CFEBC /* Pods-TrackMyRadarsTests.debug.xcconfig */,
+				2E529D0A7199C3AFE5F7F747 /* Pods-TrackMyRadarsTests.release.xcconfig */,
+				98D047F4CC18B9B2CE295181 /* Pods-TrackMyRadars.debug.xcconfig */,
+				D98073A7B6FC829ABD718ABE /* Pods-TrackMyRadars.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3436723C735ADC07AC2EE5F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E83AE3877BD2ED395D8AA3C /* libPods.a */,
+				790A2C9BEB688FD202909488 /* libPods-TrackMyRadars.a */,
+				D29D9D023CBA9A69D5F9C080 /* libPods-TrackMyRadarsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8390B5C81A306FE5003F97A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83267B0B1A31E2AB004591C6 /* Organization.h */,
+				83267B0C1A31E2AB004591C6 /* Organization.m */,
+				83267B0D1A31E2AB004591C6 /* RadarTask.h */,
+				83267B0E1A31E2AB004591C6 /* RadarTask.m */,
+				83267B5D1A325F9A004591C6 /* RadarsProject.h */,
+				83267B5E1A325F9A004591C6 /* RadarsProject.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8390B5D61A30E8AD003F97A5 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				83267B141A31E34D004591C6 /* OrganizationParser.h */,
+				83267B151A31E34D004591C6 /* OrganizationParser.m */,
+				83267B621A32F691004591C6 /* RadarsProjectParser.h */,
+				83267B631A32F691004591C6 /* RadarsProjectParser.m */,
+				83267B161A31E34D004591C6 /* RadarTaskParser.h */,
+				83267B171A31E34D004591C6 /* RadarTaskParser.m */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		8390B5DD1A30EF81003F97A5 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				83267B6B1A3313F3004591C6 /* RadarsImportManager.h */,
+				83267B6C1A3313F3004591C6 /* RadarsImportManager.m */,
+				83267B1A1A31E38B004591C6 /* OrganizationsProvider.h */,
+				83267B1B1A31E38B004591C6 /* OrganizationsProvider.m */,
+				83267B1C1A31E38B004591C6 /* RadarsProjectProvider.h */,
+				83267B1D1A31E38B004591C6 /* RadarsProjectProvider.m */,
+				83267B1E1A31E38B004591C6 /* RadarTasksProvider.h */,
+				83267B1F1A31E38B004591C6 /* RadarTasksProvider.m */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		8392746A1A2F2076008DFA0E = {
+			isa = PBXGroup;
+			children = (
+				839274751A2F2076008DFA0E /* TrackMyRadars */,
+				8392748F1A2F2076008DFA0E /* TrackMyRadarsTests */,
+				839274741A2F2076008DFA0E /* Products */,
+				146BEEA611E69DF080ACED45 /* Pods */,
+				3436723C735ADC07AC2EE5F5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		839274741A2F2076008DFA0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				839274731A2F2076008DFA0E /* TrackMyRadars.app */,
+				8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		839274751A2F2076008DFA0E /* TrackMyRadars */ = {
+			isa = PBXGroup;
+			children = (
+				8392747A1A2F2076008DFA0E /* AppDelegate.h */,
+				8392747B1A2F2076008DFA0E /* AppDelegate.m */,
+				839274A01A2F7D14008DFA0E /* Services */,
+				8390B5DD1A30EF81003F97A5 /* Providers */,
+				8390B5D61A30E8AD003F97A5 /* Parsers */,
+				8390B5C81A306FE5003F97A5 /* Models */,
+				839274AB1A2FC85E008DFA0E /* ViewControllers */,
+				839274AA1A2FC843008DFA0E /* Utils */,
+				839274AC1A2FC872008DFA0E /* Views */,
+				839274831A2F2076008DFA0E /* Images.xcassets */,
+				839274761A2F2076008DFA0E /* Supporting Files */,
+			);
+			path = TrackMyRadars;
+			sourceTree = "<group>";
+		};
+		839274761A2F2076008DFA0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83267B231A31E3EC004591C6 /* Info.plist */,
+				83267B241A31E3EC004591C6 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8392748F1A2F2076008DFA0E /* TrackMyRadarsTests */ = {
+			isa = PBXGroup;
+			children = (
+				83267B501A32370B004591C6 /* RedboothTests.m */,
+				83267B571A325045004591C6 /* OrganizationsTests.m */,
+				83267B591A32564C004591C6 /* RadarTasksTests.m */,
+				83267B651A32F6BB004591C6 /* RadarsProjectTests.m */,
+				83267B5B1A325706004591C6 /* openradars_stub.json */,
+				83267B671A32FBFC004591C6 /* newproject_stub.json */,
+				83267B691A32FC59004591C6 /* newtasklist_stub.json */,
+				83267B601A326C3C004591C6 /* redboothradars_stub.json */,
+				83267B551A324FFE004591C6 /* organizations_stub.json */,
+				839274901A2F2076008DFA0E /* Supporting Files */,
+			);
+			path = TrackMyRadarsTests;
+			sourceTree = "<group>";
+		};
+		839274901A2F2076008DFA0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				839274911A2F2076008DFA0E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		839274A01A2F7D14008DFA0E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				83267B051A31E29E004591C6 /* OpenradarAPIClient.h */,
+				83267B061A31E29E004591C6 /* OpenradarAPIClient.m */,
+				83267B071A31E29E004591C6 /* RedboothAPIClient.h */,
+				83267B081A31E29E004591C6 /* RedboothAPIClient.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		839274AA1A2FC843008DFA0E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				83267B271A31E428004591C6 /* AFNetworkActivityLogger.h */,
+				83267B281A31E428004591C6 /* AFNetworkActivityLogger.m */,
+				83267B521A323B4F004591C6 /* MBCheck.h */,
+				83267B531A323B4F004591C6 /* MBCheck.m */,
+				83267B291A31E428004591C6 /* UIColor+TrackMyRadars.h */,
+				83267B2A1A31E428004591C6 /* UIColor+TrackMyRadars.m */,
+				83267B2B1A31E428004591C6 /* UIImage+Color.h */,
+				83267B2C1A31E428004591C6 /* UIImage+Color.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		839274AB1A2FC85E008DFA0E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				83267B301A31E471004591C6 /* LoginViewController.h */,
+				83267B311A31E471004591C6 /* LoginViewController.m */,
+				83267B321A31E471004591C6 /* RadarListViewController.h */,
+				83267B331A31E471004591C6 /* RadarListViewController.m */,
+				83267B341A31E471004591C6 /* WizardDelegate.h */,
+				83267B351A31E471004591C6 /* WizardOpEmailViewController.h */,
+				83267B361A31E471004591C6 /* WizardOpEmailViewController.m */,
+				83267B371A31E471004591C6 /* WizardRbOrganizationViewController.h */,
+				83267B381A31E471004591C6 /* WizardRbOrganizationViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		839274AC1A2FC872008DFA0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83267B4C1A31E6FA004591C6 /* Main.storyboard */,
+				83267B4A1A31E6FA004591C6 /* LaunchScreen.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		839274721A2F2076008DFA0E /* TrackMyRadars */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 839274961A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadars" */;
+			buildPhases = (
+				7D0697D5B54E8B74AF3E5AB5 /* Check Pods Manifest.lock */,
+				8392746F1A2F2076008DFA0E /* Sources */,
+				839274701A2F2076008DFA0E /* Frameworks */,
+				839274711A2F2076008DFA0E /* Resources */,
+				9E5AA0B7AD38D807DD763FBD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrackMyRadars;
+			productName = TrackMyRadars;
+			productReference = 839274731A2F2076008DFA0E /* TrackMyRadars.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8392748B1A2F2076008DFA0E /* TrackMyRadarsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 839274991A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadarsTests" */;
+			buildPhases = (
+				9281F1E2EF2A6C126FC16F6B /* Check Pods Manifest.lock */,
+				839274881A2F2076008DFA0E /* Sources */,
+				839274891A2F2076008DFA0E /* Frameworks */,
+				8392748A1A2F2076008DFA0E /* Resources */,
+				3092815ED06402BB66EB95B6 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8392748E1A2F2076008DFA0E /* PBXTargetDependency */,
+			);
+			name = TrackMyRadarsTests;
+			productName = TrackMyRadarsTests;
+			productReference = 8392748C1A2F2076008DFA0E /* TrackMyRadarsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8392746B1A2F2076008DFA0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = mariabernis;
+				TargetAttributes = {
+					839274721A2F2076008DFA0E = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					8392748B1A2F2076008DFA0E = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 839274721A2F2076008DFA0E;
+					};
+				};
+			};
+			buildConfigurationList = 8392746E1A2F2076008DFA0E /* Build configuration list for PBXProject "TrackMyRadars" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8392746A1A2F2076008DFA0E;
+			productRefGroup = 839274741A2F2076008DFA0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				839274721A2F2076008DFA0E /* TrackMyRadars */,
+				8392748B1A2F2076008DFA0E /* TrackMyRadarsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		839274711A2F2076008DFA0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83267B4F1A31E6FA004591C6 /* Main.storyboard in Resources */,
+				83267B4E1A31E6FA004591C6 /* LaunchScreen.xib in Resources */,
+				839274841A2F2076008DFA0E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8392748A1A2F2076008DFA0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83267B5C1A325706004591C6 /* openradars_stub.json in Resources */,
+				83267B611A326C3C004591C6 /* redboothradars_stub.json in Resources */,
+				83267B681A32FBFC004591C6 /* newproject_stub.json in Resources */,
+				83267B561A324FFE004591C6 /* organizations_stub.json in Resources */,
+				83267B6A1A32FC59004591C6 /* newtasklist_stub.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3092815ED06402BB66EB95B6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackMyRadarsTests/Pods-TrackMyRadarsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D0697D5B54E8B74AF3E5AB5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9281F1E2EF2A6C126FC16F6B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E5AA0B7AD38D807DD763FBD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackMyRadars/Pods-TrackMyRadars-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8392746F1A2F2076008DFA0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83267B0A1A31E29E004591C6 /* RedboothAPIClient.m in Sources */,
+				83267B5F1A325F9A004591C6 /* RadarsProject.m in Sources */,
+				83267B2D1A31E428004591C6 /* AFNetworkActivityLogger.m in Sources */,
+				83267B091A31E29E004591C6 /* OpenradarAPIClient.m in Sources */,
+				8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */,
+				83267B201A31E38B004591C6 /* OrganizationsProvider.m in Sources */,
+				83267B261A31E3EC004591C6 /* main.m in Sources */,
+				83267B391A31E471004591C6 /* LoginViewController.m in Sources */,
+				83267B541A323B4F004591C6 /* MBCheck.m in Sources */,
+				83267B191A31E34D004591C6 /* RadarTaskParser.m in Sources */,
+				83267B3A1A31E471004591C6 /* RadarListViewController.m in Sources */,
+				83267B641A32F691004591C6 /* RadarsProjectParser.m in Sources */,
+				83267B111A31E2AB004591C6 /* Organization.m in Sources */,
+				83267B121A31E2AB004591C6 /* RadarTask.m in Sources */,
+				83267B3C1A31E471004591C6 /* WizardRbOrganizationViewController.m in Sources */,
+				83267B6D1A3313F4004591C6 /* RadarsImportManager.m in Sources */,
+				83267B221A31E38B004591C6 /* RadarTasksProvider.m in Sources */,
+				83267B211A31E38B004591C6 /* RadarsProjectProvider.m in Sources */,
+				83267B3B1A31E471004591C6 /* WizardOpEmailViewController.m in Sources */,
+				83267B2F1A31E428004591C6 /* UIImage+Color.m in Sources */,
+				83267B181A31E34D004591C6 /* OrganizationParser.m in Sources */,
+				83267B2E1A31E428004591C6 /* UIColor+TrackMyRadars.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		839274881A2F2076008DFA0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83267B581A325045004591C6 /* OrganizationsTests.m in Sources */,
+				83267B5A1A32564C004591C6 /* RadarTasksTests.m in Sources */,
+				83267B661A32F6BB004591C6 /* RadarsProjectTests.m in Sources */,
+				83267B511A32370B004591C6 /* RedboothTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8392748E1A2F2076008DFA0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 839274721A2F2076008DFA0E /* TrackMyRadars */;
+			targetProxy = 8392748D1A2F2076008DFA0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83267B4A1A31E6FA004591C6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83267B4B1A31E6FA004591C6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		83267B4C1A31E6FA004591C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83267B4D1A31E6FA004591C6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		839274941A2F2076008DFA0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		839274951A2F2076008DFA0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		839274971A2F2076008DFA0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98D047F4CC18B9B2CE295181 /* Pods-TrackMyRadars.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "TrackMyRadars/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		839274981A2F2076008DFA0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D98073A7B6FC829ABD718ABE /* Pods-TrackMyRadars.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "TrackMyRadars/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8392749A1A2F2076008DFA0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44D6AFCC6FBA1EFB938CFEBC /* Pods-TrackMyRadarsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrackMyRadarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars";
+			};
+			name = Debug;
+		};
+		8392749B1A2F2076008DFA0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E529D0A7199C3AFE5F7F747 /* Pods-TrackMyRadarsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrackMyRadarsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackMyRadars.app/TrackMyRadars";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8392746E1A2F2076008DFA0E /* Build configuration list for PBXProject "TrackMyRadars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839274941A2F2076008DFA0E /* Debug */,
+				839274951A2F2076008DFA0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		839274961A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839274971A2F2076008DFA0E /* Debug */,
+				839274981A2F2076008DFA0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		839274991A2F2076008DFA0E /* Build configuration list for PBXNativeTarget "TrackMyRadarsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8392749A1A2F2076008DFA0E /* Debug */,
+				8392749B1A2F2076008DFA0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8392746B1A2F2076008DFA0E /* Project object */;
+}

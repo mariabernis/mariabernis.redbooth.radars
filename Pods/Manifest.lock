@@ -22,17 +22,20 @@ PODS:
     - AFNetworking/NSURLSession
   - GROAuth2SessionManager (0.2.3):
     - AFNetworking (~> 2.4.1)
+  - Kiwi (2.3.1)
   - PQFCustomLoaders (0.0.1):
     - UIColor+FlatColors
   - UIColor+FlatColors (0.0.2)
 
 DEPENDENCIES:
   - GROAuth2SessionManager (~> 0.2)
+  - Kiwi
   - PQFCustomLoaders
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   GROAuth2SessionManager: d40e386b9e865806687b4b818964efb3ac6db952
+  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   PQFCustomLoaders: 3f59916dce73c721a823a5bb21be28305329e775
   UIColor+FlatColors: 15506ef6472e26a751033f2f2469283800bcb906
 
