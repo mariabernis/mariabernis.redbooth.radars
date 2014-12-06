@@ -58,22 +58,24 @@
             }
             return;
         }
+                                           
+        if (tempContent) {
+            tempContent(radars);
+        }
         
-        [self.projectsProvider newRadarsProjectWithOrganizationId:self.organizationId
-                                                       completion:^(RadarsProject *project, NSError *error) {
+        [self.projectsProvider newRadarsProjectWithOrganizationId:self.organizationId completion:^(RadarsProject *project, NSError *error) {
             if (error) {
                 if (completion) {
                     completion(nil, error);
                 }
                 return;
             }
-                                                           
-            [self.tasksProvider postTasksForOpenradars:radars inProject:project.radarsProjectId inTaskList:project.radarsTaskListId progress:^(NSUInteger index, RadarTask *importedRadar) {
+            
+            [self.tasksProvider postTasksForOpenradars:radars inProject:project progress:^(NSUInteger index, RadarTask *importedRadar) {
                 
                 if (progress) {
                     progress(index, importedRadar);
                 }
-                
             } completion:^(NSArray *importedRadars, NSError *error) {
                 
                 if (error) {

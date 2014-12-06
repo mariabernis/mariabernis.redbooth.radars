@@ -46,7 +46,8 @@
 - (UIViewController *)initialViewControllerForStoryboard:(UIStoryboard *)storyboard {
     UIViewController *controller = nil;
     if ([RedboothAPIClient sharedInstance].isAuthorised) {
-        controller = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([RadarListViewController class])];
+//        UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"RadarListNav"];
+        controller = [storyboard instantiateViewControllerWithIdentifier:@"RadarListNav"];
     } else {
         controller = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
     }

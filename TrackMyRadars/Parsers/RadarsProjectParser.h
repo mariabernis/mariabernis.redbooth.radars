@@ -13,7 +13,7 @@
 
 + (NSInteger)projectIdWithJSONInfo:(NSDictionary *)info;
 + (RadarsProject *)projectWithOpUser:(NSString *)email rbTasklistJSONInfo:(NSDictionary *)tasklistInfo;
-+ (NSDictionary *)rbParametersWithOrganizationId:(NSInteger)organizationId;
++ (NSDictionary *)rbProjectParametersWithOrganizationId:(NSInteger)organizationId;
 + (NSDictionary *)rbTasklistParametersWithProjectId:(NSInteger)projectId;
 
 @end

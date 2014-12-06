@@ -11,10 +11,17 @@
 @class RadarTask, RadarsProject;
 @interface RadarTaskParser : NSObject
 
+// Openradar fetch
 + (NSArray *)radarTasksWithOPArray:(NSArray *)array;
 + (RadarTask *)radarTaskWithOPInfo:(NSDictionary *)info;
-+ (NSDictionary *)rbParametersWithRadarTask:(RadarTask *)radar
-                            andRadarProject:(RadarsProject *)project;
-+ (NSArray *)radarTasksWithRBArray:(NSArray *)array;
 
+// Redbooth fetch
++ (NSArray *)radarTasksWithRBArray:(NSArray *)array;
++ (RadarTask *)radarTaskWithRBInfo:(NSDictionary *)info;
+
++ (NSDictionary *)rbGetTasksParametersWithProject:(RadarsProject *)project;
+
+// Redbooth post
++ (NSDictionary *)rbPostTaskParametersWithRadarTask:(RadarTask *)radar
+                                    andRadarProject:(RadarsProject *)project;
 @end

@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class RadarTask;
+@class RadarTask, RadarsProject;
 @interface RadarTasksProvider : NSObject
 
 - (void)fetchOpenradarsWithOPUser:(NSString *)opUser
                        completion:(void(^)(NSArray *radars, NSError *error))completion;
+- (void)fetchRBRadarsWithProject:(RadarsProject *)project
+                      completion:(void(^)(NSArray *radars, NSError *error))completion;
+
 - (void)postTasksForOpenradars:(NSArray *)radars
-                     inProject:(NSInteger)projectId
-                    inTaskList:(NSInteger)taskListId
+                     inProject:(RadarsProject *)project
                       progress:(void(^)(NSUInteger index, RadarTask *importedRadar))progress
                     completion:(void(^)(NSArray *importedRadars, NSError *error))completion;
 @end

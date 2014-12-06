@@ -50,7 +50,9 @@
                                                        NSLog(@"😱 Auth error: %@", error);
                                                        return;
                                                    }
-                                                   RadarListViewController *radarListVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([RadarListViewController class])];
+                                                   
+                                                   UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"RadarListNav"];
+                                                   RadarListViewController *radarListVC = (RadarListViewController *)[nav topViewController];
                                                    radarListVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
                                                    [self presentViewController:radarListVC animated:YES completion:nil];
                                                    

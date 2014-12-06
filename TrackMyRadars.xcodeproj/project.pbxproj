@@ -184,10 +184,10 @@
 			children = (
 				83267B141A31E34D004591C6 /* OrganizationParser.h */,
 				83267B151A31E34D004591C6 /* OrganizationParser.m */,
-				83267B161A31E34D004591C6 /* RadarTaskParser.h */,
-				83267B171A31E34D004591C6 /* RadarTaskParser.m */,
 				83267B621A32F691004591C6 /* RadarsProjectParser.h */,
 				83267B631A32F691004591C6 /* RadarsProjectParser.m */,
+				83267B161A31E34D004591C6 /* RadarTaskParser.h */,
+				83267B171A31E34D004591C6 /* RadarTaskParser.m */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";

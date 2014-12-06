@@ -65,6 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="355" y="396"/>
         </scene>
         <!--Radar List View Controller-->
         <scene sceneID="yU5-se-WAc">
@@ -81,6 +82,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="StD-UO-5fv">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RadarCell" id="vi5-Eu-6DP">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vi5-Eu-6DP" id="g8N-PE-mVn">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UW6-wf-Wp6" userLabel="ImportView">
                                 <rect key="frame" x="25" y="225" width="550" height="117"/>
@@ -127,13 +136,15 @@
                             <constraint firstItem="StD-UO-5fv" firstAttribute="leading" secondItem="MZb-Px-kte" secondAttribute="leading" id="ubi-13-AdX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ucx-3X-DTY"/>
                     <connections>
                         <outlet property="noImportView" destination="UW6-wf-Wp6" id="Qoq-wX-u4t"/>
+                        <outlet property="radarsTableView" destination="StD-UO-5fv" id="wr5-kc-oLA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fdc-Fg-gTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="490" y="1079"/>
+            <point key="canvasLocation" x="1040" y="1079"/>
         </scene>
         <!--Import radars-->
         <scene sceneID="Mm8-gJ-nMD">
@@ -211,7 +222,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1907" y="1079"/>
+            <point key="canvasLocation" x="1040" y="1771"/>
         </scene>
         <!--Wizard Rb Organization View Controller-->
         <scene sceneID="ZKy-bH-GRA">
@@ -292,7 +303,7 @@ the radars project?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETS-xG-Mc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="1079"/>
+            <point key="canvasLocation" x="1751" y="1771"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j5B-GC-UvT">
@@ -310,7 +321,25 @@ the radars project?</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yH-7O-gN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="1079"/>
+            <point key="canvasLocation" x="355" y="1771"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ENs-3h-tmi">
+            <objects>
+                <navigationController storyboardIdentifier="RadarListNav" automaticallyAdjustsScrollViewInsets="NO" id="ZvX-g6-Hg9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w27-9x-yXa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vOw-kZ-t51" kind="relationship" relationship="rootViewController" id="GF7-6t-2rV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amk-SX-8hA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="1073"/>
         </scene>
     </scenes>
     <resources>

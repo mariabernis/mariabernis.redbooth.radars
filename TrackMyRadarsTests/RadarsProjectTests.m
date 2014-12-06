@@ -9,7 +9,7 @@ describe(@"When creating the redbooth project for Openradar user 'maria@email.co
     
     context(@"When posting a new project in Organization with id '1234'", ^{
         
-        NSDictionary *projectarams = [RadarsProjectParser rbParametersWithOrganizationId:1234];
+        NSDictionary *projectarams = [RadarsProjectParser rbProjectParametersWithOrganizationId:1234];
         
         it(@"Should generate Redbooth API parameter: 'organization_id' as a number 1234", ^{
             NSNumber *organizId = projectarams[@"organization_id"];

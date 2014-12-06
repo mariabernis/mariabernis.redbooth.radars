@@ -21,17 +21,31 @@ describe(@"When receiving array of OpenRadar radars", ^{
             [[theValue(allRadars.count) should] equal:@13];
         });
         
-        it(@"Should contain the radar number '15394622' with title 'SLComposeViewController hides Twitter auth errors'", ^{
+        context(@"For radar number '15394622'", ^{
             
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"radarNumber = %@", @"15394622"];
             NSArray *filtered = [allRadars filteredArrayUsingPredicate:predicate];
-            [[theValue(filtered.count) should] equal:@1];
             
-            RadarTask *twitterError = filtered[0];
-            [[twitterError.radarNumber should] equal:@"15394622"];
-            [[twitterError.radarTitle should] equal:@"SLComposeViewController hides Twitter auth errors"];
+            it(@"The array should contain the radar number '15394622'", ^{
+                
+                [[theValue(filtered.count) should] equal:@1];
+            });
             
+            it(@"The radar number '15394622' should have title 'SLComposeViewController hides Twitter auth errors'", ^{
+                
+                RadarTask *twitterError = filtered[0];
+                [[twitterError.radarTitle should] equal:@"SLComposeViewController hides Twitter auth errors"];
+                
+            });
+            
+            it(@"The radar number '15394622' should indicate it is not yet imported to Redbooth", ^{
+                
+                RadarTask *twitterError = filtered[0];
+                [[theValue(twitterError.isImported) should] equal:@NO];
+                
+            });
         });
+
     });
     
     context(@"Importing a radar number '15394622' into a redbooth task", ^{
@@ -44,7 +58,8 @@ describe(@"When receiving array of OpenRadar radars", ^{
             RadarsProject *project = [[RadarsProject alloc] init];
             project.radarsProjectId = 1234;
             project.radarsTaskListId = 2222;
-            NSDictionary *taskParams = [RadarTaskParser rbParametersWithRadarTask:notImportedRadar andRadarProject:project];
+            NSDictionary *taskParams = [RadarTaskParser rbPostTaskParametersWithRadarTask:notImportedRadar
+                                                                          andRadarProject:project];
             
             it(@"Should generate Redbooth API parameter: 'project_id' as a number 1234", ^{
                 NSNumber *projId = taskParams[@"project_id"];
@@ -104,17 +119,31 @@ describe(@"When receiving array of Redbooth radar tasks", ^{
             [[theValue(allRadars.count) should] equal:@4];
         });
         
-        it(@"Should contain the task with id '15865431' with title 'SLComposeViewController hides Twitter auth errors'", ^{
+        context(@"For the radar with id '15865431'", ^{
             
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"taskId = %@", @15865431];
             NSArray *filtered = [allRadars filteredArrayUsingPredicate:predicate];
-            [[theValue(filtered.count) should] equal:@1];
             
-            RadarTask *twitterError = filtered[0];
-            [[theValue(twitterError.taskId) should] equal:@15865431];
-            [[twitterError.radarTitle should] equal:@"SLComposeViewController hides Twitter auth errors"];
+            it(@"The array should contain the radar with id '15865431'", ^{
+                
+                [[theValue(filtered.count) should] equal:@1];
+            });
             
+            it(@"The radar with id '15865431' should have title 'SLComposeViewController hides Twitter auth errors'", ^{
+                
+                RadarTask *twitterError = filtered[0];
+                [[twitterError.radarTitle should] equal:@"SLComposeViewController hides Twitter auth errors"];
+                
+            });
+            
+            it(@"The radar with id '15865431' should indicate it is imported to Redbooth", ^{
+                
+                RadarTask *twitterError = filtered[0];
+                [[theValue(twitterError.isImported) should] equal:@YES];
+                
+            });
         });
+
     });
     
 });

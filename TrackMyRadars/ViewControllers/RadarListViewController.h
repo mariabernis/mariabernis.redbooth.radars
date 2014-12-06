@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WizardDelegate.h"
 
-@interface RadarListViewController : UIViewController
+@interface RadarListViewController : UIViewController<WizardDelegate>
 
 @end

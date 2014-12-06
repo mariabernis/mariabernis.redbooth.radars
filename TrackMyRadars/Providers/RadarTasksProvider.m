@@ -29,16 +29,41 @@
                      }
                  }
                  failure:^(NSURLSessionDataTask *task, NSError *error) {
-                     NSLog(@"😱 Error fetching radars: %@", error);
+                     
+                     NSLog(@"😱 Error fetching openradars: %@", error);
                      if (completion) {
                          completion(nil, error);
                      }
                  }];
 }
 
+- (void)fetchRBRadarsWithProject:(RadarsProject *)project
+                      completion:(void(^)(NSArray *radars, NSError *error))completion {
+    
+    RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
+    
+    NSDictionary *tasksParams = [RadarTaskParser rbGetTasksParametersWithProject:project];
+    [redboothClient GET:RB_PATH_TASK
+             parameters:tasksParams
+                success:^(NSURLSessionDataTask *task, id responseObject) {
+                    
+                    NSArray *results = (NSArray *)responseObject;
+                    NSArray *radarTasks = [RadarTaskParser radarTasksWithRBArray:results];
+                    if (completion) {
+                        completion(radarTasks, nil);
+                    }
+                }
+                failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    
+                    NSLog(@"😱 Error fetching rb tasks: %@", error);
+                    if (completion) {
+                        completion(nil, error);
+                    }
+                }];
+}
+
 - (void)postTasksForOpenradars:(NSArray *)radars
-                     inProject:(NSInteger)projectId
-                    inTaskList:(NSInteger)taskListId
+                     inProject:(RadarsProject *)project
                       progress:(void(^)(NSUInteger index, RadarTask *importedRadar))progress
                     completion:(void(^)(NSArray *importedRadars, NSError *error))completion {
     
@@ -50,29 +75,26 @@
     [radars enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
         RadarTask *radar = (RadarTask *)obj;
-        NSDictionary *taskParams = @{ @"project_id"  :@(projectId),
-                                      @"task_list_id":@(taskListId),
-                                      @"name"        :radar.radarTitle,
-                                      @"description" :radar.radarDescription,
-                                      @"is_private"  :@"false"
-                                      };
+        NSDictionary *taskParams = [RadarTaskParser rbPostTaskParametersWithRadarTask:radar
+                                                                      andRadarProject:project];
         
         [redboothClient POST:RB_PATH_TASK
                   parameters:taskParams
                      success:^(NSURLSessionDataTask *task, id responseObject) {
                          
                          NSDictionary *taskInfo = (NSDictionary *)responseObject;
-                         radar.taskId = [[taskInfo objectForKey:@"id"] integerValue];
+                         RadarTask *importedRadar = [RadarTaskParser radarTaskWithRBInfo:taskInfo];
+                         importedRadar.radarNumber = radar.radarNumber;
                          NSLog(@"🌠 Task imported at index %li", (unsigned long)idx);
                          completed ++;
-//                         [imported addObject:radar];
+                         [imported addObject:importedRadar];
                          
                          if (progress) {
                              progress(idx, radar);
                          }
                          if (completed == total) {
                              if (completion) {
-                                 completion(radars, nil);
+                                 completion(imported, nil);
                              }
                          }
                      }

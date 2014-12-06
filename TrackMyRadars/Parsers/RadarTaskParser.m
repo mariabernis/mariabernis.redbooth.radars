@@ -12,6 +12,7 @@
 
 @implementation RadarTaskParser
 
+#pragma mark - Openradar fetch
 + (NSArray *)radarTasksWithOPArray:(NSArray *)array {
     NSMutableArray *items = [[NSMutableArray alloc] init];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -47,17 +48,7 @@
     return status;
 }
 
-+ (NSDictionary *)rbParametersWithRadarTask:(RadarTask *)radar andRadarProject:(RadarsProject *)project {
-    
-    NSDictionary *taskParams = @{ @"project_id"  :@(project.radarsProjectId),
-                                  @"task_list_id":@(project.radarsTaskListId),
-                                  @"name"        :radar.radarTitle,
-                                  @"description" :radar.radarDescription,
-                                  @"is_private"  :@"false"
-                                  };
-    return taskParams;
-}
-
+#pragma mark - Redbooth fetch
 + (NSArray *)radarTasksWithRBArray:(NSArray *)array {
     NSMutableArray *items = [[NSMutableArray alloc] init];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -71,7 +62,7 @@
 + (RadarTask *)radarTaskWithRBInfo:(NSDictionary *)info {
     
     RadarTask *item = [[RadarTask alloc] init];
-//    item.radarNumber = [info objectForKey:@"number"];
+    //    item.radarNumber = [info objectForKey:@"number"];
     item.taskId = [[info objectForKey:@"id"] integerValue];
     item.radarTitle = [info objectForKey:@"name"];
     item.radarDescription = [info objectForKey:@"description"];
@@ -79,5 +70,27 @@
     
     return item;
 }
+
++ (NSDictionary *)rbGetTasksParametersWithProject:(RadarsProject *)project {
+    
+    NSDictionary *taskParams = @{ @"project_id"  :@(project.radarsProjectId),
+                                  @"task_list_id":@(project.radarsTaskListId)
+                                  };
+    return taskParams;
+}
+
+#pragma mark - Redbooth post
++ (NSDictionary *)rbPostTaskParametersWithRadarTask:(RadarTask *)radar andRadarProject:(RadarsProject *)project {
+    
+    NSDictionary *taskParams = @{ @"project_id"  :@(project.radarsProjectId),
+                                  @"task_list_id":@(project.radarsTaskListId),
+                                  @"name"        :radar.radarTitle,
+                                  @"description" :radar.radarDescription,
+                                  @"is_private"  :@"false"
+                                  };
+    return taskParams;
+}
+
+
 
 @end

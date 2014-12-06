@@ -31,7 +31,7 @@
                                 completion:(void(^)(RadarsProject *project, NSError *error))completion {
     
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
-    NSDictionary *projectParams = [RadarsProjectParser rbParametersWithOrganizationId:organizationId];
+    NSDictionary *projectParams = [RadarsProjectParser rbProjectParametersWithOrganizationId:organizationId];
     
     [redboothClient POST:RB_PATH_PROJECT
               parameters:projectParams
@@ -59,6 +59,7 @@
                      
                  }
                  failure:^(NSURLSessionDataTask *task, NSError *error) {
+                     
                      NSLog(@"😱 Error creating project: %@", error);
                      completion(nil, error);
                  }];

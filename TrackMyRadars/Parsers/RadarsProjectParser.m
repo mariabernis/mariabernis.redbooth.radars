@@ -26,7 +26,7 @@
     return item;
 }
 
-+ (NSDictionary *)rbParametersWithOrganizationId:(NSInteger)organizationId {
++ (NSDictionary *)rbProjectParametersWithOrganizationId:(NSInteger)organizationId {
     
     NSDictionary *params = @{ @"name"           :@"Open radars",
                               @"organization_id":@(organizationId),
