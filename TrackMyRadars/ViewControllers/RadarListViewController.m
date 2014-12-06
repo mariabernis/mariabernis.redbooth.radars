@@ -187,7 +187,7 @@
     cell.textLabel.text = radar.radarTitle;
     
     cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    cell.textLabel.textColor = [UIColor flatAsbestosColor];
+    cell.textLabel.textColor = [UIColor flatSilverColor];
 }
 
 - (void)updateCellAtRow:(NSUInteger)row {
