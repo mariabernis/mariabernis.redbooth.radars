@@ -28,7 +28,7 @@
 
 + (NSDictionary *)rbProjectParametersWithOrganizationId:(NSInteger)organizationId {
     
-    NSDictionary *params = @{ @"name"           :@"Open radars",
+    NSDictionary *params = @{ @"name"           :@"My Open radars",
                               @"organization_id":@(organizationId),
                               @"publish_pages"  :@"false"
                               };
