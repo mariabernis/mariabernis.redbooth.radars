@@ -16,9 +16,6 @@
 @property (nonatomic, strong) NSArray *organizations; // Of Organization
 @property (nonatomic, strong) NSIndexPath *selectedIndex;
 @property (nonatomic, strong) OrganizationsProvider *organizationsProvider;
-@property (nonatomic, strong) RadarTasksProvider *radarsProvider;
-@property (nonatomic, strong) RadarsProjectProvider *projectProvider;
-@property (nonatomic, strong) NSArray *openRadars;
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITableView *organizationsTableView;
@@ -48,21 +45,6 @@
     }
     return _organizationsProvider;
 }
-
-- (RadarTasksProvider *)radarsProvider {
-    if (!_radarsProvider) {
-        _radarsProvider = [[RadarTasksProvider alloc] init];
-    }
-    return _radarsProvider;
-}
-
-- (RadarsProjectProvider *)projectProvider {
-    if (!_projectProvider) {
-        _projectProvider = [[RadarsProjectProvider alloc] init];
-    }
-    return _projectProvider;
-}
-
 
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
@@ -103,48 +85,10 @@
         Organization *selected = self.organizations[self.selectedIndex.row];
         [self.delegate wizardDidFinishWithOpEmail:self.opEmail organizationId:selected.oragnizationId];
     }
-    
-//    [self.radarsProvider fetchOpenradarsWithOPUser:self.opEmail
-//                                        completion:^(NSArray *radars, NSError *error) {
-//                                            
-//                                            if (error) {
-//                                                return;
-//                                            }
-//                                            self.openRadars = [NSArray arrayWithArray:radars];
-//                                            [self newProjectForRadars];
-//                                        }];
-    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
-/*
-- (void)newProjectForRadars {
-    
-    Organization *selected = self.organizations[self.selectedIndex.row];
-    [self.projectProvider newRadarsProjectWithOrganizationId:selected.oragnizationId
-                                                  completion:^(NSInteger projectId, NSInteger taskListId, NSError *error) {
-                                                      
-                                                      if (error) {
-                                                          return;
-                                                      }
-                                    
-                                                      [self importRadarsIntoTasksAndFinalize:projectId taskList:taskListId];
-                                                      
-                                                  }];
-}
-
-- (void)importRadarsIntoTasksAndFinalize:(NSInteger)projectId taskList:(NSInteger)taskListId {
-    [self.radarsProvider postTasksForOpenradars:self.openRadars
-                                      inProject:projectId
-                                     inTaskList:taskListId
-                                       progress:^(NSUInteger index, RadarTask *importedRadar) {
-                                           NSLog(@"🌠 Task imported at index %li", (unsigned long)index);
-                                       }
-                                     completion:^(NSArray *importedRadars, NSError *error) {
-                                         NSLog(@"🐼 Importing ended with error: %@", error);
-                                     }];
-}
-*/
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

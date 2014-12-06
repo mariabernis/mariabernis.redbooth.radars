@@ -47,14 +47,15 @@
 }
 
 - (void)importRadarsWithTemporaryContent:(void(^)(NSArray *tempRadars))tempContent
-                                progress:(void(^)(NSUInteger index, RadarTask *importedRadar))progress
-                              completion:(void(^)(NSArray *importedRadars, NSError *error))completion {
+                                progress:(void(^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock
+                                  import:(void(^)(NSUInteger index, RadarTask *importedRadar, NSError *error))importBlock
+                              completion:(void(^)(NSArray *importedRadars, NSError *error))completionBlock {
     
     [self.tasksProvider fetchOpenradarsWithOPUser:self.opEmail
                                        completion:^(NSArray *radars, NSError *error) {
         if (error) {
-            if (completion) {
-                completion(nil, error);
+            if (completionBlock) {
+                completionBlock(nil, error);
             }
             return;
         }
@@ -65,29 +66,21 @@
         
         [self.projectsProvider newRadarsProjectWithOrganizationId:self.organizationId completion:^(RadarsProject *project, NSError *error) {
             if (error) {
-                if (completion) {
-                    completion(nil, error);
+                if (completionBlock) {
+                    completionBlock(nil, error);
                 }
                 return;
             }
             
-            [self.tasksProvider postTasksForOpenradars:radars inProject:project progress:^(NSUInteger index, RadarTask *importedRadar) {
-                
-                if (progress) {
-                    progress(index, importedRadar);
-                }
-            } completion:^(NSArray *importedRadars, NSError *error) {
-                
-                if (error) {
-                    if (completion) {
-                        completion(nil, error);
-                    }
-                    return;
-                }
-                if (completion) {
-                    completion(importedRadars, error);
-                }
-            }];
+            [self.tasksProvider postTasksForOpenradars:radars
+                                             inProject:project
+                                              progress:progressBlock
+                                                import:importBlock
+                                            completion:^(NSArray *importedRadars) {
+                                                if (completionBlock) {
+                                                    completionBlock(importedRadars, nil);
+                                                }
+                                            }];
         }];
     }];
     

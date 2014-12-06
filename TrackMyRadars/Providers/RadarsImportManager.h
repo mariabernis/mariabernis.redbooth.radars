@@ -15,6 +15,7 @@
 - (instancetype)initWithOpEmail:(NSString *)opEmail andOrganizationId:(NSInteger)organizationId;
 
 - (void)importRadarsWithTemporaryContent:(void(^)(NSArray *tempRadars))tempContent
-                                progress:(void(^)(NSUInteger index, RadarTask *importedRadar))progress
-                              completion:(void(^)(NSArray *importedRadars, NSError *error))completion;
+                                progress:(void(^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock
+                                  import:(void(^)(NSUInteger index, RadarTask *importedRadar, NSError *error))importBlock
+                              completion:(void(^)(NSArray *importedRadars, NSError *error))completionBlock;
 @end

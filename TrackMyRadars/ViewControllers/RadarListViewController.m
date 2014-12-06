@@ -125,24 +125,31 @@
     [self showImportedData];
     [self.loader show];
     self.importManager = [[RadarsImportManager alloc] initWithOpEmail:email andOrganizationId:organizationId];
-    [self.importManager importRadarsWithTemporaryContent:^(NSArray *tempRadars) {
-        
-                                                    [self.radars removeAllObjects];
-                                                    [self.radars addObjectsFromArray:tempRadars];
-                                                    [self.radarsTableView reloadData];
-                                                }
-                                                progress:^(NSUInteger index, RadarTask *importedRadar) {
-                                                    
-                                                    [self.radars replaceObjectAtIndex:index withObject:importedRadar];
-                                                    [self updateCellAtRow:index];
-                                                }
-                                              completion:^(NSArray *importedRadars, NSError *error) {
-                                                  
-                                                  [self.radars removeAllObjects];
-                                                  [self.radars addObjectsFromArray:importedRadars];
-                                                  [self.radarsTableView reloadData];
-                                                  [self.loader hide];
-                                              }];
+    [self.importManager
+     importRadarsWithTemporaryContent:^(NSArray *tempRadars) {
+         
+         [self.radars removeAllObjects];
+         [self.radars addObjectsFromArray:tempRadars];
+         [self.radarsTableView reloadData];
+     }
+     progress:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
+         
+         self.loader.label.text = [NSString stringWithFormat:@"%lu of %lu imported", numberOfFinishedOperations, totalNumberOfOperations];
+     }
+     import:^(NSUInteger index, RadarTask *importedRadar, NSError *error) {
+         
+         if (!error) {
+             [self.radars replaceObjectAtIndex:index withObject:importedRadar];
+             [self updateCellAtRow:index];
+         }
+     }
+     completion:^(NSArray *importedRadars, NSError *error) {
+         
+         [self.radars removeAllObjects];
+         [self.radars addObjectsFromArray:importedRadars];
+         [self.radarsTableView reloadData];
+         [self.loader hide];
+     }];
 }
 
 #pragma mark - UITableViewDataSource
