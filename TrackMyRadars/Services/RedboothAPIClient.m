@@ -20,10 +20,6 @@
 #define KEY_REFRESH_TOKEN   @"refresh_token"
 
 
-@interface AFOAuthCredential ()
-@property (strong, readwrite, nonatomic) NSDate *expiration;
-@end
-
 @interface RedboothAPIClient ()
 @property (nonatomic, strong) AFOAuthCredential *credential;
 @end
@@ -39,6 +35,16 @@
     });
     return sharedInstance;
 }
+
+//- (instancetype)initWithSessionConfiguration:(NSURLSessionConfiguration *)configuration {
+//    self = [super initWithSessionConfiguration:configuration];
+//    if (self) {
+//        [self setServiceProviderIdentifier:[[self baseURL] host]];
+//        [self setClientID:RB_API_CLIENT];
+//        [self setSecret:RB_API_SECRET];
+//    }
+//    return self;
+//}
 
 - (id)initWithBaseURL:(NSURL *)url clientID:(NSString *)clientID secret:(NSString *)secret {
     self = [super initWithBaseURL:url clientID:clientID secret:secret];

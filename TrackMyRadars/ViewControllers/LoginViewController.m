@@ -52,9 +52,8 @@
                                                    }
                                                    
                                                    UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"RadarListNav"];
-                                                   RadarListViewController *radarListVC = (RadarListViewController *)[nav topViewController];
-                                                   radarListVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-                                                   [self presentViewController:radarListVC animated:YES completion:nil];
+                                                   nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                                                   [self presentViewController:nav animated:YES completion:nil];
                                                    
                                                }];
 }

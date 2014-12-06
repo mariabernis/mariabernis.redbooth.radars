@@ -99,6 +99,7 @@
                          }
                      }
                      failure:^(NSURLSessionDataTask *task, NSError *error) {
+                         
                          NSLog(@"😱 Error importing radar #%@: %@", radar.radarNumber, error);
                          completed ++;
                          if (completed == total) {
