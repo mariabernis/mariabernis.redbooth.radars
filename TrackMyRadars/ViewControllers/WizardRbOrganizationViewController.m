@@ -11,6 +11,7 @@
 #import "OrganizationsProvider.h"
 #import "RadarTasksProvider.h"
 #import "RadarsProjectProvider.h"
+#import "WizardStepsView.h"
 
 @interface WizardRbOrganizationViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *organizations; // Of Organization
@@ -53,6 +54,10 @@
     
     self.organizationsTableView.dataSource = self;
     self.organizationsTableView.delegate = self;
+    
+    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 80);
+    WizardStepsView *stepsView = [[WizardStepsView alloc] initWithFrame:frame step:2];
+    [self.view addSubview:stepsView];
     
     [self loadOrganizationList];
 }

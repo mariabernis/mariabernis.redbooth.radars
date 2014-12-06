@@ -9,6 +9,7 @@
 #import "WizardOpEmailViewController.h"
 #import "WizardRbOrganizationViewController.h"
 #import "MBCheck.h"
+#import "WizardStepsView.h"
 
 @interface WizardOpEmailViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *opEmailField;
@@ -23,6 +24,10 @@
     [super viewDidLoad];
     self.nextButton.enabled = NO;
     self.opEmailField.delegate = self;
+    
+    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 80);
+    WizardStepsView *stepsView = [[WizardStepsView alloc] initWithFrame:frame step:1];
+    [self.view addSubview:stepsView];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,6 +11,7 @@
 #import "RadarListViewController.h"
 #import "RedboothAPIClient.h"
 #import "MBCheck.h"
+#import "UIColor+TrackMyRadars.h"
 #import "AFNetworkActivityLogger.h"
 
 #define APP_URL_SCHEME      @"mbredbooth"
@@ -29,6 +30,8 @@
     [[AFNetworkActivityLogger sharedLogger] startLogging];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    [self customizeAppearance];
 
     UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];
     
@@ -37,6 +40,18 @@
     
     [MBCheck storeLastOpenedAppVersion];
     return YES;
+}
+
+- (void)customizeAppearance {
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor flatWetAsphaltColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor flatCloudsColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    NSDictionary *textAtt = @{ NSForegroundColorAttributeName : [UIColor flatCloudsColor] };
+    [[UINavigationBar appearance] setTitleTextAttributes:textAtt];
 }
 
 - (UIStoryboard *)mainStoryboard {
