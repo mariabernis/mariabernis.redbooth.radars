@@ -11,6 +11,7 @@
 @interface RadarsProject : NSObject
 
 @property (nonatomic, strong) NSString *opEmail;
+@property (nonatomic, strong) NSString *radarsProjectName;
 @property (nonatomic, assign) NSInteger radarsProjectId;
 @property (nonatomic, assign) NSInteger radarsTaskListId;
 

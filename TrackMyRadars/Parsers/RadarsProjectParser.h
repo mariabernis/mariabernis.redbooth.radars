@@ -12,7 +12,9 @@
 @interface RadarsProjectParser : NSObject
 
 + (NSInteger)projectIdWithJSONInfo:(NSDictionary *)info;
-+ (RadarsProject *)projectWithOpUser:(NSString *)email rbTasklistJSONInfo:(NSDictionary *)tasklistInfo;
++ (RadarsProject *)projectWithOpUser:(NSString *)email
+                         projectName:(NSString *)name
+                  rbTasklistJSONInfo:(NSDictionary *)tasklistInfo;
 + (NSDictionary *)rbProjectParametersWithName:(NSString *)name organizationId:(NSInteger)organizationId;
 + (NSDictionary *)rbTasklistParametersWithProjectId:(NSInteger)projectId;
 

@@ -43,6 +43,7 @@
 		83267B731A346FBC004591C6 /* UIButton+TrackMyRadars.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B721A346FBC004591C6 /* UIButton+TrackMyRadars.m */; };
 		83267B761A34B3A5004591C6 /* UIView+TrackMyRadars.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B751A34B3A5004591C6 /* UIView+TrackMyRadars.m */; };
 		83267B791A34C637004591C6 /* RadarTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B781A34C637004591C6 /* RadarTaskCell.m */; };
+		83267B7C1A34EE56004591C6 /* MBTagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B7B1A34EE56004591C6 /* MBTagLabel.m */; };
 		8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8392747B1A2F2076008DFA0E /* AppDelegate.m */; };
 		839274841A2F2076008DFA0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839274831A2F2076008DFA0E /* Images.xcassets */; };
 		9E9BF58ED9437C5259A43EC5 /* libPods-TrackMyRadars.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 790A2C9BEB688FD202909488 /* libPods-TrackMyRadars.a */; };
@@ -126,6 +127,8 @@
 		83267B751A34B3A5004591C6 /* UIView+TrackMyRadars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TrackMyRadars.m"; sourceTree = "<group>"; };
 		83267B771A34C637004591C6 /* RadarTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarTaskCell.h; sourceTree = "<group>"; };
 		83267B781A34C637004591C6 /* RadarTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTaskCell.m; sourceTree = "<group>"; };
+		83267B7A1A34EE56004591C6 /* MBTagLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTagLabel.h; sourceTree = "<group>"; };
+		83267B7B1A34EE56004591C6 /* MBTagLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTagLabel.m; sourceTree = "<group>"; };
 		839274731A2F2076008DFA0E /* TrackMyRadars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyRadars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8392747A1A2F2076008DFA0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8392747B1A2F2076008DFA0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -271,8 +274,8 @@
 			children = (
 				83267B501A32370B004591C6 /* RedboothTests.m */,
 				83267B571A325045004591C6 /* OrganizationsTests.m */,
-				83267B591A32564C004591C6 /* RadarTasksTests.m */,
 				83267B651A32F6BB004591C6 /* RadarsProjectTests.m */,
+				83267B591A32564C004591C6 /* RadarTasksTests.m */,
 				83267B5B1A325706004591C6 /* openradars_stub.json */,
 				83267B671A32FBFC004591C6 /* newproject_stub.json */,
 				83267B691A32FC59004591C6 /* newtasklist_stub.json */,
@@ -346,6 +349,8 @@
 				83267B6F1A337ACA004591C6 /* WizardStepsView.m */,
 				83267B771A34C637004591C6 /* RadarTaskCell.h */,
 				83267B781A34C637004591C6 /* RadarTaskCell.m */,
+				83267B7A1A34EE56004591C6 /* MBTagLabel.h */,
+				83267B7B1A34EE56004591C6 /* MBTagLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				83267B0A1A31E29E004591C6 /* RedboothAPIClient.m in Sources */,
 				83267B5F1A325F9A004591C6 /* RadarsProject.m in Sources */,
 				83267B2D1A31E428004591C6 /* AFNetworkActivityLogger.m in Sources */,
+				83267B7C1A34EE56004591C6 /* MBTagLabel.m in Sources */,
 				83267B091A31E29E004591C6 /* OpenradarAPIClient.m in Sources */,
 				8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */,
 				83267B791A34C637004591C6 /* RadarTaskCell.m in Sources */,

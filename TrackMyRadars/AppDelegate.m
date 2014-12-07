@@ -40,6 +40,7 @@
 //    p.opEmail = @"matt@bookhousesoftware.com";
 //    p.radarsProjectId = 1333016;
 //    p.radarsTaskListId = 2693588;
+//    p.radarsProjectName = @"My named project";
 //    [RadarsProject saveImportedProject:p];
 
     UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];

@@ -14,10 +14,12 @@
 // Openradar fetch
 + (NSArray *)radarTasksWithOPArray:(NSArray *)array;
 + (RadarTask *)radarTaskWithOPInfo:(NSDictionary *)info;
++ (NSString *)addRadarNumber:(NSString *)radarNumber toDescription:(NSString *)description;
 
 // Redbooth fetch
 + (NSArray *)radarTasksWithRBArray:(NSArray *)array;
 + (RadarTask *)radarTaskWithRBInfo:(NSDictionary *)info;
++ (NSString *)retrieveRadarNumberFromDescription:(NSString *)description;
 
 + (NSDictionary *)rbGetTasksParametersWithProject:(RadarsProject *)project;
 

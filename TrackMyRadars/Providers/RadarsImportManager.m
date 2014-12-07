@@ -36,7 +36,7 @@
 
 - (RadarsProjectProvider *)projectsProvider {
     if (!_projectsProvider) {
-        _projectsProvider = [[RadarsProjectProvider alloc] initWithOpUser:self.opEmail];
+        _projectsProvider = [[RadarsProjectProvider alloc] initWithOpUser:self.opEmail projectName:self.projectName];
     }
     return _projectsProvider;
 }

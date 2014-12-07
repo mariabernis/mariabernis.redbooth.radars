@@ -13,16 +13,18 @@
 
 @interface RadarsProjectProvider ()
 @property (nonatomic, strong) NSString *opEmail;
+@property (nonatomic, strong) NSString *projectName;
 @end
 
 
 @implementation RadarsProjectProvider
 
-- (instancetype)initWithOpUser:(NSString *)email
+- (instancetype)initWithOpUser:(NSString *)email projectName:(NSString *)name
 {
     self = [super init];
     if (self) {
         _opEmail = email;
+        _projectName = name;
     }
     return self;
 }
@@ -49,6 +51,7 @@
                                      
                                      NSDictionary *taskListInfo = [(NSArray *)responseObject firstObject];
                                      RadarsProject *project = [RadarsProjectParser projectWithOpUser:self.opEmail
+                                                                                         projectName:self.projectName
                                                                                   rbTasklistJSONInfo:taskListInfo];
                                      BOOL saved = [RadarsProject saveImportedProject:project];
                                      NSLog(@"🌠 Project created and saved: %@", saved? @"YES" : @"NO");

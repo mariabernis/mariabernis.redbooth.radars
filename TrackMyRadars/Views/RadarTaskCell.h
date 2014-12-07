@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class MBTagLabel;
 @interface RadarTaskCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet MBTagLabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *radarTitleLabel;
 
 @property (nonatomic, assign, getter=isImported) BOOL imported;

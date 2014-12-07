@@ -8,6 +8,7 @@
 
 #import "RadarTaskCell.h"
 #import "UIColor+TrackMyRadars.h"
+#import "MBTagLabel.h"
 
 @implementation RadarTaskCell
 
@@ -15,13 +16,10 @@
     // Initialization code
     CGFloat labelHeight = self.statusLabel.frame.size.height;
     self.statusLabel.layer.cornerRadius = labelHeight/2;
+    self.statusLabel.layoutMargins = UIEdgeInsetsMake(0, 10, 0, 10);
     self.statusLabel.clipsToBounds = YES;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    self.radarTitleLabel.preferredMaxLayoutWidth = self.radarTitleLabel.frame.size.width;
-    [super layoutSubviews];
+    
+    self.statusLabel.padding = UIEdgeInsetsMake(0, 6, 0, 6);
 }
 
 - (void)setImported:(BOOL)imported {

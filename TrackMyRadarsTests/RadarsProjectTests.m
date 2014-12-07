@@ -54,14 +54,16 @@ describe(@"When creating the redbooth project for Openradar user 'maria@email.co
         
     });
     
-    context(@"When asking for the TaskList created in the new project", ^{
+    context(@"When asking for the TaskList created in the new project 'Open radars'", ^{
         
         NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"newtasklist_stub" ofType:@"json"];
         NSData *jsonData = [NSData dataWithContentsOfFile:path];
         NSError *error = nil;
         NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         
-        RadarsProject *project = [RadarsProjectParser projectWithOpUser:@"maria@email.com" rbTasklistJSONInfo:[jsonArray firstObject]];
+        RadarsProject *project = [RadarsProjectParser projectWithOpUser:@"maria@email.com"
+                                                            projectName:@"Open radars"
+                                                     rbTasklistJSONInfo:[jsonArray firstObject]];
         
         it(@"Should have projectId '2222'", ^{
             
@@ -76,6 +78,11 @@ describe(@"When creating the redbooth project for Openradar user 'maria@email.co
         it(@"Should have Openradar email 'maria@email.com'", ^{
             
             [[project.opEmail should] equal:@"maria@email.com"];
+        });
+        
+        it(@"Should have project name 'Open radars'", ^{
+            
+            [[project.radarsProjectName should] equal:@"Open radars"];
         });
     });
     

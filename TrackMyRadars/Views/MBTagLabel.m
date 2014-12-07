@@ -10,6 +10,45 @@
 
 @implementation MBTagLabel
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+
+- (void)commonInit {
+    _padding = UIEdgeInsetsZero;
+}
+
+
+- (void)drawTextInRect:(CGRect)rect {
+    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, self.padding)];
+}
+
+- (CGSize)intrinsicContentSize {
+    
+    CGSize size = [super intrinsicContentSize];
+    CGFloat adjustedW = size.width + self.padding.left + self.padding.right;
+    CGFloat adjustedH = size.height + self.padding.top + self.padding.bottom;
+    
+    CGSize adjustedSize = CGSizeMake(adjustedW, adjustedH);
+    
+    return adjustedSize;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

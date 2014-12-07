@@ -17,6 +17,7 @@
 #import "RadarTasksProvider.h"
 #import "UIColor+TrackMyRadars.h"
 #import "UIButton+TrackMyRadars.h"
+#import "MBTagLabel.h"
 
 @interface RadarListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -70,6 +71,7 @@
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor tmrLighterGrayColor];
     self.radarsTableView.dataSource = self;
     self.radarsTableView.delegate = self;
@@ -102,11 +104,13 @@
 
 #pragma mark - Actions
 - (void)showNoImportView {
+    self.navigationItem.title = @"Track My Radars";
     self.noImportView.hidden = NO;
     self.radarsTableView.hidden = YES;
 }
 
 - (void)showImportedData {
+    self.navigationItem.title = self.importedProject.radarsProjectName;
     self.noImportView.hidden = YES;
     self.radarsTableView.hidden = NO;
     // pull to refresh

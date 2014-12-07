@@ -28,11 +28,18 @@
     RadarTask *item = [[RadarTask alloc] init];
     item.radarNumber = [info objectForKey:@"number"];
     item.radarTitle = [info objectForKey:@"title"];
-    item.radarDescription = [info objectForKey:@"description"];
+    NSString *description = [info objectForKey:@"description"];
+//    item.radarDescription = description;
+    item.radarDescription = [self addRadarNumber:item.radarNumber toDescription:description];
     NSString *opStatus = [info objectForKey:@"status"];
     item.radarStatus = [self simplifiedStatusForOPStatus:opStatus];
     
     return item;
+}
+
++ (NSString *)addRadarNumber:(NSString *)radarNumber toDescription:(NSString *)description {
+    
+    return [NSString stringWithFormat:@"rdar://%@\r\n\r\n%@", radarNumber, description];
 }
 
 + (NSString *)simplifiedStatusForOPStatus:(NSString *)opStatus {
@@ -62,13 +69,25 @@
 + (RadarTask *)radarTaskWithRBInfo:(NSDictionary *)info {
     
     RadarTask *item = [[RadarTask alloc] init];
-    //    item.radarNumber = [info objectForKey:@"number"];
     item.taskId = [[info objectForKey:@"id"] integerValue];
     item.radarTitle = [info objectForKey:@"name"];
     item.radarDescription = [info objectForKey:@"description"];
     item.radarStatus = [info objectForKey:@"status"];
+    item.radarNumber = [self retrieveRadarNumberFromDescription:item.radarDescription];
     
     return item;
+}
+
++ (NSString *)retrieveRadarNumberFromDescription:(NSString *)description {
+    
+    NSString *matchString = @"rdar://";
+    NSRange matchRadarNum = [description rangeOfString:matchString];
+    if (matchRadarNum.length == NSNotFound) {
+        return nil;
+    }
+    NSString *rdar = [description substringToIndex:matchRadarNum.length + 8];
+    NSString *num = [rdar substringFromIndex:matchRadarNum.length];
+    return num;
 }
 
 + (NSDictionary *)rbGetTasksParametersWithProject:(RadarsProject *)project {

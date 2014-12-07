@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MBTagLabel : UILabel
-
+@property (nonatomic) UIEdgeInsets padding;
 @end

@@ -12,6 +12,7 @@
 #define KEY_OP_EMAIL         @"imported_op_email"
 #define KEY_RB_PROJECT_ID    @"imported_proj_id"
 #define KEY_RB_TASKLIST_ID   @"imported_tasklist_id"
+#define KEY_RB_PROJECT_NAME  @"imported_proj_name"
 
 
 @implementation RadarsProject
@@ -24,6 +25,7 @@
         project.opEmail = [projInfo objectForKey:KEY_OP_EMAIL];
         project.radarsProjectId = [[projInfo objectForKey:KEY_RB_PROJECT_ID] integerValue];
         project.radarsTaskListId = [[projInfo objectForKey:KEY_RB_TASKLIST_ID] integerValue];
+        project.radarsProjectName = [projInfo objectForKey:KEY_RB_PROJECT_NAME];
     }
     return project;
 }
@@ -34,9 +36,10 @@
         return NO;
     }
     
-    NSDictionary *projInfo = @{ KEY_OP_EMAIL      : project.opEmail,
-                                KEY_RB_PROJECT_ID : @(project.radarsProjectId),
-                                KEY_RB_TASKLIST_ID: @(project.radarsTaskListId)
+    NSDictionary *projInfo = @{ KEY_OP_EMAIL       : project.opEmail,
+                                KEY_RB_PROJECT_ID  : @(project.radarsProjectId),
+                                KEY_RB_TASKLIST_ID : @(project.radarsTaskListId),
+                                KEY_RB_PROJECT_NAME: project.radarsProjectName
                                 };
     [[NSUserDefaults standardUserDefaults] setObject:projInfo forKey:KEY_IMPORTED_PROJECT];
     [[NSUserDefaults standardUserDefaults] synchronize];
