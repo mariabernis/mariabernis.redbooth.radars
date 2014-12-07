@@ -79,15 +79,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="StD-UO-5fv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="StD-UO-5fv">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RadarCell" id="vi5-Eu-6DP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RadarTaskCell" id="vi5-Eu-6DP" customClass="RadarTaskCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vi5-Eu-6DP" id="g8N-PE-mVn">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# 123456" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-Vt-fp8">
+                                                    <rect key="frame" x="20" y="10" width="560" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="nwk-17-4nS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="open" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5N-RS-UEa">
+                                                    <rect key="frame" x="20" y="32" width="46" height="18"/>
+                                                    <color key="backgroundColor" red="0.27722185850143433" green="0.37512141466140747" blue="0.47318506240844727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="f7q-vh-LGc"/>
+                                                        <constraint firstAttribute="width" constant="46" id="m0Q-de-0Sv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Radar title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7w-mx-ren">
+                                                    <rect key="frame" x="20" y="61" width="560" height="27"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Z7w-mx-ren" secondAttribute="bottom" constant="14" id="0L8-8c-nyx"/>
+                                                <constraint firstItem="Wuh-Vt-fp8" firstAttribute="trailing" secondItem="Z7w-mx-ren" secondAttribute="trailing" id="1YQ-zw-OLm"/>
+                                                <constraint firstItem="C5N-RS-UEa" firstAttribute="top" secondItem="Wuh-Vt-fp8" secondAttribute="bottom" constant="6" id="9JP-ZO-kLX"/>
+                                                <constraint firstItem="Wuh-Vt-fp8" firstAttribute="leading" secondItem="Z7w-mx-ren" secondAttribute="leading" id="BLg-ZL-Fkl"/>
+                                                <constraint firstItem="Wuh-Vt-fp8" firstAttribute="leading" secondItem="g8N-PE-mVn" secondAttribute="leading" constant="20" id="RUC-SF-Jhe"/>
+                                                <constraint firstItem="Wuh-Vt-fp8" firstAttribute="leading" secondItem="C5N-RS-UEa" secondAttribute="leading" id="dhN-qU-cJl"/>
+                                                <constraint firstItem="Wuh-Vt-fp8" firstAttribute="top" secondItem="g8N-PE-mVn" secondAttribute="top" constant="10" id="fzg-39-aRM"/>
+                                                <constraint firstItem="Z7w-mx-ren" firstAttribute="top" secondItem="C5N-RS-UEa" secondAttribute="bottom" constant="11" id="oG4-18-9gM"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wuh-Vt-fp8" secondAttribute="trailing" constant="20" id="v3M-xn-td6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="numberLabel" destination="Wuh-Vt-fp8" id="VHn-46-L6U"/>
+                                            <outlet property="radarTitleLabel" destination="Z7w-mx-ren" id="XsO-Ek-jlb"/>
+                                            <outlet property="statusLabel" destination="C5N-RS-UEa" id="4ex-a9-jN2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -151,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fdc-Fg-gTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040" y="1079"/>
+            <point key="canvasLocation" x="1040" y="1075"/>
         </scene>
         <!--Import radars-->
         <scene sceneID="Mm8-gJ-nMD">
@@ -180,8 +225,8 @@
                                     <segue destination="OWm-3g-cUr" kind="show" identifier="WizardTwoSegue" id="Zez-1s-T7s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario de Openradar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrT-En-GWd">
-                                <rect key="frame" x="160" y="164" width="280" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your Openradar user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrT-En-GWd">
+                                <rect key="frame" x="160" y="149" width="280" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Sds-yf-yk0"/>
                                 </constraints>
@@ -190,9 +235,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEa-J2-bzk" userLabel="FieldView">
-                                <rect key="frame" x="155" y="189" width="290" height="35"/>
+                                <rect key="frame" x="155" y="177" width="290" height="35"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="120-0u-BHP">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="120-0u-BHP">
                                         <rect key="frame" x="5" y="0.0" width="280" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -213,8 +258,8 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="BcT-nF-7JV" secondAttribute="centerX" id="8Fh-tb-IQb"/>
-                            <constraint firstItem="YEa-J2-bzk" firstAttribute="top" secondItem="SrT-En-GWd" secondAttribute="bottom" constant="5" id="FVT-mj-S6i"/>
-                            <constraint firstItem="SrT-En-GWd" firstAttribute="top" secondItem="eHU-RL-d0J" secondAttribute="bottom" constant="100" id="Ggq-F8-pr0"/>
+                            <constraint firstItem="YEa-J2-bzk" firstAttribute="top" secondItem="SrT-En-GWd" secondAttribute="bottom" constant="8" id="FVT-mj-S6i"/>
+                            <constraint firstItem="SrT-En-GWd" firstAttribute="top" secondItem="eHU-RL-d0J" secondAttribute="bottom" constant="85" id="Ggq-F8-pr0"/>
                             <constraint firstAttribute="centerX" secondItem="SrT-En-GWd" secondAttribute="centerX" id="Ta9-g7-wcd"/>
                             <constraint firstItem="cEu-qL-HQX" firstAttribute="top" secondItem="BcT-nF-7JV" secondAttribute="bottom" constant="20" id="tKE-ba-JUV"/>
                             <constraint firstAttribute="centerX" secondItem="YEa-J2-bzk" secondAttribute="centerX" id="xvl-ph-zfO"/>
@@ -272,24 +317,23 @@
                                     <action selector="startRadarsImport:" destination="OWm-3g-cUr" eventType="touchUpInside" id="gus-JQ-Tuj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="290" placeholderIntrinsicHeight="44" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-UU-9Xc">
-                                <rect key="frame" x="155" y="164" width="290" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" text="Choose where to add the  project" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-UU-9Xc">
+                                <rect key="frame" x="155" y="236" width="290" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="MNW-Yw-e6e"/>
                                 </constraints>
-                                <string key="text">Where do you want to add
-the radars project?</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Drb-XK-2Ef">
-                                <rect key="frame" x="155" y="216" width="290" height="225"/>
+                                <rect key="frame" x="155" y="264" width="290" height="225"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="750" constant="225" id="B0q-Zo-RUY"/>
+                                    <constraint firstAttribute="height" priority="250" constant="225" id="B0q-Zo-RUY"/>
                                     <constraint firstAttribute="width" constant="290" id="wv0-vN-rom"/>
                                 </constraints>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="bPh-JO-i42" style="IBUITableViewCellStyleDefault" id="Jwi-l2-Vf9">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -299,7 +343,7 @@ the radars project?</string>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bPh-JO-i42">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.27722185850143433" green="0.37512141466140747" blue="0.47318506240844727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -307,24 +351,69 @@ the radars project?</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKV-8K-CbZ" userLabel="FieldView">
+                                <rect key="frame" x="155" y="177" width="290" height="35"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ej: Track My Radars" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxD-eQ-hQz">
+                                        <rect key="frame" x="5" y="0.0" width="280" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xxD-eQ-hQz" firstAttribute="top" secondItem="eKV-8K-CbZ" secondAttribute="top" id="1fC-a7-GAR"/>
+                                    <constraint firstAttribute="trailing" secondItem="xxD-eQ-hQz" secondAttribute="trailing" constant="5" id="KFb-RH-vkP"/>
+                                    <constraint firstAttribute="height" constant="35" id="RGn-TD-sQ6"/>
+                                    <constraint firstAttribute="bottom" secondItem="xxD-eQ-hQz" secondAttribute="bottom" id="UyW-iL-Kbf"/>
+                                    <constraint firstItem="xxD-eQ-hQz" firstAttribute="leading" secondItem="eKV-8K-CbZ" secondAttribute="leading" constant="5" id="eY5-0S-NNN"/>
+                                    <constraint firstAttribute="width" constant="290" id="oMI-lX-1jz"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Set a name for the Redbooth project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCE-YN-QQc">
+                                <rect key="frame" x="160" y="149" width="280" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="bya-el-XkF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Z9p-UU-9Xc" firstAttribute="top" secondItem="HWE-OG-xUU" secondAttribute="bottom" constant="100" id="MAr-3T-SvW"/>
+                            <constraint firstItem="eKV-8K-CbZ" firstAttribute="top" secondItem="KCE-YN-QQc" secondAttribute="bottom" constant="8" id="7DW-Im-W6S"/>
+                            <constraint firstItem="KCE-YN-QQc" firstAttribute="top" secondItem="HWE-OG-xUU" secondAttribute="bottom" constant="85" id="MCU-mQ-KhL"/>
+                            <constraint firstAttribute="centerX" secondItem="KCE-YN-QQc" secondAttribute="centerX" id="SXE-7q-8Rl"/>
                             <constraint firstItem="oNj-9a-pfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Drb-XK-2Ef" secondAttribute="bottom" constant="20" id="YDi-th-mLh"/>
                             <constraint firstAttribute="centerX" secondItem="Drb-XK-2Ef" secondAttribute="centerX" id="dAm-Io-vrZ"/>
                             <constraint firstAttribute="centerX" secondItem="Z9p-UU-9Xc" secondAttribute="centerX" id="kcw-Cz-e1Z"/>
                             <constraint firstItem="Drb-XK-2Ef" firstAttribute="top" secondItem="Z9p-UU-9Xc" secondAttribute="bottom" constant="8" id="ltW-wz-7dM"/>
                             <constraint firstAttribute="centerX" secondItem="oNj-9a-pfY" secondAttribute="centerX" id="mEw-og-2MK"/>
                             <constraint firstItem="tmA-ZU-yh0" firstAttribute="top" secondItem="oNj-9a-pfY" secondAttribute="bottom" constant="20" id="mWp-Um-xzV"/>
+                            <constraint firstAttribute="centerX" secondItem="eKV-8K-CbZ" secondAttribute="centerX" id="tAi-re-imp"/>
+                            <constraint firstItem="Z9p-UU-9Xc" firstAttribute="top" secondItem="eKV-8K-CbZ" secondAttribute="bottom" constant="24" id="wGL-JI-mFz"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bzG-6t-qy0" appends="YES" id="c9Z-h7-rUn"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="fieldWrapper" destination="eKV-8K-CbZ" id="JKD-F2-g26"/>
                         <outlet property="importButton" destination="oNj-9a-pfY" id="w8P-FX-m8n"/>
+                        <outlet property="organizationsLabel" destination="Z9p-UU-9Xc" id="hww-uS-uDw"/>
                         <outlet property="organizationsTableView" destination="Drb-XK-2Ef" id="Qa8-bt-1p9"/>
+                        <outlet property="projNameField" destination="xxD-eQ-hQz" id="PEc-vX-uXu"/>
+                        <outlet property="projNameLabel" destination="KCE-YN-QQc" id="XeX-ox-k4k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETS-xG-Mc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bzG-6t-qy0">
+                    <connections>
+                        <action selector="dismissKeyboardIfShowing:" destination="OWm-3g-cUr" id="0iW-3d-mSH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1751" y="1771"/>
         </scene>

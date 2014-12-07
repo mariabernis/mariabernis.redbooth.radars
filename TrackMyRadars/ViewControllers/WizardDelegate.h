@@ -10,7 +10,9 @@
 
 @protocol WizardDelegate <NSObject>
 @required
-- (void)wizardDidFinishWithOpEmail:(NSString *)email organizationId:(NSInteger)organizationId;
+- (void)wizardDidFinishWithOpEmail:(NSString *)email
+                       projectName:(NSString *)name
+                    organizationId:(NSInteger)organizationId;
 
 @optional
 @end

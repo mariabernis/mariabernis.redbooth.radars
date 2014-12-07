@@ -8,6 +8,7 @@
 
 #import "RadarsProjectParser.h"
 #import "RadarsProject.h"
+#import "MBCheck.h"
 
 @implementation RadarsProjectParser
 
@@ -26,9 +27,12 @@
     return item;
 }
 
-+ (NSDictionary *)rbProjectParametersWithOrganizationId:(NSInteger)organizationId {
++ (NSDictionary *)rbProjectParametersWithName:(NSString *)name organizationId:(NSInteger)organizationId {
     
-    NSDictionary *params = @{ @"name"           :@"My Open radars",
+    if ([MBCheck isEmpty:name]) {
+        name = @"Track My Radars";
+    }
+    NSDictionary *params = @{ @"name"           :name,
                               @"organization_id":@(organizationId),
                               @"publish_pages"  :@"false"
                               };

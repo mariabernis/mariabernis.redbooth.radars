@@ -14,7 +14,8 @@
 /* Designated initializer */
 - (instancetype)initWithOpUser:(NSString *)email;
 
-- (void)newRadarsProjectWithOrganizationId:(NSInteger)organizationId
-                                completion:(void(^)(RadarsProject *project, NSError *error))completion;
+- (void)newRadarsProjectWithName:(NSString *)name
+                  organizationId:(NSInteger)organizationId
+                      completion:(void(^)(RadarsProject *project, NSError *error))completion;
 
 @end

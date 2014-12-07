@@ -86,6 +86,7 @@
                                   @"task_list_id":@(project.radarsTaskListId),
                                   @"name"        :radar.radarTitle,
                                   @"description" :radar.radarDescription,
+                                  @"status"      :radar.radarStatus,
                                   @"is_private"  :@"false"
                                   };
     return taskParams;

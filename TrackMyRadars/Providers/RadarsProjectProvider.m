@@ -27,11 +27,13 @@
     return self;
 }
 
-- (void)newRadarsProjectWithOrganizationId:(NSInteger)organizationId
-                                completion:(void(^)(RadarsProject *project, NSError *error))completion {
+- (void)newRadarsProjectWithName:(NSString *)name
+                  organizationId:(NSInteger)organizationId
+                      completion:(void(^)(RadarsProject *project, NSError *error))completion {
     
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
-    NSDictionary *projectParams = [RadarsProjectParser rbProjectParametersWithOrganizationId:organizationId];
+    NSDictionary *projectParams = [RadarsProjectParser rbProjectParametersWithName:name
+                                                                    organizationId:organizationId];
     
     [redboothClient POST:RB_PATH_PROJECT
               parameters:projectParams

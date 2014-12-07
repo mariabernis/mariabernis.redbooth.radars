@@ -12,7 +12,9 @@
 @interface RadarsImportManager : NSObject
 
 /* Designated initializer */
-- (instancetype)initWithOpEmail:(NSString *)opEmail andOrganizationId:(NSInteger)organizationId;
+- (instancetype)initWithOpEmail:(NSString *)opEmail
+                    projectName:(NSString *)name
+              andOrganizationId:(NSInteger)organizationId;
 
 - (void)importRadarsWithTemporaryContent:(void(^)(NSArray *tempRadars))tempContent
                                 progress:(void(^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock

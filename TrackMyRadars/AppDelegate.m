@@ -12,7 +12,9 @@
 #import "RedboothAPIClient.h"
 #import "MBCheck.h"
 #import "UIColor+TrackMyRadars.h"
+// TEMP Test
 #import "AFNetworkActivityLogger.h"
+#import "RadarsProject.h"
 
 #define APP_URL_SCHEME      @"mbredbooth"
 #define APP_CALLBACK_URI    @"mbredbooth://authorise"
@@ -32,6 +34,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     [self customizeAppearance];
+    
+    // TEMP test
+//    RadarsProject *p = [[RadarsProject alloc] init];
+//    p.opEmail = @"matt@bookhousesoftware.com";
+//    p.radarsProjectId = 1333016;
+//    p.radarsTaskListId = 2693588;
+//    [RadarsProject saveImportedProject:p];
 
     UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];
     

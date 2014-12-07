@@ -11,6 +11,7 @@
 #import "WizardRbOrganizationViewController.h"
 #import <PQFCustomLoaders/PQFCustomLoaders.h>
 #import "RadarsImportManager.h"
+#import "RadarTaskCell.h"
 #import "RadarTask.h"
 #import "RadarsProject.h"
 #import "RadarTasksProvider.h"
@@ -72,6 +73,8 @@
     self.view.backgroundColor = [UIColor tmrLighterGrayColor];
     self.radarsTableView.dataSource = self;
     self.radarsTableView.delegate = self;
+    self.radarsTableView.estimatedRowHeight = 80.0;
+    self.radarsTableView.rowHeight = UITableViewAutomaticDimension;
     
     for (UIView *v in self.noImportView.subviews) {
         if ([v isKindOfClass:[UIButton class]]) {
@@ -129,11 +132,12 @@
 
 #pragma mark - WizardDelegate
 - (void)wizardDidFinishWithOpEmail:(NSString *)email
+                       projectName:(NSString *)name
                     organizationId:(NSInteger)organizationId {
     
     [self showImportedData];
     [self.loader show];
-    self.importManager = [[RadarsImportManager alloc] initWithOpEmail:email andOrganizationId:organizationId];
+    self.importManager = [[RadarsImportManager alloc] initWithOpEmail:email projectName:name andOrganizationId:organizationId];
     [self.importManager
      importRadarsWithTemporaryContent:^(NSArray *tempRadars) {
          
@@ -168,36 +172,38 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    RadarTask *radar = self.radars[indexPath.row];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RadarCell" forIndexPath:indexPath];
-    
-    if (radar.isImported) {
-        // Rb task
-        [self configureRBRadarCell:cell withRadar:radar];
-    } else {
-        // It's not yet imported to RB
-        [self configureOPRadarCell:cell withRadar:radar];
-    }
+    RadarTaskCell *cell = (RadarTaskCell *)[tableView dequeueReusableCellWithIdentifier:@"RadarTaskCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self configureCell:cell forIndexPath:indexPath];
+
     return cell;
 }
 
 #pragma datasuorce Helpers
-- (void)configureRBRadarCell:(UITableViewCell *)cell withRadar:(RadarTask *)radar{
+- (void)configureCell:(RadarTaskCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     
-    cell.textLabel.text = radar.radarTitle;
-    
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    cell.textLabel.textColor = [UIColor tmrMainColor];
+    RadarTask *radar = self.radars[indexPath.row];
+    cell.radarTitleLabel.text = radar.radarTitle;
+    cell.numberLabel.text = [NSString stringWithFormat:@"# %@", radar.radarNumber];
+    cell.statusLabel.text = radar.radarStatus;
+    cell.imported = radar.isImported;
 }
 
-- (void)configureOPRadarCell:(UITableViewCell *)cell withRadar:(RadarTask *)radar{
-    
-    cell.textLabel.text = radar.radarTitle;
-    
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    cell.textLabel.textColor = [UIColor tmrDisabledColor];
-}
+//- (void)configureRBRadarCell:(UITableViewCell *)cell withRadar:(RadarTask *)radar {
+//    
+//    cell.textLabel.text = radar.radarTitle;
+//    
+//    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
+//    cell.textLabel.textColor = [UIColor tmrMainColor];
+//}
+//
+//- (void)configureOPRadarCell:(UITableViewCell *)cell withRadar:(RadarTask *)radar {
+//    
+//    cell.textLabel.text = radar.radarTitle;
+//    
+//    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
+//    cell.textLabel.textColor = [UIColor tmrDisabledColor];
+//}
 
 - (void)updateCellAtRow:(NSUInteger)row {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
@@ -205,20 +211,26 @@
 }
 
 #pragma mark - UITableViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    
-//    if (self.selectedIndex) {
-//        UITableViewCell *prevCell = [tableView cellForRowAtIndexPath:self.selectedIndex];
-//        prevCell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-//    
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    
-//    self.selectedIndex = indexPath;
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    static RadarTaskCell *cell;
+//    if (cell == nil) {
+//        cell = (RadarTaskCell *)[tableView dequeueReusableCellWithIdentifier: @"RadarTaskCell"];
+//    }
+//    [self configureCell:cell forIndexPath:indexPath];
+//    [cell.radarTitleLabel sizeToFit];
+//    [cell setNeedsLayout];
+//    [cell layoutIfNeeded];
+//    
+//    CGSize size = [cell.contentView systemLayoutSizeFittingSize: UILayoutFittingCompressedSize];
+//    NSLog(@"Calculated height %f", size.height);
+//    return size.height + 1.0f;
+//}
 
 
 @end

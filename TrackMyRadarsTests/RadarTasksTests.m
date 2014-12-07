@@ -44,6 +44,13 @@ describe(@"When receiving array of OpenRadar radars", ^{
                 [[theValue(twitterError.isImported) should] equal:@NO];
                 
             });
+            
+            it(@"The radar number '15394622' should have a status 'open'", ^{
+                
+                RadarTask *twitterError = filtered[0];
+                [[twitterError.radarStatus should] equal:kRadarStatusOpen];
+                
+            });
         });
 
     });
@@ -86,6 +93,12 @@ describe(@"When receiving array of OpenRadar radars", ^{
                 [[desc should] beKindOfClass:[NSString class]];
                 BOOL match = [desc containsString:@"Summary:\r\nSLComposeViewController has no error structure for reporting bad twitter credentials (HTTP 401 from Twitter), and does not provide useful information to the user when it fails.\r\n\r\nI have multiple accounts in Settings > Twitter:"];
                 [[theValue(match) should] beTrue];
+            });
+            
+            it(@"Should generate Redbooth API parameter: 'status' as string 'open'", ^{
+                NSString *name = taskParams[@"status"];
+                [[name should] beKindOfClass:[NSString class]];
+                [[name should] equal:kRadarStatusOpen];
             });
             
             it(@"Should generate Redbooth API parameters: 'is_private' as a string 'false'", ^{

@@ -11,10 +11,13 @@
 #import "OrganizationsProvider.h"
 #import "RadarTasksProvider.h"
 #import "RadarsProjectProvider.h"
+#import "MBCheck.h"
 #import "WizardStepsView.h"
+#import "UIColor+TrackMyRadars.h"
 #import "UIButton+TrackMyRadars.h"
+#import "UIView+TrackMyRadars.h"
 
-@interface WizardRbOrganizationViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface WizardRbOrganizationViewController ()<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *organizations; // Of Organization
 @property (nonatomic, strong) NSIndexPath *selectedIndex;
 @property (nonatomic, strong) OrganizationsProvider *organizationsProvider;
@@ -22,6 +25,10 @@
 // Outlets
 @property (weak, nonatomic) IBOutlet UITableView *organizationsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *importButton;
+@property (weak, nonatomic) IBOutlet UIView *fieldWrapper;
+@property (weak, nonatomic) IBOutlet UILabel *projNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *projNameField;
+@property (weak, nonatomic) IBOutlet UILabel *organizationsLabel;
 @end
 
 
@@ -51,12 +58,16 @@
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Import radar";
+    self.navigationItem.title = @"Import radars";
     
+    self.projNameField.delegate = self;
     self.organizationsTableView.dataSource = self;
     self.organizationsTableView.delegate = self;
     
+    self.projNameLabel.textColor = [UIColor tmrMainColor];
+    self.organizationsLabel.textColor = [UIColor tmrMainColor];
     [self.importButton tmrStyle];
+    [self.fieldWrapper tmrFieldBckStyle];
     
     CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60);
     WizardStepsView *stepsView = [[WizardStepsView alloc] initWithFrame:frame step:2];
@@ -87,16 +98,34 @@
     }];
 }
 
+- (IBAction)dismissKeyboardIfShowing:(UITapGestureRecognizer *)sender {
+    if ([self.projNameField isFirstResponder]) {
+        [self.projNameField resignFirstResponder];
+    }
+}
+
 - (IBAction)startRadarsImport:(id)sender {
     
     if (self.delegate) {
         Organization *selected = self.organizations[self.selectedIndex.row];
-        [self.delegate wizardDidFinishWithOpEmail:self.opEmail organizationId:selected.oragnizationId];
+        [self.delegate wizardDidFinishWithOpEmail:self.opEmail projectName:self.projNameField.text organizationId:selected.oragnizationId];
     }
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-
+#pragma mark - UITextFieldDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    BOOL isEmptyText = [MBCheck isEmpty:self.projNameField.text];
+    if (isEmptyText) {
+        self.fieldWrapper.backgroundColor = [UIColor colorWithHue:0.583 saturation:0.551 brightness:0.568 alpha:0.4];
+        self.projNameField.placeholder = @"Name your project";
+    } else {
+        self.fieldWrapper.backgroundColor = [UIColor tmrWhiteColor];
+        self.projNameField.placeholder = @"Ej: Track My Radars";
+    }
+    self.importButton.enabled = !isEmptyText;
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
