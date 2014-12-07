@@ -12,4 +12,12 @@
 @interface UIColor (TrackMyRadars)
 + (UIColor *)redboothColor;
 + (UIColor *)redboothColorDarken;
++ (UIColor *)tmrMainColor;
++ (UIColor *)tmrMainColorDarker;
++ (UIColor *)tmrMainColorLighter;
++ (UIColor *)tmrWhiteColor;
++ (UIColor *)tmrTintColor;
++ (UIColor *)tmrLighterGrayColor;
++ (UIColor *)tmrLightMiddleGrayColor;
++ (UIColor *)tmrDisabledColor;
 @end

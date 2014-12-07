@@ -9,11 +9,13 @@
 #import "RadarListViewController.h"
 #import "WizardOpEmailViewController.h"
 #import "WizardRbOrganizationViewController.h"
+#import <PQFCustomLoaders/PQFCustomLoaders.h>
 #import "RadarsImportManager.h"
 #import "RadarTask.h"
 #import "RadarsProject.h"
 #import "RadarTasksProvider.h"
-#import <PQFCustomLoaders/PQFCustomLoaders.h>
+#import "UIColor+TrackMyRadars.h"
+#import "UIButton+TrackMyRadars.h"
 
 @interface RadarListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -67,9 +69,16 @@
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor flatCloudsColor];
+    self.view.backgroundColor = [UIColor tmrLighterGrayColor];
     self.radarsTableView.dataSource = self;
     self.radarsTableView.delegate = self;
+    
+    for (UIView *v in self.noImportView.subviews) {
+        if ([v isKindOfClass:[UIButton class]]) {
+            UIButton *b = (UIButton *)v;
+            [b tmrStyle];
+        }
+    }
     
     if (self.importedProject) {
         [self showImportedData];
@@ -134,7 +143,7 @@
      }
      progress:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
          
-         self.loader.label.text = [NSString stringWithFormat:@"%lu of %lu imported", numberOfFinishedOperations, totalNumberOfOperations];
+         self.loader.label.text = [NSString stringWithFormat:@"%lu of %lu imported", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations];
      }
      import:^(NSUInteger index, RadarTask *importedRadar, NSError *error) {
          
@@ -179,7 +188,7 @@
     cell.textLabel.text = radar.radarTitle;
     
     cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    cell.textLabel.textColor = [UIColor flatWetAsphaltColor];
+    cell.textLabel.textColor = [UIColor tmrMainColor];
 }
 
 - (void)configureOPRadarCell:(UITableViewCell *)cell withRadar:(RadarTask *)radar{
@@ -187,7 +196,7 @@
     cell.textLabel.text = radar.radarTitle;
     
     cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    cell.textLabel.textColor = [UIColor flatSilverColor];
+    cell.textLabel.textColor = [UIColor tmrDisabledColor];
 }
 
 - (void)updateCellAtRow:(NSUInteger)row {

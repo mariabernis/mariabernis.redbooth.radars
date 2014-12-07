@@ -46,11 +46,11 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor flatWetAsphaltColor]];
-    [[UINavigationBar appearance] setTintColor:[UIColor flatCloudsColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor tmrMainColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor tmrTintColor]];
     [[UINavigationBar appearance] setTranslucent:NO];
     
-    NSDictionary *textAtt = @{ NSForegroundColorAttributeName : [UIColor flatCloudsColor] };
+    NSDictionary *textAtt = @{ NSForegroundColorAttributeName : [UIColor tmrTintColor] };
     [[UINavigationBar appearance] setTitleTextAttributes:textAtt];
 }
 

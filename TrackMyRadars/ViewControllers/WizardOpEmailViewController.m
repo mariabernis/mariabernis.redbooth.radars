@@ -10,10 +10,14 @@
 #import "WizardRbOrganizationViewController.h"
 #import "MBCheck.h"
 #import "WizardStepsView.h"
+#import "UIColor+TrackMyRadars.h"
+#import "UIButton+TrackMyRadars.h"
 
 @interface WizardOpEmailViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *opEmailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *opEmailField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIView *fieldWrapper;
 
 @end
 
@@ -22,10 +26,18 @@
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.nextButton.enabled = NO;
+//    self.nextButton.enabled = NO;
+    [self.nextButton tmrStyle];
     self.opEmailField.delegate = self;
     
-    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 80);
+    self.opEmailLabel.textColor = [UIColor tmrMainColor];
+    CALayer *fieldBckLayer = self.fieldWrapper.layer;
+    fieldBckLayer.borderColor = [UIColor tmrLightMiddleGrayColor].CGColor;
+    fieldBckLayer.borderWidth = 1.0;
+    fieldBckLayer.cornerRadius = 2.0;
+    self.fieldWrapper.backgroundColor = [UIColor tmrWhiteColor];
+    
+    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60);
     WizardStepsView *stepsView = [[WizardStepsView alloc] initWithFrame:frame step:1];
     [self.view addSubview:stepsView];
 }
@@ -74,7 +86,7 @@
         return;
     }
     
-    self.nextButton.enabled = [MBCheck isValidEmail:textField.text];
+//    self.nextButton.enabled = [MBCheck isValidEmail:textField.text];
 
 }
 

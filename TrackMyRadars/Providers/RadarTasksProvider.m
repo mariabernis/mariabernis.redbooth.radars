@@ -99,7 +99,7 @@
     }];
     
     NSArray *operations = [AFURLConnectionOperation batchOfRequestOperations:mOperations progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
-        NSLog(@"🌠 %lu of %lu complete", numberOfFinishedOperations, totalNumberOfOperations);
+        NSLog(@"🌠 %lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
         if (progressBlock) {
             progressBlock(numberOfFinishedOperations, totalNumberOfOperations);
         }

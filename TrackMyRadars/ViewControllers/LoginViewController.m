@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UIColor+TrackMyRadars.h"
-#import "UIImage+Color.h"
+#import "UIButton+TrackMyRadars.h"
 #import <PQFCustomLoaders/PQFCirclesInTriangle.h>
 #import "RedboothAPIClient.h"
 #import "RadarListViewController.h"
@@ -25,11 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.loginButton setBackgroundImage:[UIImage mbc_imageWithColor:[UIColor redboothColor]] forState:UIControlStateNormal];
-    [self.loginButton setBackgroundImage:[UIImage mbc_imageWithColor:[UIColor redboothColorDarken]] forState:UIControlStateHighlighted];
-    CGFloat spacing = 15;
-    self.loginButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
-    self.loginButton.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
+    [self.loginButton redboothLoginStyle];
 }
 
 - (void)didReceiveMemoryWarning {

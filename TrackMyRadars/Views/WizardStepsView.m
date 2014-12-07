@@ -9,17 +9,24 @@
 #import "WizardStepsView.h"
 #import "UIColor+TrackMyRadars.h"
 
-#define CIRCLE_WIDTH 35.0
-#define LINE_HEIGHT 10.0
-#define HORIZONTAL_MARGIN 35.0
+#define CIRCLE_WIDTH 26.0
+#define LINE_HEIGHT 7.0
+//#define HORIZONTAL_MARGIN 50.0
 
 @interface WizardStepsView ()
-@property (nonatomic, assign) CGRect leftCircleFrame;
-@property (nonatomic, assign) CGRect rightCircleFrame;
-@property (nonatomic, assign) CGRect activeCircleFrame;
+//@property (nonatomic, assign) CGFloat horizontalMargin;
+//@property (nonatomic, assign) CGRect leftCircleFrame;
+//@property (nonatomic, assign) CGRect rightCircleFrame;
+//@property (nonatomic, assign) CGRect activeCircleFrame;
 @end
 
-@implementation WizardStepsView
+@implementation WizardStepsView {
+    CGFloat _centerY;
+    CGFloat _horizontalMargin;
+    CGRect _leftCircleFrame;
+    CGRect _rightCircleFrame;
+    CGRect _activeCircleFrame;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame step:(NSInteger)step
 {
@@ -33,15 +40,16 @@
 
 - (void)setup {
     
-    self.backgroundColor = [UIColor flatCloudsColor];
+    self.backgroundColor = [UIColor tmrLighterGrayColor];
+    _horizontalMargin = (CGRectGetWidth([UIScreen mainScreen].bounds)/3)/2;
     
-    CGFloat centerY = CGRectGetHeight(self.frame)/2;
-    CGFloat circlesY = centerY - CIRCLE_WIDTH/2;
-    self.leftCircleFrame = CGRectMake(HORIZONTAL_MARGIN,
+    _centerY = CGRectGetHeight(self.frame)/2 + 6;
+    CGFloat circlesY = _centerY - CIRCLE_WIDTH/2;
+    _leftCircleFrame = CGRectMake(_horizontalMargin,
                                   circlesY,
                                   CIRCLE_WIDTH,
                                   CIRCLE_WIDTH);
-    self.rightCircleFrame = CGRectMake(CGRectGetWidth(self.frame) - HORIZONTAL_MARGIN - CIRCLE_WIDTH,
+    _rightCircleFrame = CGRectMake(CGRectGetWidth(self.frame) - _horizontalMargin - CIRCLE_WIDTH,
                                    circlesY,
                                    CIRCLE_WIDTH,
                                    CIRCLE_WIDTH);
@@ -49,23 +57,23 @@
         self.step = 1;
     }
     if (self.step == 1) {
-        self.activeCircleFrame = self.leftCircleFrame;
+        _activeCircleFrame = _leftCircleFrame;
     } else {
-        self.activeCircleFrame = self.rightCircleFrame;
+        _activeCircleFrame = _rightCircleFrame;
     }
     
-    UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectInset(self.activeCircleFrame, -5, -5)];
-    numberLabel.font = [UIFont boldSystemFontOfSize:15.0];
-    numberLabel.textColor = [UIColor whiteColor];
+    UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectInset(_activeCircleFrame, -5, -5)];
+    numberLabel.font = [UIFont boldSystemFontOfSize:CIRCLE_WIDTH/2];
+    numberLabel.textColor = [UIColor tmrTintColor];
     numberLabel.textAlignment = NSTextAlignmentCenter;
-    numberLabel.text = [NSString stringWithFormat:@"%li", self.step];
+    numberLabel.text = [NSString stringWithFormat:@"%li", (long)self.step];
     
     CGFloat labelHeigh = 21.0;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, centerY - LINE_HEIGHT/2 - 3 - labelHeigh, CGRectGetWidth(self.frame), labelHeigh)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, _centerY - LINE_HEIGHT/2 - 3 - labelHeigh, CGRectGetWidth(self.frame), labelHeigh)];
     label.font = [UIFont systemFontOfSize:14.0];
-    label.textColor = [UIColor flatSilverColor];
+    label.textColor = [UIColor tmrDisabledColor];
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = [NSString stringWithFormat:@"Step %li of 2", self.step];
+    label.text = [NSString stringWithFormat:@"Step %li of 2", (long)self.step];
     
     [self addSubview:numberLabel];
     [self addSubview:label];
@@ -74,34 +82,34 @@
 
 - (void)drawRect:(CGRect)rect {
 
-    CGFloat centerY = CGRectGetHeight(rect)/2;
+//    CGFloat centerY = CGRectGetHeight(rect)/2;
     
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     
-    [[UIColor flatSilverColor] set];
+    [[UIColor tmrDisabledColor] set];
     // Left circle
-    UIBezierPath *leftCircle = [UIBezierPath bezierPathWithOvalInRect:self.leftCircleFrame];
+    UIBezierPath *leftCircle = [UIBezierPath bezierPathWithOvalInRect:_leftCircleFrame];
     [bezierPath appendPath:leftCircle];
     [bezierPath fill];
     
     // Right circle
-    UIBezierPath *rightCircle = [UIBezierPath bezierPathWithOvalInRect:self.rightCircleFrame];
+    UIBezierPath *rightCircle = [UIBezierPath bezierPathWithOvalInRect:_rightCircleFrame];
     [bezierPath removeAllPoints];
     [bezierPath appendPath:rightCircle];
     [bezierPath fill];
     
     // Line in between
     [bezierPath removeAllPoints];
-    [bezierPath moveToPoint:CGPointMake(HORIZONTAL_MARGIN + CIRCLE_WIDTH/2, centerY)];
-    [bezierPath addLineToPoint:CGPointMake(CGRectGetWidth(rect) - HORIZONTAL_MARGIN - CIRCLE_WIDTH/2, centerY)];
+    [bezierPath moveToPoint:CGPointMake(_horizontalMargin + CIRCLE_WIDTH/2, _centerY)];
+    [bezierPath addLineToPoint:CGPointMake(CGRectGetWidth(rect) - _horizontalMargin - CIRCLE_WIDTH/2, _centerY)];
     [bezierPath setLineWidth:LINE_HEIGHT];
     [bezierPath stroke];
     
     // Highlight circle
-    [[UIColor flatWetAsphaltColor] set];
+    [[UIColor tmrMainColor] set];
     [bezierPath removeAllPoints];
     
-    CGRect stepCircleFrame = CGRectInset(self.activeCircleFrame, 3, 3);
+    CGRect stepCircleFrame = CGRectInset(_activeCircleFrame, 3, 3);
     UIBezierPath *stepCircle = [UIBezierPath bezierPathWithOvalInRect:stepCircleFrame];
     [bezierPath appendPath:stepCircle];
     [bezierPath fill];
