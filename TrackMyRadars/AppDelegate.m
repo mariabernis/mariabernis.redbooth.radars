@@ -11,7 +11,10 @@
 #import "RadarListViewController.h"
 #import "RedboothAPIClient.h"
 #import "MBCheck.h"
+#import "UIColor+TrackMyRadars.h"
+// TEMP Test
 #import "AFNetworkActivityLogger.h"
+#import "RadarsProject.h"
 
 #define APP_URL_SCHEME      @"mbredbooth"
 #define APP_CALLBACK_URI    @"mbredbooth://authorise"
@@ -29,6 +32,16 @@
     [[AFNetworkActivityLogger sharedLogger] startLogging];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    [self customizeAppearance];
+    
+    // TEMP test
+//    RadarsProject *p = [[RadarsProject alloc] init];
+//    p.opEmail = @"matt@bookhousesoftware.com";
+//    p.radarsProjectId = 1333016;
+//    p.radarsTaskListId = 2693588;
+//    p.radarsProjectName = @"My named project";
+//    [RadarsProject saveImportedProject:p];
 
     UIViewController *initialVC = [self initialViewControllerForStoryboard:[self mainStoryboard]];
     
@@ -37,6 +50,18 @@
     
     [MBCheck storeLastOpenedAppVersion];
     return YES;
+}
+
+- (void)customizeAppearance {
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor tmrMainColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor tmrTintColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    NSDictionary *textAtt = @{ NSForegroundColorAttributeName : [UIColor tmrTintColor] };
+    [[UINavigationBar appearance] setTitleTextAttributes:textAtt];
 }
 
 - (UIStoryboard *)mainStoryboard {

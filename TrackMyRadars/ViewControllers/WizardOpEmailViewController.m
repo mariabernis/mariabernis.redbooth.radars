@@ -9,10 +9,16 @@
 #import "WizardOpEmailViewController.h"
 #import "WizardRbOrganizationViewController.h"
 #import "MBCheck.h"
+#import "WizardStepsView.h"
+#import "UIColor+TrackMyRadars.h"
+#import "UIButton+TrackMyRadars.h"
+#import "UIView+TrackMyRadars.h"
 
 @interface WizardOpEmailViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *opEmailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *opEmailField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIView *fieldWrapper;
 
 @end
 
@@ -21,8 +27,17 @@
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.nextButton.enabled = NO;
     self.opEmailField.delegate = self;
+    self.nextButton.enabled = NO;
+    
+    self.view.backgroundColor = [UIColor tmrLighterGrayColor];
+    self.opEmailLabel.textColor = [UIColor tmrMainColor];
+    [self.fieldWrapper tmrFieldBckStyle];
+    [self.nextButton tmrStyle];
+    
+    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60);
+    WizardStepsView *stepsView = [[WizardStepsView alloc] initWithFrame:frame step:1];
+    [self.view addSubview:stepsView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,12 +80,8 @@
 
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (textField != self.opEmailField) {
-        return;
-    }
     
-    self.nextButton.enabled = [MBCheck isValidEmail:textField.text];
-
+    self.nextButton.enabled = [MBCheck isValidEmail:self.opEmailField.text];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "RadarsProjectParser.h"
 #import "RadarsProject.h"
+#import "MBCheck.h"
 
 @implementation RadarsProjectParser
 
@@ -16,19 +17,25 @@
     return [[info objectForKey:@"id"] integerValue];
 }
 
-+ (RadarsProject *)projectWithOpUser:(NSString *)email rbTasklistJSONInfo:(NSDictionary *)tasklistInfo {
++ (RadarsProject *)projectWithOpUser:(NSString *)email
+                         projectName:(NSString *)name
+                  rbTasklistJSONInfo:(NSDictionary *)tasklistInfo {
     
     RadarsProject *item = [[RadarsProject alloc] init];
     item.opEmail = email;
+    item.radarsProjectName = name;
     item.radarsProjectId = [[tasklistInfo objectForKey:@"project_id"] integerValue];
     item.radarsTaskListId = [[tasklistInfo objectForKey:@"id"] integerValue];
 
     return item;
 }
 
-+ (NSDictionary *)rbProjectParametersWithOrganizationId:(NSInteger)organizationId {
++ (NSDictionary *)rbProjectParametersWithName:(NSString *)name organizationId:(NSInteger)organizationId {
     
-    NSDictionary *params = @{ @"name"           :@"My Open radars",
+    if ([MBCheck isEmpty:name]) {
+        name = @"Track My Radars";
+    }
+    NSDictionary *params = @{ @"name"           :name,
                               @"organization_id":@(organizationId),
                               @"publish_pages"  :@"false"
                               };

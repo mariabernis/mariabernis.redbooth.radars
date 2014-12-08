@@ -12,9 +12,10 @@
 @interface RadarsProjectProvider : NSObject
 
 /* Designated initializer */
-- (instancetype)initWithOpUser:(NSString *)email;
+- (instancetype)initWithOpUser:(NSString *)email projectName:(NSString *)name;
 
-- (void)newRadarsProjectWithOrganizationId:(NSInteger)organizationId
-                                completion:(void(^)(RadarsProject *project, NSError *error))completion;
+- (void)newRadarsProjectWithName:(NSString *)name
+                  organizationId:(NSInteger)organizationId
+                      completion:(void(^)(RadarsProject *project, NSError *error))completion;
 
 @end

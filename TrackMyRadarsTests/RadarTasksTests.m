@@ -44,6 +44,23 @@ describe(@"When receiving array of OpenRadar radars", ^{
                 [[theValue(twitterError.isImported) should] equal:@NO];
                 
             });
+            
+            it(@"The radar number '15394622' should have a status 'open'", ^{
+                
+                RadarTask *twitterError = filtered[0];
+                [[twitterError.radarStatus should] equal:kRadarStatusOpen];
+                
+            });
+            
+            context(@"Saving radar number inside the description", ^{
+                RadarTask *twitterError = filtered[0];
+                
+                it(@"Should create description starting with 'rdar://15394622'", ^{
+ 
+                    BOOL match = [twitterError.radarDescription containsString:@"rdar://15394622"];
+                    [[theValue(match) should] beTrue];
+                });
+            });
         });
 
     });
@@ -86,6 +103,12 @@ describe(@"When receiving array of OpenRadar radars", ^{
                 [[desc should] beKindOfClass:[NSString class]];
                 BOOL match = [desc containsString:@"Summary:\r\nSLComposeViewController has no error structure for reporting bad twitter credentials (HTTP 401 from Twitter), and does not provide useful information to the user when it fails.\r\n\r\nI have multiple accounts in Settings > Twitter:"];
                 [[theValue(match) should] beTrue];
+            });
+            
+            it(@"Should generate Redbooth API parameter: 'status' as string 'open'", ^{
+                NSString *name = taskParams[@"status"];
+                [[name should] beKindOfClass:[NSString class]];
+                [[name should] equal:kRadarStatusOpen];
             });
             
             it(@"Should generate Redbooth API parameters: 'is_private' as a string 'false'", ^{
@@ -141,6 +164,24 @@ describe(@"When receiving array of Redbooth radar tasks", ^{
                 RadarTask *twitterError = filtered[0];
                 [[theValue(twitterError.isImported) should] equal:@YES];
                 
+            });
+            
+            it(@"The radar with id '15865431' should have a status 'open'", ^{
+                
+                RadarTask *twitterError = filtered[0];
+                [[twitterError.radarStatus should] equal:kRadarStatusOpen];
+                
+            });
+            
+            context(@"Retrieving radar number from the description", ^{
+                RadarTask *twitterError = filtered[0];
+                
+                it(@"Should get radar number '15394622'", ^{
+                    
+                    NSString *radarNum = [RadarTaskParser retrieveRadarNumberFromDescription:twitterError.radarDescription];
+                    [[radarNum should] equal:@"15394622"];
+                    [[twitterError.radarNumber should] equal:@"15394622"];
+                });
             });
         });
 

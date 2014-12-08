@@ -18,4 +18,40 @@
     return [UIColor colorWithHue:1 saturation:0.853 brightness:0.7 alpha:1];
 }
 
++ (UIColor *)tmrMainColor {
+    return [UIColor flatWetAsphaltColor];
+}
+
++ (UIColor *)tmrMainColorDarker {
+    return [UIColor flatMidnightBlueColor];
+}
+
++ (UIColor *)tmrMainColorLighter {
+    return [UIColor colorWithHue:0.583 saturation:1 brightness:0.442 alpha:1];
+}
+
++ (UIColor *)tmrMainColorWithAlpha:(CGFloat)alpha {
+    return [UIColor colorWithHue:0.583 saturation:0.445 brightness:0.368 alpha:alpha];
+}
+
++ (UIColor *)tmrWhiteColor {
+    return [UIColor whiteColor];
+}
+
++ (UIColor *)tmrTintColor {
+    return [UIColor flatCloudsColor];
+}
+
++ (UIColor *)tmrLighterGrayColor {
+    return [UIColor flatCloudsColor];
+}
+
++ (UIColor *)tmrLightMiddleGrayColor {
+    return [UIColor flatAsbestosColor];
+}
+
++ (UIColor *)tmrDisabledColor {
+    return [UIColor flatSilverColor];
+}
+
 @end

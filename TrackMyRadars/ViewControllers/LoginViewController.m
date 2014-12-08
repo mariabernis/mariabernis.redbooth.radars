@@ -8,28 +8,41 @@
 
 #import "LoginViewController.h"
 #import "UIColor+TrackMyRadars.h"
-#import "UIImage+Color.h"
-#import <PQFCustomLoaders/PQFCirclesInTriangle.h>
+#import "UIButton+TrackMyRadars.h"
+#import <PQFCustomLoaders/PQFCustomLoaders.h>
 #import "RedboothAPIClient.h"
 #import "RadarListViewController.h"
 
 @interface LoginViewController ()
+@property (nonatomic, strong) PQFCirclesInTriangle *loader;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 @end
 
 
-
 @implementation LoginViewController
+
+-(PQFCirclesInTriangle *)loader {
+    if (!_loader) {
+        _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
+        _loader.backgroundColor = [UIColor tmrMainColorWithAlpha:0.8];
+        _loader.loaderColor = [UIColor tmrTintColor];
+        // Fix center
+        _loader.center = CGPointMake(self.view.center.x, self.view.center.y - 64);
+    }
+    return _loader;
+}
 
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.loginButton setBackgroundImage:[UIImage mbc_imageWithColor:[UIColor redboothColor]] forState:UIControlStateNormal];
-    [self.loginButton setBackgroundImage:[UIImage mbc_imageWithColor:[UIColor redboothColorDarken]] forState:UIControlStateHighlighted];
-    CGFloat spacing = 15;
-    self.loginButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
-    self.loginButton.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
+    self.view.backgroundColor = [UIColor tmrLighterGrayColor];
+    self.titleLabel.textColor = [UIColor tmrMainColor];
+    self.explanationLabel.textColor = [UIColor tmrMainColor];
+    [self.loginButton redboothLoginStyle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,8 +57,11 @@
 
 - (void)handleAuthoriseCallback:(NSString *)code {
     
+    [self.loader show];
     [[RedboothAPIClient sharedInstance] authoriseWithCode:code
                                                completion:^(NSError *error) {
+                                                   
+                                                   [self.loader hide];
                                                    if (error) {
                                                        NSLog(@"😱 Auth error: %@", error);
                                                        return;

@@ -13,25 +13,29 @@
 
 @interface RadarsProjectProvider ()
 @property (nonatomic, strong) NSString *opEmail;
+@property (nonatomic, strong) NSString *projectName;
 @end
 
 
 @implementation RadarsProjectProvider
 
-- (instancetype)initWithOpUser:(NSString *)email
+- (instancetype)initWithOpUser:(NSString *)email projectName:(NSString *)name
 {
     self = [super init];
     if (self) {
         _opEmail = email;
+        _projectName = name;
     }
     return self;
 }
 
-- (void)newRadarsProjectWithOrganizationId:(NSInteger)organizationId
-                                completion:(void(^)(RadarsProject *project, NSError *error))completion {
+- (void)newRadarsProjectWithName:(NSString *)name
+                  organizationId:(NSInteger)organizationId
+                      completion:(void(^)(RadarsProject *project, NSError *error))completion {
     
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
-    NSDictionary *projectParams = [RadarsProjectParser rbProjectParametersWithOrganizationId:organizationId];
+    NSDictionary *projectParams = [RadarsProjectParser rbProjectParametersWithName:name
+                                                                    organizationId:organizationId];
     
     [redboothClient POST:RB_PATH_PROJECT
               parameters:projectParams
@@ -47,6 +51,7 @@
                                      
                                      NSDictionary *taskListInfo = [(NSArray *)responseObject firstObject];
                                      RadarsProject *project = [RadarsProjectParser projectWithOpUser:self.opEmail
+                                                                                         projectName:self.projectName
                                                                                   rbTasklistJSONInfo:taskListInfo];
                                      BOOL saved = [RadarsProject saveImportedProject:project];
                                      NSLog(@"🌠 Project created and saved: %@", saved? @"YES" : @"NO");
