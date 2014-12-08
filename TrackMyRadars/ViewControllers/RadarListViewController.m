@@ -158,6 +158,7 @@
     [self showImportedData];
     self.navigationItem.title = name;
     self.importBarButton.enabled = NO;
+    self.radarsTableView.userInteractionEnabled = NO;
     self.loader.label.text = @"Getting Openradars";
     [self.loader show];
     self.importManager = [[RadarsImportManager alloc] initWithOpEmail:email projectName:name andOrganizationId:organizationId];
@@ -187,6 +188,7 @@
          [self.radarsTableView reloadData];
          
          self.importBarButton.enabled = YES;
+         self.radarsTableView.userInteractionEnabled = YES;
          self.loader.label.text = @"Import completed!";
          [self performSelector:@selector(hideLoader) withObject:nil afterDelay:0.5];
      }];
