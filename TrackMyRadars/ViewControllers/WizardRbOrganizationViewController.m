@@ -64,6 +64,7 @@
     self.organizationsTableView.dataSource = self;
     self.organizationsTableView.delegate = self;
     
+    self.view.backgroundColor = [UIColor tmrLighterGrayColor];
     self.projNameLabel.textColor = [UIColor tmrMainColor];
     self.organizationsLabel.textColor = [UIColor tmrMainColor];
     [self.importButton tmrStyle];

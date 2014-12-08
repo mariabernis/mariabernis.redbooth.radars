@@ -14,6 +14,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+//    self.layoutMargins = UIEdgeInsetsZero;
+    
     CGFloat labelHeight = self.statusLabel.frame.size.height;
     self.statusLabel.layer.cornerRadius = labelHeight/2;
     self.statusLabel.layoutMargins = UIEdgeInsetsMake(0, 10, 0, 10);
@@ -37,10 +39,8 @@
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (UIEdgeInsets)layoutMargins {
+    return UIEdgeInsetsZero;
 }
-
-
 
 @end

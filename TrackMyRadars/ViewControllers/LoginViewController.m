@@ -14,7 +14,9 @@
 #import "RadarListViewController.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 @end
 
 
@@ -25,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor tmrLighterGrayColor];
+    self.titleLabel.textColor = [UIColor tmrMainColor];
+    self.explanationLabel.textColor = [UIColor tmrMainColor];
     [self.loginButton redboothLoginStyle];
 }
 

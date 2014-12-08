@@ -56,8 +56,7 @@ describe(@"When receiving array of OpenRadar radars", ^{
                 RadarTask *twitterError = filtered[0];
                 
                 it(@"Should create description starting with 'rdar://15394622'", ^{
-                    
-//                    NSString *newDesc = [RadarTaskParser addRadarNumber:twitterError.radarNumber toDescription:twitterError.radarDescription];
+ 
                     BOOL match = [twitterError.radarDescription containsString:@"rdar://15394622"];
                     [[theValue(match) should] beTrue];
                 });

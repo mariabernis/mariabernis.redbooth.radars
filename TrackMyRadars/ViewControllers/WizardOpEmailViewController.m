@@ -30,6 +30,7 @@
     self.opEmailField.delegate = self;
     self.nextButton.enabled = NO;
     
+    self.view.backgroundColor = [UIColor tmrLighterGrayColor];
     self.opEmailLabel.textColor = [UIColor tmrMainColor];
     [self.fieldWrapper tmrFieldBckStyle];
     [self.nextButton tmrStyle];
