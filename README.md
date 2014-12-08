@@ -1,7 +1,7 @@
 Track My Radars
 =======================
 
-With this app you can import your openradar radars as tasks in your Redbooth account. 
+With this app you can import your [Openradar](http://openradar.appspot.com) radars as tasks in your Redbooth account. 
 
 Main features:
 
