@@ -12,7 +12,8 @@
 @interface RadarsProjectProvider : NSObject
 
 /* Designated initializer */
-- (instancetype)initWithOpUser:(NSString *)email projectName:(NSString *)name;
+- (instancetype)initWithOpUser:(NSString *)email
+                   projectName:(NSString *)name;
 
 - (void)newRadarsProjectWithName:(NSString *)name
                   organizationId:(NSInteger)organizationId

@@ -19,6 +19,7 @@
 #import <PQFCustomLoaders/PQFCustomLoaders.h>
 
 @interface WizardRbOrganizationViewController ()<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
+
 @property (nonatomic, strong) NSArray *organizations; // Of Organization
 @property (nonatomic, strong) NSIndexPath *selectedIndex;
 @property (nonatomic, strong) OrganizationsProvider *organizationsProvider;
@@ -32,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *projNameField;
 @property (weak, nonatomic) IBOutlet UILabel *organizationsLabel;
 @property (weak, nonatomic) IBOutlet UIView *loaderPlaceholder;
+
 @end
 
 
@@ -39,26 +41,30 @@
 
 @synthesize organizations = _organizations;
 
-- (NSArray *)organizations {
+- (NSArray *)organizations
+{
     if (!_organizations) {
         _organizations = [[NSArray alloc] init];
     }
     return _organizations;
 }
 
-- (void)setOrganizations:(NSArray *)organizations {
+- (void)setOrganizations:(NSArray *)organizations
+{
     _organizations = [NSArray arrayWithArray:organizations];
     [self.organizationsTableView reloadData];
 }
 
-- (OrganizationsProvider *)organizationsProvider {
+- (OrganizationsProvider *)organizationsProvider
+{
     if (!_organizationsProvider) {
         _organizationsProvider = [[OrganizationsProvider alloc] init];
     }
     return _organizationsProvider;
 }
 
-- (PQFCirclesInTriangle *)loader {
+- (PQFCirclesInTriangle *)loader
+{
     if (!_loader) {
         _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
         _loader.loaderColor = [UIColor tmrMainColor];
@@ -69,8 +75,10 @@
 }
 
 #pragma mark - VC life cycle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
     self.navigationItem.title = @"Import radars";
     
     self.projNameField.delegate = self;
@@ -92,17 +100,15 @@
     [self loadOrganizationList];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
 
 #pragma mark - Actions
-- (void)loadOrganizationList {
-    
+- (void)loadOrganizationList
+{
     self.importButton.enabled = NO;
     [self showLoader];
     [self.organizationsProvider fetchOrganizationsWithRemainingProjects:^(NSArray *organizations, NSError *error) {
@@ -116,14 +122,15 @@
     }];
 }
 
-- (IBAction)dismissKeyboardIfShowing:(UITapGestureRecognizer *)sender {
+- (IBAction)dismissKeyboardIfShowing:(UITapGestureRecognizer *)sender
+{
     if ([self.projNameField isFirstResponder]) {
         [self.projNameField resignFirstResponder];
     }
 }
 
-- (IBAction)startRadarsImport:(id)sender {
-    
+- (IBAction)startRadarsImport:(id)sender
+{
     if (self.delegate) {
         Organization *selected = self.organizations[self.selectedIndex.row];
         [self.delegate wizardDidFinishWithOpEmail:self.opEmail projectName:self.projNameField.text organizationId:selected.oragnizationId];
@@ -131,19 +138,21 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)showLoader {
+- (void)showLoader
+{
     self.loaderPlaceholder.hidden = NO;
     [self.loader show];
 }
 
-- (void)hideLoader {
+- (void)hideLoader
+{
     self.loaderPlaceholder.hidden = YES;
     [self.loader hide];
 }
 
 #pragma mark - UITextFieldDelegate
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
     BOOL isEmptyText = [MBCheck isEmpty:self.projNameField.text];
     if (isEmptyText) {
         self.fieldWrapper.backgroundColor = [UIColor colorWithHue:0.583 saturation:0.551 brightness:0.568 alpha:0.4];
@@ -156,12 +165,13 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.organizations.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Organization *organization = self.organizations[indexPath.row];
     cell.textLabel.text = organization.organizationName;
@@ -180,8 +190,8 @@
 }
 
 #pragma mark - UITableViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (self.selectedIndex) {

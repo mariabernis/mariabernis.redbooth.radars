@@ -11,7 +11,8 @@
 @class Organization;
 @interface OrganizationParser : NSObject
 
-+ (NSArray *)organizationsWithJSONArray:(NSArray *)array atLeastOneRemainingProject:(BOOL)atLeastOne;
++ (NSArray *)organizationsWithJSONArray:(NSArray *)array
+             atLeastOneRemainingProject:(BOOL)atLeastOne;
 + (Organization *)organizationWithJSONInfo:(NSDictionary *)info;
 
 @end

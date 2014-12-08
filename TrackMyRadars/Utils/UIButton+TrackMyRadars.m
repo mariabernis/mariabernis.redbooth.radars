@@ -12,14 +12,13 @@
 
 @implementation UIButton (TrackMyRadars)
 
-- (void)tmrStyle {
-    
+- (void)tmrStyle
+{
     self.layer.borderColor = [UIColor tmrMainColorLighter].CGColor;
     self.layer.borderWidth = 1.0;
     self.layer.cornerRadius = 3.0;
     self.clipsToBounds = YES;
     
-//    self.backgroundColor = [UIColor clearColor];
     [self setBackgroundImage:[UIImage mbc_imageWithColor:[UIColor tmrLighterGrayColor]] forState:UIControlStateNormal];
     [self setBackgroundImage:[UIImage mbc_imageWithColor:[UIColor tmrLighterGrayColor]] forState:UIControlStateDisabled];
     [self setBackgroundImage:[UIImage mbc_imageWithColor:[UIColor tmrMainColor]] forState:UIControlStateHighlighted];
@@ -28,8 +27,8 @@
     [self setTitleColor:[UIColor tmrTintColor] forState:UIControlStateHighlighted];
 }
 
-- (void)redboothLoginStyle {
-    
+- (void)redboothLoginStyle
+{
     self.layer.cornerRadius = 3.0;
     self.clipsToBounds = YES;
     

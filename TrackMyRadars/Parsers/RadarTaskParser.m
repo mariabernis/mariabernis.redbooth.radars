@@ -12,8 +12,10 @@
 
 @implementation RadarTaskParser
 
-#pragma mark - Openradar fetch
-+ (NSArray *)radarTasksWithOPArray:(NSArray *)array {
+#pragma mark - Openradar 
+#pragma fetch
++ (NSArray *)radarTasksWithOPArray:(NSArray *)array
+{
     NSMutableArray *items = [[NSMutableArray alloc] init];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         RadarTask *item = [self radarTaskWithOPInfo:(NSDictionary *)obj];
@@ -23,8 +25,8 @@
     return [NSArray arrayWithArray:items];
 }
 
-+ (RadarTask *)radarTaskWithOPInfo:(NSDictionary *)info {
-    
++ (RadarTask *)radarTaskWithOPInfo:(NSDictionary *)info
+{
     RadarTask *item = [[RadarTask alloc] init];
     item.radarNumber = [info objectForKey:@"number"];
     item.radarTitle = [info objectForKey:@"title"];
@@ -37,13 +39,13 @@
     return item;
 }
 
-+ (NSString *)addRadarNumber:(NSString *)radarNumber toDescription:(NSString *)description {
-    
++ (NSString *)addRadarNumber:(NSString *)radarNumber toDescription:(NSString *)description
+{
     return [NSString stringWithFormat:@"rdar://%@\r\n\r\n%@", radarNumber, description];
 }
 
-+ (NSString *)simplifiedStatusForOPStatus:(NSString *)opStatus {
-    
++ (NSString *)simplifiedStatusForOPStatus:(NSString *)opStatus
+{
     NSString *status = nil;
     NSString *lowOpStatus = [opStatus lowercaseString];
     if ([lowOpStatus containsString:@"closed"] ||
@@ -55,8 +57,10 @@
     return status;
 }
 
-#pragma mark - Redbooth fetch
-+ (NSArray *)radarTasksWithRBArray:(NSArray *)array {
+#pragma mark - Redbooth
+#pragma mark fetch
++ (NSArray *)radarTasksWithRBArray:(NSArray *)array
+{
     NSMutableArray *items = [[NSMutableArray alloc] init];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         RadarTask *item = [self radarTaskWithRBInfo:(NSDictionary *)obj];
@@ -66,8 +70,8 @@
     return [NSArray arrayWithArray:items];
 }
 
-+ (RadarTask *)radarTaskWithRBInfo:(NSDictionary *)info {
-    
++ (RadarTask *)radarTaskWithRBInfo:(NSDictionary *)info
+{
     RadarTask *item = [[RadarTask alloc] init];
     item.taskId = [[info objectForKey:@"id"] integerValue];
     item.radarTitle = [info objectForKey:@"name"];
@@ -78,8 +82,8 @@
     return item;
 }
 
-+ (NSString *)retrieveRadarNumberFromDescription:(NSString *)description {
-    
++ (NSString *)retrieveRadarNumberFromDescription:(NSString *)description
+{
     NSString *matchString = @"rdar://";
     NSRange matchRadarNum = [description rangeOfString:matchString];
     if (matchRadarNum.length == NSNotFound) {
@@ -90,8 +94,9 @@
     return num;
 }
 
-+ (NSDictionary *)rbGetTasksParametersWithProject:(RadarsProject *)project {
-    
++ (NSDictionary *)rbGETTasksParametersWithProject:(RadarsProject *)project
+{
+    // Add per_page to max value, otherwise it will page at 30.
     NSDictionary *taskParams = @{ @"project_id"  :@(project.radarsProjectId),
                                   @"task_list_id":@(project.radarsTaskListId),
                                   @"per_page"    :@1000
@@ -99,9 +104,9 @@
     return taskParams;
 }
 
-#pragma mark - Redbooth post
-+ (NSDictionary *)rbPostTaskParametersWithRadarTask:(RadarTask *)radar andRadarProject:(RadarsProject *)project {
-    
+#pragma mark post
++ (NSDictionary *)rbPOSTTaskParametersWithRadarTask:(RadarTask *)radar andRadarProject:(RadarsProject *)project
+{
     NSDictionary *taskParams = @{ @"project_id"  :@(project.radarsProjectId),
                                   @"task_list_id":@(project.radarsTaskListId),
                                   @"name"        :radar.radarTitle,

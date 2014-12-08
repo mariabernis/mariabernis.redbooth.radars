@@ -12,15 +12,11 @@
 
 @implementation RadarsProjectParser
 
-+ (NSInteger)projectIdWithJSONInfo:(NSDictionary *)info {
-    
-    return [[info objectForKey:@"id"] integerValue];
-}
-
+#pragma mark - Openradar
 + (RadarsProject *)projectWithOpUser:(NSString *)email
                          projectName:(NSString *)name
-                  rbTasklistJSONInfo:(NSDictionary *)tasklistInfo {
-    
+                  rbTasklistJSONInfo:(NSDictionary *)tasklistInfo
+{
     RadarsProject *item = [[RadarsProject alloc] init];
     item.opEmail = email;
     item.radarsProjectName = name;
@@ -30,8 +26,14 @@
     return item;
 }
 
-+ (NSDictionary *)rbProjectParametersWithName:(NSString *)name organizationId:(NSInteger)organizationId {
-    
+#pragma mark - Redbooth
++ (NSInteger)projectIdWithJSONInfo:(NSDictionary *)info
+{
+    return [[info objectForKey:@"id"] integerValue];
+}
+
++ (NSDictionary *)rbProjectParametersWithName:(NSString *)name organizationId:(NSInteger)organizationId
+{
     if ([MBCheck isEmpty:name]) {
         name = @"Track My Radars";
     }
@@ -42,8 +44,8 @@
     return params;
 }
 
-+ (NSDictionary *)rbTasklistParametersWithProjectId:(NSInteger)projectId {
-    
++ (NSDictionary *)rbTasklistParametersWithProjectId:(NSInteger)projectId
+{
     NSDictionary *params = @{ @"project_id":@(projectId) };
     return params;
 }

@@ -75,7 +75,7 @@ describe(@"When receiving array of OpenRadar radars", ^{
             RadarsProject *project = [[RadarsProject alloc] init];
             project.radarsProjectId = 1234;
             project.radarsTaskListId = 2222;
-            NSDictionary *taskParams = [RadarTaskParser rbPostTaskParametersWithRadarTask:notImportedRadar
+            NSDictionary *taskParams = [RadarTaskParser rbPOSTTaskParametersWithRadarTask:notImportedRadar
                                                                           andRadarProject:project];
             
             it(@"Should generate Redbooth API parameter: 'project_id' as a number 1234", ^{
@@ -98,7 +98,7 @@ describe(@"When receiving array of OpenRadar radars", ^{
                 [[name should] equal:@"SLComposeViewController hides Twitter auth errors"];
             });
             
-            it(@"Should generate Redbooth API parameters: 'description' as string", ^{
+            it(@"Should generate Redbooth API parameter: 'description' as string", ^{
                 NSString *desc = taskParams[@"description"];
                 [[desc should] beKindOfClass:[NSString class]];
                 BOOL match = [desc containsString:@"Summary:\r\nSLComposeViewController has no error structure for reporting bad twitter credentials (HTTP 401 from Twitter), and does not provide useful information to the user when it fails.\r\n\r\nI have multiple accounts in Settings > Twitter:"];
@@ -111,7 +111,7 @@ describe(@"When receiving array of OpenRadar radars", ^{
                 [[name should] equal:kRadarStatusOpen];
             });
             
-            it(@"Should generate Redbooth API parameters: 'is_private' as a string 'false'", ^{
+            it(@"Should generate Redbooth API parameter: 'is_private' as a string 'false'", ^{
                 NSString *isPrivate = taskParams[@"is_private"];
                 [[isPrivate should] beKindOfClass:[NSString class]];
                 [[isPrivate should] equal:@"false"];
@@ -185,6 +185,37 @@ describe(@"When receiving array of Redbooth radar tasks", ^{
             });
         });
 
+    });
+    
+    context(@"Calling the API to get the tasks", ^{
+        
+        RadarsProject *p = [[RadarsProject alloc] init];
+        p.opEmail = @"matt@bookhousesoftware.com";
+        p.radarsProjectId = 1333016;
+        p.radarsTaskListId = 2693588;
+        p.radarsProjectName = @"My named project";
+        NSDictionary *taskParams = [RadarTaskParser rbGETTasksParametersWithProject:p];
+
+        it(@"Should generate API parameter: 'project_id' as a number '1333016'", ^{
+            
+            NSNumber *projectId = taskParams[@"project_id"];
+            [[projectId should] beKindOfClass:[NSNumber class]];
+            [[projectId should] equal:@1333016];
+        });
+        
+        it(@"Should generate API parameter: 'task_list_id' as a number '2693588'", ^{
+            
+            NSNumber *tasklistId = taskParams[@"task_list_id"];
+            [[tasklistId should] beKindOfClass:[NSNumber class]];
+            [[tasklistId should] equal:@2693588];
+        });
+        
+        it(@"Should generate API parameter: 'per_page' as a number '1000'", ^{
+            
+            NSNumber *perpage = taskParams[@"per_page"];
+            [[perpage should] beKindOfClass:[NSNumber class]];
+            [[perpage should] equal:@1000];
+        });
     });
     
 });

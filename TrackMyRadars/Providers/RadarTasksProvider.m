@@ -14,9 +14,10 @@
 
 @implementation RadarTasksProvider
 
+#pragma mark - Fetching
 - (void)fetchOpenradarsWithOPUser:(NSString *)opUser
-                       completion:(void(^)(NSArray *radars, NSError *error))completion {
-    
+                       completion:(void(^)(NSArray *radars, NSError *error))completion
+{
     OpenradarAPIClient *openradarClient = [OpenradarAPIClient sharedInstance];
     [openradarClient GET:OP_PATH_RADAR
               parameters:@{ @"user":opUser }
@@ -38,11 +39,11 @@
 }
 
 - (void)fetchRBRadarsWithProject:(RadarsProject *)project
-                      completion:(void(^)(NSArray *radars, NSError *error))completion {
-    
+                      completion:(void(^)(NSArray *radars, NSError *error))completion
+{
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
     
-    NSDictionary *tasksParams = [RadarTaskParser rbGetTasksParametersWithProject:project];
+    NSDictionary *tasksParams = [RadarTaskParser rbGETTasksParametersWithProject:project];
     [redboothClient GET:RB_PATH_TASK
              parameters:tasksParams
                 success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -62,12 +63,13 @@
                 }];
 }
 
+#pragma mark - Import batch
 - (void)postTasksForOpenradars:(NSArray *)radars
                      inProject:(RadarsProject *)project
                       progress:(void(^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock
                         import:(void(^)(NSUInteger index, RadarTask *importedRadar, NSError *error))importBlock
-                    completion:(void(^)(NSArray *importedRadars))completionBlock {
-    
+                    completion:(void(^)(NSArray *importedRadars))completionBlock
+{
     NSMutableArray *mOperations = [[NSMutableArray alloc] init];
     
     __block NSMutableArray *importedRadars = [[NSMutableArray alloc] init];
@@ -114,11 +116,11 @@
     
 }
 
-- (AFHTTPRequestOperation *)operationForPostingRadar:(RadarTask *)radar inRadarProject:(RadarsProject *)project {
-    
+- (AFHTTPRequestOperation *)operationForPostingRadar:(RadarTask *)radar inRadarProject:(RadarsProject *)project
+{
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
     NSString *path = [[NSURL URLWithString:RB_PATH_TASK relativeToURL:redboothClient.baseURL] absoluteString];
-    NSDictionary *taskParams = [RadarTaskParser rbPostTaskParametersWithRadarTask:radar
+    NSDictionary *taskParams = [RadarTaskParser rbPOSTTaskParametersWithRadarTask:radar
                                                                   andRadarProject:project];
     
     NSMutableURLRequest *request = [redboothClient.requestSerializer requestWithMethod:@"POST"

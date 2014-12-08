@@ -10,6 +10,8 @@
 #import "WizardDelegate.h"
 
 @interface WizardRbOrganizationViewController : UIViewController
+
 @property (nonatomic, weak) id<WizardDelegate> delegate;
 @property (nonatomic, strong) NSString *opEmail;
+
 @end

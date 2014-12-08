@@ -27,7 +27,8 @@
 @implementation RedboothAPIClient
 
 #pragma mark - Singleton instance
-+ (instancetype)sharedInstance {
++ (instancetype)sharedInstance
+{
     static dispatch_once_t once;
     static id sharedInstance;
     dispatch_once(&once, ^{
@@ -36,7 +37,8 @@
     return sharedInstance;
 }
 
-- (id)initWithBaseURL:(NSURL *)url clientID:(NSString *)clientID secret:(NSString *)secret {
+- (id)initWithBaseURL:(NSURL *)url clientID:(NSString *)clientID secret:(NSString *)secret
+{
     self = [super initWithBaseURL:url clientID:clientID secret:secret];
     if (self) {
         BOOL isFirstLaunch = [MBCheck isFirstTimeAppLaunch];
@@ -55,13 +57,14 @@
     return self;
 }
 
-- (void)setCredential:(AFOAuthCredential *)credential {
+- (void)setCredential:(AFOAuthCredential *)credential
+{
     _credential = credential;
     _authorised = credential ? YES : NO;
 }
 
-- (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
-    
+- (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
+{
     void (^realSuccessBlock)(NSURLSessionDataTask *task, id responseObject) = ^(NSURLSessionDataTask *task, id responseObject) {
         
        [super GET:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -79,8 +82,8 @@
     return nil;
 }
 
-- (NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
-    
+- (NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
+{
     void (^realSuccessBlock)(NSURLSessionDataTask *task, id responseObject) = ^(NSURLSessionDataTask *task, id responseObject) {
         
         [super POST:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -101,8 +104,8 @@
 
 #pragma mark - Authentication
 - (void)refreshTokenIfNeededWithSuccess:(void (^)(NSURLSessionDataTask *, id))success
-                                failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
-    
+                                failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
+{
     if (self.credential == nil) {
         if (failure) {
             // Failed to get credentials
@@ -141,8 +144,8 @@
                                  }];
 }
 
-- (void)launchAuthorizationFlow {
-    
+- (void)launchAuthorizationFlow
+{
     NSString *baseAuthURLStr = @"https://redbooth.com/oauth2/authorize";
     NSString *params = [NSString stringWithFormat:@"client_id=%@&redirect_uri=%@&response_type=code", RB_API_CLIENT, RB_API_CALLBACK_URL];
     NSString *scapedParams = [params stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
@@ -150,8 +153,8 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:authURLStr]];
 }
 
-- (void)authoriseWithCode:(NSString *)code completion:(void(^)(NSError *error))completion {
-    
+- (void)authoriseWithCode:(NSString *)code completion:(void(^)(NSError *error))completion
+{
     [self authenticateUsingOAuthWithPath:@"/oauth2/token"
                                     code:code
                              redirectURI:RB_API_CALLBACK_URL

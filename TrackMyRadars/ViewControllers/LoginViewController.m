@@ -14,17 +14,21 @@
 #import "RadarListViewController.h"
 
 @interface LoginViewController ()
+
 @property (nonatomic, strong) PQFCirclesInTriangle *loader;
 
+// Outlets
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
+
 @end
 
 
 @implementation LoginViewController
 
--(PQFCirclesInTriangle *)loader {
+- (PQFCirclesInTriangle *)loader
+{
     if (!_loader) {
         _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
         _loader.backgroundColor = [UIColor tmrMainColorWithAlpha:0.8];
@@ -36,7 +40,8 @@
 }
 
 #pragma mark - VC life cycle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor tmrLighterGrayColor];
@@ -45,18 +50,19 @@
     [self.loginButton redboothLoginStyle];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Actions
-- (IBAction)loginButtonPressed:(id)sender {
-    
+- (IBAction)loginButtonPressed:(id)sender
+{
     [[RedboothAPIClient sharedInstance] launchAuthorizationFlow];
 }
 
-- (void)handleAuthoriseCallback:(NSString *)code {
-    
+- (void)handleAuthoriseCallback:(NSString *)code
+{
     [self.loader show];
     [[RedboothAPIClient sharedInstance] authoriseWithCode:code
                                                completion:^(NSError *error) {

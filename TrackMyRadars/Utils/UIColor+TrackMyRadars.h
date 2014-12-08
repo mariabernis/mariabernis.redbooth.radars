@@ -10,6 +10,7 @@
 #import <UIColor+FlatColors/UIColor+FlatColors.h>
 
 @interface UIColor (TrackMyRadars)
+
 + (UIColor *)redboothColor;
 + (UIColor *)redboothColorDarken;
 + (UIColor *)tmrMainColor;
@@ -21,4 +22,5 @@
 + (UIColor *)tmrLighterGrayColor;
 + (UIColor *)tmrLightMiddleGrayColor;
 + (UIColor *)tmrDisabledColor;
+
 @end

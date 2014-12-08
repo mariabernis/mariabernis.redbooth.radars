@@ -13,7 +13,8 @@
 @implementation OpenradarAPIClient
 
 #pragma mark - Singleton instance
-+ (instancetype)sharedInstance {
++ (instancetype)sharedInstance
+{
     static dispatch_once_t once;
     static id sharedInstance;
     dispatch_once(&once, ^{
@@ -22,7 +23,8 @@
     return sharedInstance;
 }
 
-- (instancetype)initWithBaseURL:(NSURL *)url {
+- (instancetype)initWithBaseURL:(NSURL *)url
+{
     self = [super initWithBaseURL:url];
     if (self) {
         NSMutableSet *responseContentTypes = [NSMutableSet setWithSet:self.responseSerializer.acceptableContentTypes];
@@ -31,11 +33,5 @@
     }
     return self;
 }
-
-#pragma mark - Authorisation
-//- (void)setAuthorizationHeaderWithKey:(NSString *)apiKey {
-//    [self.requestSerializer setValue:[NSString stringWithFormat:@"Basic %@", apiKey]
-//                  forHTTPHeaderField:@"Authorization"];
-//}
 
 @end

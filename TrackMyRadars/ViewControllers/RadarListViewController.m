@@ -31,36 +31,38 @@
 @property (weak, nonatomic) IBOutlet UITableView *radarsTableView;
 @property (weak, nonatomic) IBOutlet UIView *noImportView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *importBarButton;
+
 @end
 
 
 @implementation RadarListViewController
 
-- (NSMutableArray *)radars {
-    
+- (NSMutableArray *)radars
+{
     if (!_radars) {
         _radars = [[NSMutableArray alloc] init];
     }
     return _radars;
 }
 
-- (RadarsProject *)importedProject {
-    
+- (RadarsProject *)importedProject
+{
     if (!_importedProject) {
         _importedProject = [RadarsProject importedProject];
     }
     return _importedProject;
 }
 
-- (RadarTasksProvider *)tasksProvider {
-    
+- (RadarTasksProvider *)tasksProvider
+{
     if (!_tasksProvider) {
         _tasksProvider = [[RadarTasksProvider alloc] init];
     }
     return _tasksProvider;
 }
 
-- (PQFCirclesInTriangle *)loader {
+- (PQFCirclesInTriangle *)loader
+{
     if (!_loader) {
         _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
         _loader.backgroundColor = [UIColor tmrMainColorWithAlpha:0.8];
@@ -72,7 +74,8 @@
 }
 
 #pragma mark - VC life cycle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor tmrLighterGrayColor];
@@ -97,33 +100,14 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Actions
-- (void)showNoImportView {
-    self.navigationItem.title = @"Track My Radars";
-    self.noImportView.hidden = NO;
-    self.radarsTableView.hidden = YES;
-}
-
-- (void)showImportedData {
-    self.navigationItem.title = self.importedProject.radarsProjectName;
-    self.noImportView.hidden = YES;
-    self.radarsTableView.hidden = NO;
-}
-
-- (void)hideLoader {
-    [self.loader hide];
-}
-
-- (void)loadRadarsFromRBProject:(RadarsProject *)project {
-    
+- (void)loadRadarsFromRBProject:(RadarsProject *)project
+{
     self.loader.label.text = @"Loading radar tasks";
     self.importBarButton.enabled = NO;
     [self.loader show];
@@ -139,18 +123,38 @@
                                       }];
 }
 
-- (IBAction)startImport:(id)sender {
+- (IBAction)startImport:(id)sender
+{
     UINavigationController *navVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WizardOneNav"];
     WizardOpEmailViewController *wizardEmailVC = (WizardOpEmailViewController *)[navVC topViewController];
     wizardEmailVC.delegate = self;
     [self presentViewController:navVC animated:YES completion:nil];
 }
 
+- (void)showNoImportView
+{
+    self.navigationItem.title = @"Track My Radars";
+    self.noImportView.hidden = NO;
+    self.radarsTableView.hidden = YES;
+}
+
+- (void)showImportedData
+{
+    self.navigationItem.title = self.importedProject.radarsProjectName;
+    self.noImportView.hidden = YES;
+    self.radarsTableView.hidden = NO;
+}
+
+- (void)hideLoader
+{
+    [self.loader hide];
+}
+
 #pragma mark - WizardDelegate
 - (void)wizardDidFinishWithOpEmail:(NSString *)email
                        projectName:(NSString *)name
-                    organizationId:(NSInteger)organizationId {
-    
+                    organizationId:(NSInteger)organizationId
+{
     [self showImportedData];
     self.navigationItem.title = name;
     self.importBarButton.enabled = NO;
@@ -189,12 +193,13 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.radars.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     RadarTaskCell *cell = (RadarTaskCell *)[tableView dequeueReusableCellWithIdentifier:@"RadarTaskCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [self configureCell:cell forIndexPath:indexPath];
@@ -202,9 +207,9 @@
     return cell;
 }
 
-#pragma datasuorce Helpers
-- (void)configureCell:(RadarTaskCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    
+#pragma mark datasuorce Helpers
+- (void)configureCell:(RadarTaskCell *)cell forIndexPath:(NSIndexPath *)indexPath
+{
     RadarTask *radar = self.radars[indexPath.row];
     cell.radarTitleLabel.text = radar.radarTitle;
     cell.numberLabel.text = [NSString stringWithFormat:@"#%@", radar.radarNumber];
@@ -219,7 +224,8 @@
     }
 }
 
-- (void)updateCellAtRow:(NSUInteger)row {
+- (void)updateCellAtRow:(NSUInteger)row
+{
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
     
     [self.radarsTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
@@ -230,9 +236,7 @@
         [self.radarsTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     } else {
         rowAnimation = UITableViewRowAnimationLeft;
-    }
-    
-//    [self.radarsTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
+    }    
 }
 
 @end

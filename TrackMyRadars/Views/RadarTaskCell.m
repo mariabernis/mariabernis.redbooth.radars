@@ -12,10 +12,9 @@
 
 @implementation RadarTaskCell
 
-- (void)awakeFromNib {
-    // Initialization code
-//    self.layoutMargins = UIEdgeInsetsZero;
-    
+- (void)awakeFromNib
+{
+    // Initialization code    
     CGFloat labelHeight = self.statusLabel.frame.size.height;
     self.statusLabel.layer.cornerRadius = labelHeight/2;
     self.statusLabel.layoutMargins = UIEdgeInsetsMake(0, 10, 0, 10);
@@ -24,7 +23,8 @@
     self.statusLabel.padding = UIEdgeInsetsMake(0, 6, 0, 6);
 }
 
-- (void)setImported:(BOOL)imported {
+- (void)setImported:(BOOL)imported
+{
     _imported = imported;
     if (imported) {
         self.numberLabel.textColor = [UIColor tmrLightMiddleGrayColor];
@@ -39,7 +39,8 @@
     }
 }
 
-- (UIEdgeInsets)layoutMargins {
+- (UIEdgeInsets)layoutMargins
+{
     return UIEdgeInsetsZero;
 }
 

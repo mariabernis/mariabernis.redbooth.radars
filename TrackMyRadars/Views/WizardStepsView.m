@@ -11,16 +11,15 @@
 
 #define CIRCLE_WIDTH 26.0
 #define LINE_HEIGHT 7.0
-//#define HORIZONTAL_MARGIN 50.0
+
 
 @interface WizardStepsView ()
-//@property (nonatomic, assign) CGFloat horizontalMargin;
-//@property (nonatomic, assign) CGRect leftCircleFrame;
-//@property (nonatomic, assign) CGRect rightCircleFrame;
-//@property (nonatomic, assign) CGRect activeCircleFrame;
+
 @end
 
-@implementation WizardStepsView {
+
+@implementation WizardStepsView
+{
     CGFloat _centerY;
     CGFloat _horizontalMargin;
     CGRect _leftCircleFrame;
@@ -38,8 +37,8 @@
     return self;
 }
 
-- (void)setup {
-    
+- (void)setup
+{
     self.backgroundColor = [UIColor tmrLighterGrayColor];
     _horizontalMargin = (CGRectGetWidth([UIScreen mainScreen].bounds)/3)/2;
     
@@ -105,8 +104,8 @@
 }
 
 
-- (void)drawRect:(CGRect)rect {
-    
+- (void)drawRect:(CGRect)rect
+{
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     
     [[UIColor tmrDisabledColor] set];

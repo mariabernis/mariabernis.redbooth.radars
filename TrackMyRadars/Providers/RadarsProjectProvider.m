@@ -19,7 +19,8 @@
 
 @implementation RadarsProjectProvider
 
-- (instancetype)initWithOpUser:(NSString *)email projectName:(NSString *)name
+- (instancetype)initWithOpUser:(NSString *)email
+                   projectName:(NSString *)name
 {
     self = [super init];
     if (self) {
@@ -31,8 +32,8 @@
 
 - (void)newRadarsProjectWithName:(NSString *)name
                   organizationId:(NSInteger)organizationId
-                      completion:(void(^)(RadarsProject *project, NSError *error))completion {
-    
+                      completion:(void(^)(RadarsProject *project, NSError *error))completion
+{
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
     NSDictionary *projectParams = [RadarsProjectParser rbProjectParametersWithName:name
                                                                     organizationId:organizationId];

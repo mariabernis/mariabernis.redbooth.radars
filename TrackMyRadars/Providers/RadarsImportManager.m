@@ -34,14 +34,16 @@
     return self;
 }
 
-- (RadarsProjectProvider *)projectsProvider {
+- (RadarsProjectProvider *)projectsProvider
+{
     if (!_projectsProvider) {
         _projectsProvider = [[RadarsProjectProvider alloc] initWithOpUser:self.opEmail projectName:self.projectName];
     }
     return _projectsProvider;
 }
 
-- (RadarTasksProvider *)tasksProvider {
+- (RadarTasksProvider *)tasksProvider
+{
     if (!_tasksProvider) {
         _tasksProvider = [[RadarTasksProvider alloc] init];
     }
@@ -51,8 +53,8 @@
 - (void)importRadarsWithTemporaryContent:(void(^)(NSArray *tempRadars))tempContent
                                 progress:(void(^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock
                                   import:(void(^)(NSUInteger index, RadarTask *importedRadar, NSError *error))importBlock
-                              completion:(void(^)(NSArray *importedRadars, NSError *error))completionBlock {
-    
+                              completion:(void(^)(NSArray *importedRadars, NSError *error))completionBlock
+{
     [self.tasksProvider fetchOpenradarsWithOPUser:self.opEmail
                                        completion:^(NSArray *radars, NSError *error) {
         if (error) {

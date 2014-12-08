@@ -14,7 +14,8 @@ NSString * const kRadarStatusResolved = @"resolved";
 
 @implementation RadarTask
 
-- (void)setTaskId:(NSInteger)taskId {
+- (void)setTaskId:(NSInteger)taskId
+{
     _taskId = taskId;
     if (taskId) {
         _imported = YES;

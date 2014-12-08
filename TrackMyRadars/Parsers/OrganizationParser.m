@@ -11,8 +11,9 @@
 
 @implementation OrganizationParser
 
-+ (NSArray *)organizationsWithJSONArray:(NSArray *)array atLeastOneRemainingProject:(BOOL)atLeastOne {
-    
++ (NSArray *)organizationsWithJSONArray:(NSArray *)array
+             atLeastOneRemainingProject:(BOOL)atLeastOne
+{
     NSMutableArray *items = [[NSMutableArray alloc] init];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         Organization *item = [self organizationWithJSONInfo:(NSDictionary *)obj];
@@ -29,8 +30,8 @@
     return [NSArray arrayWithArray:items];
 }
 
-+ (Organization *)organizationWithJSONInfo:(NSDictionary *)info {
-    
++ (Organization *)organizationWithJSONInfo:(NSDictionary *)info
+{
     Organization *item = [[Organization alloc] init];
     item.oragnizationId = [[info objectForKey:@"id"] integerValue];
     item.organizationName = [info objectForKey:@"name"];

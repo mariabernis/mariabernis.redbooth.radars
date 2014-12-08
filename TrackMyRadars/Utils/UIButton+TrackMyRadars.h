@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (TrackMyRadars)
+
 - (void)tmrStyle;
 - (void)redboothLoginStyle;
+
 @end

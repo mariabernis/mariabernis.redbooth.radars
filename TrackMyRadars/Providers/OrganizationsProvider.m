@@ -13,8 +13,8 @@
 
 @implementation OrganizationsProvider
 
-- (void)fetchOrganizationsWithRemainingProjects:(void(^)(NSArray *organizations, NSError * error))completion {
-    
+- (void)fetchOrganizationsWithRemainingProjects:(void(^)(NSArray *organizations, NSError * error))completion
+{
     RedboothAPIClient *redboothClient = [RedboothAPIClient sharedInstance];
     [redboothClient GET:RB_PATH_ORGANIZATION
              parameters:nil

@@ -25,12 +25,8 @@ typedef void (^RedboothRequestCompletion)(id responseObject, NSError *error);
 // Singleton instance
 + (instancetype)sharedInstance;
 
-// Authentication
+#pragma mark - Authentication
 - (void)launchAuthorizationFlow;
 - (void)authoriseWithCode:(NSString *)code completion:(void(^)(NSError *error))completion;
-//- (void)handleAuthoriseCallback:(NSString *)urlParams;
-//- (void)setAuthorizationHeaderWithToken:(NSString *)token;
-//- (void)storeCredential:(AFOAuthCredential *)credential;
-//- (BOOL)hasStoredToken;
 
 @end

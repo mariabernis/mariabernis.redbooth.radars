@@ -11,11 +11,13 @@
 @class RadarTask, RadarsProject;
 @interface RadarTasksProvider : NSObject
 
+#pragma mark - Fetching
 - (void)fetchOpenradarsWithOPUser:(NSString *)opUser
                        completion:(void(^)(NSArray *radars, NSError *error))completion;
 - (void)fetchRBRadarsWithProject:(RadarsProject *)project
                       completion:(void(^)(NSArray *radars, NSError *error))completion;
 
+#pragma mark - Import batch
 - (void)postTasksForOpenradars:(NSArray *)radars
                      inProject:(RadarsProject *)project
                       progress:(void(^)(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations))progressBlock

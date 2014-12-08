@@ -1,18 +1,10 @@
-//
-//  MBCheck.m
-//  TrackMyRadars
-//
-//  Created by Maria Bernis on 05/12/14.
-//  Copyright (c) 2014 mariabernis. All rights reserved.
-//
-
 #import "MBCheck.h"
 
 
 @implementation MBCheck
 
-+ (BOOL)isValidEmail:(NSString*)email {
-    
++ (BOOL)isValidEmail:(NSString*)email
+{
     if (email.length == 0) {
         return NO;
     }
@@ -44,7 +36,8 @@
     return NO;
 }
 
-+ (BOOL)isFirstTimeAppLaunch {
++ (BOOL)isFirstTimeAppLaunch
+{
     BOOL result = NO;
     NSString *lastOpenedVersion = [self lastOpenedAppVersion];
     if (lastOpenedVersion == nil) {
@@ -53,17 +46,20 @@
     return result;
 }
 
-+ (NSString *)lastOpenedAppVersion {
++ (NSString *)lastOpenedAppVersion
+{
     return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_APP_LAST_OPENED_VERSION];
 }
 
-+ (void)storeLastOpenedAppVersion {
++ (void)storeLastOpenedAppVersion
+{
     NSString *version = [self currentAppVersion];
     [[NSUserDefaults standardUserDefaults] setObject:version forKey:KEY_APP_LAST_OPENED_VERSION];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (NSString *)currentAppVersion {
++ (NSString *)currentAppVersion
+{
     NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
     NSString *version = [appInfo objectForKey:@"CFBundleVersion"];
     return version;

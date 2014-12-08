@@ -10,47 +10,58 @@
 
 @implementation UIColor (TrackMyRadars)
 
-+ (UIColor *)redboothColor {
++ (UIColor *)redboothColor
+{
     return [UIColor colorWithHue:1 saturation:0.853 brightness:0.886 alpha:1];
 }
 
-+ (UIColor *)redboothColorDarken {
++ (UIColor *)redboothColorDarken
+{
     return [UIColor colorWithHue:1 saturation:0.853 brightness:0.7 alpha:1];
 }
 
-+ (UIColor *)tmrMainColor {
++ (UIColor *)tmrMainColor
+{
     return [UIColor flatWetAsphaltColor];
 }
 
-+ (UIColor *)tmrMainColorDarker {
++ (UIColor *)tmrMainColorDarker
+{
     return [UIColor flatMidnightBlueColor];
 }
 
-+ (UIColor *)tmrMainColorLighter {
++ (UIColor *)tmrMainColorLighter
+{
     return [UIColor colorWithHue:0.583 saturation:1 brightness:0.442 alpha:1];
 }
 
-+ (UIColor *)tmrMainColorWithAlpha:(CGFloat)alpha {
++ (UIColor *)tmrMainColorWithAlpha:(CGFloat)alpha
+{
     return [UIColor colorWithHue:0.583 saturation:0.445 brightness:0.368 alpha:alpha];
 }
 
-+ (UIColor *)tmrWhiteColor {
++ (UIColor *)tmrWhiteColor
+{
     return [UIColor whiteColor];
 }
 
-+ (UIColor *)tmrTintColor {
++ (UIColor *)tmrTintColor
+{
     return [UIColor flatCloudsColor];
 }
 
-+ (UIColor *)tmrLighterGrayColor {
++ (UIColor *)tmrLighterGrayColor
+{
     return [UIColor flatCloudsColor];
 }
 
-+ (UIColor *)tmrLightMiddleGrayColor {
++ (UIColor *)tmrLightMiddleGrayColor
+{
     return [UIColor flatAsbestosColor];
 }
 
-+ (UIColor *)tmrDisabledColor {
++ (UIColor *)tmrDisabledColor
+{
     return [UIColor flatSilverColor];
 }
 

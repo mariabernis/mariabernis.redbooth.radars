@@ -29,17 +29,19 @@
 }
 
 
-- (void)commonInit {
+- (void)commonInit
+{
     _padding = UIEdgeInsetsZero;
 }
 
 
-- (void)drawTextInRect:(CGRect)rect {
+- (void)drawTextInRect:(CGRect)rect
+{
     [super drawTextInRect:UIEdgeInsetsInsetRect(rect, self.padding)];
 }
 
-- (CGSize)intrinsicContentSize {
-    
+- (CGSize)intrinsicContentSize
+{
     CGSize size = [super intrinsicContentSize];
     CGFloat adjustedW = size.width + self.padding.left + self.padding.right;
     CGFloat adjustedH = size.height + self.padding.top + self.padding.bottom;
@@ -49,12 +51,5 @@
     return adjustedSize;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

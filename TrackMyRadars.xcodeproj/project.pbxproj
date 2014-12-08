@@ -17,7 +17,6 @@
 		83267B211A31E38B004591C6 /* RadarsProjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B1D1A31E38B004591C6 /* RadarsProjectProvider.m */; };
 		83267B221A31E38B004591C6 /* RadarTasksProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B1F1A31E38B004591C6 /* RadarTasksProvider.m */; };
 		83267B261A31E3EC004591C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B241A31E3EC004591C6 /* main.m */; };
-		83267B2D1A31E428004591C6 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B281A31E428004591C6 /* AFNetworkActivityLogger.m */; };
 		83267B2E1A31E428004591C6 /* UIColor+TrackMyRadars.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B2A1A31E428004591C6 /* UIColor+TrackMyRadars.m */; };
 		83267B2F1A31E428004591C6 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B2C1A31E428004591C6 /* UIImage+Color.m */; };
 		83267B391A31E471004591C6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83267B311A31E471004591C6 /* LoginViewController.m */; };
@@ -85,8 +84,6 @@
 		83267B1F1A31E38B004591C6 /* RadarTasksProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarTasksProvider.m; sourceTree = "<group>"; };
 		83267B231A31E3EC004591C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83267B241A31E3EC004591C6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		83267B271A31E428004591C6 /* AFNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityLogger.h; sourceTree = "<group>"; };
-		83267B281A31E428004591C6 /* AFNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityLogger.m; sourceTree = "<group>"; };
 		83267B291A31E428004591C6 /* UIColor+TrackMyRadars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TrackMyRadars.h"; sourceTree = "<group>"; };
 		83267B2A1A31E428004591C6 /* UIColor+TrackMyRadars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TrackMyRadars.m"; sourceTree = "<group>"; };
 		83267B2B1A31E428004591C6 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -308,8 +305,6 @@
 		839274AA1A2FC843008DFA0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				83267B271A31E428004591C6 /* AFNetworkActivityLogger.h */,
-				83267B281A31E428004591C6 /* AFNetworkActivityLogger.m */,
 				83267B521A323B4F004591C6 /* MBCheck.h */,
 				83267B531A323B4F004591C6 /* MBCheck.m */,
 				83267B2B1A31E428004591C6 /* UIImage+Color.h */,
@@ -529,7 +524,6 @@
 			files = (
 				83267B0A1A31E29E004591C6 /* RedboothAPIClient.m in Sources */,
 				83267B5F1A325F9A004591C6 /* RadarsProject.m in Sources */,
-				83267B2D1A31E428004591C6 /* AFNetworkActivityLogger.m in Sources */,
 				83267B7C1A34EE56004591C6 /* MBTagLabel.m in Sources */,
 				83267B091A31E29E004591C6 /* OpenradarAPIClient.m in Sources */,
 				8392747C1A2F2076008DFA0E /* AppDelegate.m in Sources */,

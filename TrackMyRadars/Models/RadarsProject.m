@@ -17,7 +17,8 @@
 
 @implementation RadarsProject
 
-+ (RadarsProject *)importedProject {
++ (RadarsProject *)importedProject
+{
     RadarsProject *project = nil;
     NSDictionary *projInfo = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_IMPORTED_PROJECT];
     if (projInfo) {
@@ -30,8 +31,8 @@
     return project;
 }
 
-+ (BOOL)saveImportedProject:(RadarsProject *)project{
-
++ (BOOL)saveImportedProject:(RadarsProject *)project
+{
     if (project.opEmail == nil || project.radarsProjectId == 0) {
         return NO;
     }

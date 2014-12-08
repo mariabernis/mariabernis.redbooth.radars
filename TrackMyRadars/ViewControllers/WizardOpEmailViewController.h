@@ -10,5 +10,7 @@
 #import "WizardDelegate.h"
 
 @interface WizardOpEmailViewController : UIViewController
+
 @property (nonatomic, weak) id<WizardDelegate> delegate;
+
 @end

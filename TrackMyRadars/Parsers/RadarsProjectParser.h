@@ -11,10 +11,13 @@
 @class RadarsProject;
 @interface RadarsProjectParser : NSObject
 
-+ (NSInteger)projectIdWithJSONInfo:(NSDictionary *)info;
+#pragma mark - Openradar
 + (RadarsProject *)projectWithOpUser:(NSString *)email
                          projectName:(NSString *)name
                   rbTasklistJSONInfo:(NSDictionary *)tasklistInfo;
+
+#pragma mark - Redbooth
++ (NSInteger)projectIdWithJSONInfo:(NSDictionary *)info;
 + (NSDictionary *)rbProjectParametersWithName:(NSString *)name organizationId:(NSInteger)organizationId;
 + (NSDictionary *)rbTasklistParametersWithProjectId:(NSInteger)projectId;
 

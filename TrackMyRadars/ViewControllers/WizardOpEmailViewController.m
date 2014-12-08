@@ -15,6 +15,8 @@
 #import "UIView+TrackMyRadars.h"
 
 @interface WizardOpEmailViewController ()<UITextFieldDelegate>
+
+// Outlets
 @property (weak, nonatomic) IBOutlet UILabel *opEmailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *opEmailField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
@@ -25,8 +27,10 @@
 @implementation WizardOpEmailViewController
 
 #pragma mark - VC life cycle
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
     self.opEmailField.delegate = self;
     self.nextButton.enabled = NO;
     
@@ -40,36 +44,42 @@
     [self.view addSubview:stepsView];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
+    
     self.navigationItem.title = @"Import radars";
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
+    
     self.navigationItem.title = @"";
 }
 
 #pragma mark - Actions
-- (IBAction)dismissKeyboardIfShowing:(UITapGestureRecognizer *)sender {
+- (IBAction)dismissKeyboardIfShowing:(UITapGestureRecognizer *)sender
+{
     if ([self.opEmailField isFirstResponder]) {
         [self.opEmailField resignFirstResponder];
     }
 }
 
-- (IBAction)dismissWizard:(id)sender {
+- (IBAction)dismissWizard:(id)sender
+{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - Helpers
-
 
 #pragma mark - Navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"WizardTwoSegue"]) {
         WizardRbOrganizationViewController *wizardTwoVC = segue.destinationViewController;
         wizardTwoVC.delegate = self.delegate;
@@ -79,8 +89,8 @@
 
 
 #pragma mark - UITextFieldDelegate
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
     self.nextButton.enabled = [MBCheck isValidEmail:self.opEmailField.text];
 }
 

@@ -10,11 +10,13 @@
 #import "UIColor+TrackMyRadars.h"
 
 @implementation UIView (TrackMyRadars)
-- (void)tmrFieldBckStyle {
-    
+
+- (void)tmrFieldBckStyle
+{
     self.layer.borderColor = [UIColor tmrLightMiddleGrayColor].CGColor;
     self.layer.borderWidth = 1.0;
     self.layer.cornerRadius = 2.0;
     self.backgroundColor = [UIColor tmrWhiteColor];
 }
+
 @end
