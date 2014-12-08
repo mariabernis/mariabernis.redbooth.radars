@@ -91,6 +91,14 @@
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    BOOL isValidEmail = [MBCheck isValidEmail:self.opEmailField.text];
+    if (!isValidEmail) {
+        self.fieldWrapper.backgroundColor = [UIColor colorWithHue:0.583 saturation:0.551 brightness:0.568 alpha:0.4];
+        self.opEmailField.placeholder = @"Enter a valid email";
+    } else {
+        self.fieldWrapper.backgroundColor = [UIColor tmrWhiteColor];
+        self.opEmailField.placeholder = @"email";
+    }
     self.nextButton.enabled = [MBCheck isValidEmail:self.opEmailField.text];
 }
 
