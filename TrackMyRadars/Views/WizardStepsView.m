@@ -62,12 +62,14 @@
         _activeCircleFrame = _rightCircleFrame;
     }
     
+    // Number label
     UILabel *numberLabel = [[UILabel alloc] initWithFrame:CGRectInset(_activeCircleFrame, -5, -5)];
     numberLabel.font = [UIFont boldSystemFontOfSize:CIRCLE_WIDTH/2];
     numberLabel.textColor = [UIColor tmrTintColor];
     numberLabel.textAlignment = NSTextAlignmentCenter;
     numberLabel.text = [NSString stringWithFormat:@"%li", (long)self.step];
     
+    // Step x of 2 label
     CGFloat labelHeigh = 21.0;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, _centerY - LINE_HEIGHT/2 - 3 - labelHeigh, CGRectGetWidth(self.frame), labelHeigh)];
     label.font = [UIFont systemFontOfSize:14.0];
@@ -75,14 +77,35 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.text = [NSString stringWithFormat:@"Step %li of 2", (long)self.step];
     
+    // Step icon
+    NSString *icon = nil;
+    CGFloat iconViewHeight = CIRCLE_WIDTH + 4;
+    CGFloat margin = 15.0;
+    CGRect iconViewFrame;
+    if (self.step == 1) {
+        icon = @"ic_bug_grey_70";
+        iconViewFrame = CGRectMake(CGRectGetMinX(_leftCircleFrame) - margin - iconViewHeight,
+                                   _centerY - iconViewHeight/2,
+                                   iconViewHeight,
+                                   iconViewHeight);
+    } else {
+        icon = @"ic_redbooth_grey_70";
+        iconViewFrame = CGRectMake(CGRectGetMaxX(_rightCircleFrame) + margin,
+                                   _centerY - iconViewHeight/2,
+                                   iconViewHeight,
+                                   iconViewHeight);
+    }
+    
+    UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:icon]];
+    iconView.frame = iconViewFrame;
+    
     [self addSubview:numberLabel];
     [self addSubview:label];
+    [self addSubview:iconView];
 }
 
 
 - (void)drawRect:(CGRect)rect {
-
-//    CGFloat centerY = CGRectGetHeight(rect)/2;
     
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     

@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *projNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *projNameField;
 @property (weak, nonatomic) IBOutlet UILabel *organizationsLabel;
+@property (weak, nonatomic) IBOutlet UIView *loaderPlaceholder;
 @end
 
 
@@ -59,9 +60,10 @@
 
 - (PQFCirclesInTriangle *)loader {
     if (!_loader) {
-        _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.organizationsTableView];
-        _loader.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+        _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
         _loader.loaderColor = [UIColor tmrMainColor];
+        // Manually set center
+        _loader.center = CGPointMake(self.view.center.x, self.organizationsTableView.center.y - 64.0);
     }
     return _loader;
 }
@@ -76,6 +78,8 @@
     self.organizationsTableView.delegate = self;
     
     self.view.backgroundColor = [UIColor tmrLighterGrayColor];
+    self.loaderPlaceholder.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
+    self.loaderPlaceholder.hidden = YES;
     self.projNameLabel.textColor = [UIColor tmrMainColor];
     self.organizationsLabel.textColor = [UIColor tmrMainColor];
     [self.importButton tmrStyle];
@@ -100,10 +104,10 @@
 - (void)loadOrganizationList {
     
     self.importButton.enabled = NO;
-    [self.loader show];
+    [self showLoader];
     [self.organizationsProvider fetchOrganizationsWithRemainingProjects:^(NSArray *organizations, NSError *error) {
         
-        [self.loader hide];
+        [self hideLoader];
         if (error) {
             return;
         }
@@ -125,6 +129,16 @@
         [self.delegate wizardDidFinishWithOpEmail:self.opEmail projectName:self.projNameField.text organizationId:selected.oragnizationId];
     }
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)showLoader {
+    self.loaderPlaceholder.hidden = NO;
+    [self.loader show];
+}
+
+- (void)hideLoader {
+    self.loaderPlaceholder.hidden = YES;
+    [self.loader hide];
 }
 
 #pragma mark - UITextFieldDelegate

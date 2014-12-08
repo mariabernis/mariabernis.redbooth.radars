@@ -65,6 +65,8 @@
         _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
         _loader.backgroundColor = [UIColor tmrMainColorWithAlpha:0.8];
         _loader.loaderColor = [UIColor tmrTintColor];
+        // Fix center
+        _loader.center = CGPointMake(self.view.center.x, self.view.center.y - 64);
     }
     return _loader;
 }
@@ -222,7 +224,7 @@
     
     [self.radarsTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     UITableViewRowAnimation rowAnimation;
-    if(row != 0 && ((int)row % 10) == 0){
+    if(row != 0 && ((int)row % 5) == 0){
         NSLog(@"🐼 scroll tableview");
         rowAnimation = UITableViewRowAnimationNone;
         [self.radarsTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];

@@ -377,6 +377,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wU-gc-1B7" userLabel="PlaceLoader">
+                                <rect key="frame" x="155" y="264" width="290" height="225"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="Hgn-NI-Jv5"/>
+                                    <constraint firstAttribute="height" priority="250" constant="225" id="iqE-hZ-IAB"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKV-8K-CbZ" userLabel="FieldView">
                                 <rect key="frame" x="155" y="177" width="290" height="35"/>
                                 <subviews>
@@ -409,9 +417,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="3wU-gc-1B7" firstAttribute="top" secondItem="Z9p-UU-9Xc" secondAttribute="bottom" constant="8" id="1ud-Zt-wjT"/>
                             <constraint firstItem="eKV-8K-CbZ" firstAttribute="top" secondItem="KCE-YN-QQc" secondAttribute="bottom" constant="8" id="7DW-Im-W6S"/>
+                            <constraint firstAttribute="centerX" secondItem="3wU-gc-1B7" secondAttribute="centerX" id="FNM-aN-cvq"/>
                             <constraint firstItem="KCE-YN-QQc" firstAttribute="top" secondItem="HWE-OG-xUU" secondAttribute="bottom" constant="85" id="MCU-mQ-KhL"/>
                             <constraint firstAttribute="centerX" secondItem="KCE-YN-QQc" secondAttribute="centerX" id="SXE-7q-8Rl"/>
+                            <constraint firstItem="oNj-9a-pfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3wU-gc-1B7" secondAttribute="bottom" constant="20" id="VnO-Tw-4FR"/>
                             <constraint firstItem="oNj-9a-pfY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Drb-XK-2Ef" secondAttribute="bottom" constant="20" id="YDi-th-mLh"/>
                             <constraint firstAttribute="centerX" secondItem="Drb-XK-2Ef" secondAttribute="centerX" id="dAm-Io-vrZ"/>
                             <constraint firstAttribute="centerX" secondItem="Z9p-UU-9Xc" secondAttribute="centerX" id="kcw-Cz-e1Z"/>
@@ -428,6 +439,7 @@
                     <connections>
                         <outlet property="fieldWrapper" destination="eKV-8K-CbZ" id="JKD-F2-g26"/>
                         <outlet property="importButton" destination="oNj-9a-pfY" id="w8P-FX-m8n"/>
+                        <outlet property="loaderPlaceholder" destination="3wU-gc-1B7" id="s4v-ug-Z8i"/>
                         <outlet property="organizationsLabel" destination="Z9p-UU-9Xc" id="hww-uS-uDw"/>
                         <outlet property="organizationsTableView" destination="Drb-XK-2Ef" id="Qa8-bt-1p9"/>
                         <outlet property="projNameField" destination="xxD-eQ-hQz" id="PEc-vX-uXu"/>
