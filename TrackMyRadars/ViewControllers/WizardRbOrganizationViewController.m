@@ -16,11 +16,13 @@
 #import "UIColor+TrackMyRadars.h"
 #import "UIButton+TrackMyRadars.h"
 #import "UIView+TrackMyRadars.h"
+#import <PQFCustomLoaders/PQFCustomLoaders.h>
 
 @interface WizardRbOrganizationViewController ()<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *organizations; // Of Organization
 @property (nonatomic, strong) NSIndexPath *selectedIndex;
 @property (nonatomic, strong) OrganizationsProvider *organizationsProvider;
+@property (nonatomic, strong) PQFCirclesInTriangle *loader;
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITableView *organizationsTableView;
@@ -53,6 +55,15 @@
         _organizationsProvider = [[OrganizationsProvider alloc] init];
     }
     return _organizationsProvider;
+}
+
+- (PQFCirclesInTriangle *)loader {
+    if (!_loader) {
+        _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.organizationsTableView];
+        _loader.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+        _loader.loaderColor = [UIColor tmrMainColor];
+    }
+    return _loader;
 }
 
 #pragma mark - VC life cycle
@@ -89,8 +100,10 @@
 - (void)loadOrganizationList {
     
     self.importButton.enabled = NO;
+    [self.loader show];
     [self.organizationsProvider fetchOrganizationsWithRemainingProjects:^(NSArray *organizations, NSError *error) {
         
+        [self.loader hide];
         if (error) {
             return;
         }

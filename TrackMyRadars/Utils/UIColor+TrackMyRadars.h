@@ -15,6 +15,7 @@
 + (UIColor *)tmrMainColor;
 + (UIColor *)tmrMainColorDarker;
 + (UIColor *)tmrMainColorLighter;
++ (UIColor *)tmrMainColorWithAlpha:(CGFloat)alpha;
 + (UIColor *)tmrWhiteColor;
 + (UIColor *)tmrTintColor;
 + (UIColor *)tmrLighterGrayColor;

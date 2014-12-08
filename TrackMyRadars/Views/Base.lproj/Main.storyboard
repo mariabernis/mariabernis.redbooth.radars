@@ -216,6 +216,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="importBarButton" destination="Mod-Vs-oAi" id="MIi-lg-Gdx"/>
                         <outlet property="noImportView" destination="UW6-wf-Wp6" id="Qoq-wX-u4t"/>
                         <outlet property="radarsTableView" destination="StD-UO-5fv" id="wr5-kc-oLA"/>
                     </connections>

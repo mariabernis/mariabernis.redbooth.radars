@@ -30,6 +30,7 @@
 // Outlets
 @property (weak, nonatomic) IBOutlet UITableView *radarsTableView;
 @property (weak, nonatomic) IBOutlet UIView *noImportView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *importBarButton;
 @end
 
 
@@ -62,8 +63,8 @@
 - (PQFCirclesInTriangle *)loader {
     if (!_loader) {
         _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
-        _loader.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.4];
-        _loader.loaderColor = [UIColor flatPeterRiverColor];
+        _loader.backgroundColor = [UIColor tmrMainColorWithAlpha:0.8];
+        _loader.loaderColor = [UIColor tmrTintColor];
     }
     return _loader;
 }
@@ -113,17 +114,26 @@
     self.navigationItem.title = self.importedProject.radarsProjectName;
     self.noImportView.hidden = YES;
     self.radarsTableView.hidden = NO;
-    // pull to refresh
+}
+
+- (void)hideLoader {
+    [self.loader hide];
 }
 
 - (void)loadRadarsFromRBProject:(RadarsProject *)project {
     
+    self.loader.label.text = @"Loading radar tasks";
+    self.importBarButton.enabled = NO;
+    [self.loader show];
     [self.tasksProvider fetchRBRadarsWithProject:project
                                       completion:^(NSArray *radars, NSError *error) {
                                           
                                           [self.radars removeAllObjects];
                                           [self.radars addObjectsFromArray:radars];
                                           [self.radarsTableView reloadData];
+                                          
+                                          self.importBarButton.enabled = YES;
+                                          [self.loader hide];
                                       }];
 }
 
@@ -140,6 +150,9 @@
                     organizationId:(NSInteger)organizationId {
     
     [self showImportedData];
+    self.navigationItem.title = name;
+    self.importBarButton.enabled = NO;
+    self.loader.label.text = @"Getting Openradars";
     [self.loader show];
     self.importManager = [[RadarsImportManager alloc] initWithOpEmail:email projectName:name andOrganizationId:organizationId];
     [self.importManager
@@ -148,6 +161,7 @@
          [self.radars removeAllObjects];
          [self.radars addObjectsFromArray:tempRadars];
          [self.radarsTableView reloadData];
+         self.loader.label.text = @"Importing to Redbooth";
      }
      progress:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
          
@@ -165,7 +179,10 @@
          [self.radars removeAllObjects];
          [self.radars addObjectsFromArray:importedRadars];
          [self.radarsTableView reloadData];
-         [self.loader hide];
+         
+         self.importBarButton.enabled = YES;
+         self.loader.label.text = @"Import completed!";
+         [self performSelector:@selector(hideLoader) withObject:nil afterDelay:0.5];
      }];
 }
 
@@ -188,53 +205,32 @@
     
     RadarTask *radar = self.radars[indexPath.row];
     cell.radarTitleLabel.text = radar.radarTitle;
-    cell.numberLabel.text = [NSString stringWithFormat:@"# %@", radar.radarNumber];
+    cell.numberLabel.text = [NSString stringWithFormat:@"#%@", radar.radarNumber];
     cell.statusLabel.text = radar.radarStatus;
     cell.imported = radar.isImported;
+    if (radar.isImported) {
+        if ([radar.radarStatus isEqualToString:kRadarStatusOpen]) {
+            cell.statusLabel.backgroundColor = [UIColor tmrMainColor];
+        } else {
+            cell.statusLabel.backgroundColor = [UIColor tmrDisabledColor];
+        }
+    }
 }
-
-//- (void)configureRBRadarCell:(UITableViewCell *)cell withRadar:(RadarTask *)radar {
-//    
-//    cell.textLabel.text = radar.radarTitle;
-//    
-//    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-//    cell.textLabel.textColor = [UIColor tmrMainColor];
-//}
-//
-//- (void)configureOPRadarCell:(UITableViewCell *)cell withRadar:(RadarTask *)radar {
-//    
-//    cell.textLabel.text = radar.radarTitle;
-//    
-//    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-//    cell.textLabel.textColor = [UIColor tmrDisabledColor];
-//}
 
 - (void)updateCellAtRow:(NSUInteger)row {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-    [self.radarsTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-}
-
-#pragma mark - UITableViewDelegate
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [self.radarsTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    UITableViewRowAnimation rowAnimation;
+    if(row != 0 && ((int)row % 10) == 0){
+        NSLog(@"🐼 scroll tableview");
+        rowAnimation = UITableViewRowAnimationNone;
+        [self.radarsTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    } else {
+        rowAnimation = UITableViewRowAnimationLeft;
+    }
+    
+//    [self.radarsTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
 }
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    static RadarTaskCell *cell;
-//    if (cell == nil) {
-//        cell = (RadarTaskCell *)[tableView dequeueReusableCellWithIdentifier: @"RadarTaskCell"];
-//    }
-//    [self configureCell:cell forIndexPath:indexPath];
-//    [cell.radarTitleLabel sizeToFit];
-//    [cell setNeedsLayout];
-//    [cell layoutIfNeeded];
-//    
-//    CGSize size = [cell.contentView systemLayoutSizeFittingSize: UILayoutFittingCompressedSize];
-//    NSLog(@"Calculated height %f", size.height);
-//    return size.height + 1.0f;
-//}
-
 
 @end

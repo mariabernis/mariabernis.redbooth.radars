@@ -28,8 +28,10 @@
 
 + (UIColor *)tmrMainColorLighter {
     return [UIColor colorWithHue:0.583 saturation:1 brightness:0.442 alpha:1];
-//    return [UIColor colorWithHue:0.582 saturation:0.448 brightness:0.568 alpha:1];
-//    return [UIColor colorWithHue:0.581 saturation:0.449 brightness:0.478 alpha:1];
+}
+
++ (UIColor *)tmrMainColorWithAlpha:(CGFloat)alpha {
+    return [UIColor colorWithHue:0.583 saturation:0.445 brightness:0.368 alpha:alpha];
 }
 
 + (UIColor *)tmrWhiteColor {

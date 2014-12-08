@@ -9,19 +9,29 @@
 #import "LoginViewController.h"
 #import "UIColor+TrackMyRadars.h"
 #import "UIButton+TrackMyRadars.h"
-#import <PQFCustomLoaders/PQFCirclesInTriangle.h>
+#import <PQFCustomLoaders/PQFCustomLoaders.h>
 #import "RedboothAPIClient.h"
 #import "RadarListViewController.h"
 
 @interface LoginViewController ()
+@property (nonatomic, strong) PQFCirclesInTriangle *loader;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 @end
 
 
-
 @implementation LoginViewController
+
+-(PQFCirclesInTriangle *)loader {
+    if (!_loader) {
+        _loader = [[PQFCirclesInTriangle alloc] initLoaderOnView:self.view];
+        _loader.backgroundColor = [UIColor tmrMainColorWithAlpha:0.8];
+        _loader.loaderColor = [UIColor tmrTintColor];
+    }
+    return _loader;
+}
 
 #pragma mark - VC life cycle
 - (void)viewDidLoad {
@@ -45,8 +55,11 @@
 
 - (void)handleAuthoriseCallback:(NSString *)code {
     
+    [self.loader show];
     [[RedboothAPIClient sharedInstance] authoriseWithCode:code
                                                completion:^(NSError *error) {
+                                                   
+                                                   [self.loader hide];
                                                    if (error) {
                                                        NSLog(@"😱 Auth error: %@", error);
                                                        return;

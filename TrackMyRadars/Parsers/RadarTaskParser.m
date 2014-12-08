@@ -93,7 +93,8 @@
 + (NSDictionary *)rbGetTasksParametersWithProject:(RadarsProject *)project {
     
     NSDictionary *taskParams = @{ @"project_id"  :@(project.radarsProjectId),
-                                  @"task_list_id":@(project.radarsTaskListId)
+                                  @"task_list_id":@(project.radarsTaskListId),
+                                  @"per_page"    :@1000
                                   };
     return taskParams;
 }
