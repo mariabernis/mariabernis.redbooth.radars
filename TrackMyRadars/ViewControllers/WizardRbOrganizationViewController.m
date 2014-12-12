@@ -115,6 +115,8 @@
         
         [self hideLoader];
         if (error) {
+            NSLog(@"No organizations for user");
+
             return;
         }
         self.organizations = organizations;
@@ -132,6 +134,10 @@
 - (IBAction)startRadarsImport:(id)sender
 {
     if (self.delegate) {
+        if (self.organizations.count == 0) {
+            NSLog(@"No organizations for user");
+            return;
+        }
         Organization *selected = self.organizations[self.selectedIndex.row];
         [self.delegate wizardDidFinishWithOpEmail:self.opEmail projectName:self.projNameField.text organizationId:selected.oragnizationId];
     }
