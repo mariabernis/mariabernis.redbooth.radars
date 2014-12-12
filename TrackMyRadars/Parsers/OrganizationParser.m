@@ -27,7 +27,7 @@
         
     }];
     
-    return [NSArray arrayWithArray:items];
+    return items;
 }
 
 + (Organization *)organizationWithJSONInfo:(NSDictionary *)info
