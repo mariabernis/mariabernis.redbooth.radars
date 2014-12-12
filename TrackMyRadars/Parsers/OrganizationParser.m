@@ -35,7 +35,8 @@
     Organization *item = [[Organization alloc] init];
     item.oragnizationId = [[info objectForKey:@"id"] integerValue];
     item.organizationName = [info objectForKey:@"name"];
-    item.remainingProjects = [[info objectForKey:@"remaining_projects"] integerValue];
+    item.remainingProjects = [[info objectForKey:@"used_projects"] integerValue];
+
     return item;
 }
 
