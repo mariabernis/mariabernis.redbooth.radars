@@ -78,7 +78,7 @@
 }
 
 
-#pragma mark - URL cheme
+#pragma mark - URL scheme
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
