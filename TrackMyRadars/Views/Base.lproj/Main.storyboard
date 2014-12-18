@@ -447,7 +447,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETS-xG-Mc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="bzG-6t-qy0">
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="bzG-6t-qy0">
                     <connections>
                         <action selector="dismissKeyboardIfShowing:" destination="OWm-3g-cUr" id="0iW-3d-mSH"/>
                     </connections>
